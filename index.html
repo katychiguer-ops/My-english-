@@ -8,10 +8,28 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 
+:root{
+--navy:#172554;
+--navy2:#1e3a5f;
+--teal:#0f766e;
+--teal-light:#e7f8f5;
+--orange:#f97316;
+--gold:#f59e0b;
+--cream:#fffaf2;
+--bg:#f4f7f8;
+--text:#1f2937;
+--muted:#718096;
+--line:#e5e7eb;
+--success:#15803d;
+--success-bg:#ecfdf3;
+--error:#be123c;
+--error-bg:#fff1f2;
+}
+
 body{
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-background:linear-gradient(135deg,#f5efff,#eee7ff,#f9f4ff);
-color:#29233d;
+background:linear-gradient(135deg,#f7faf9,#eef5f4,#fffaf2);
+color:var(--text);
 min-height:100vh;
 padding-bottom:90px
 }
@@ -38,7 +56,7 @@ padding:18px 4px 25px
 .logo{
 font-size:25px;
 font-weight:800;
-color:#7047d9
+color:var(--navy)
 }
 
 .logo span{font-size:29px}
@@ -52,17 +70,17 @@ gap:10px
 background:white;
 padding:9px 13px;
 border-radius:15px;
-box-shadow:0 5px 18px #6d4ac01a;
+box-shadow:0 5px 18px #17255416;
 font-weight:700;
 font-size:14px
 }
 
 .hero{
-background:linear-gradient(135deg,#7650dc,#a276f3);
+background:linear-gradient(135deg,var(--navy),var(--teal));
 color:white;
 border-radius:28px;
 padding:30px;
-box-shadow:0 15px 35px #7047d933;
+box-shadow:0 15px 35px #17255430;
 margin-bottom:25px
 }
 
@@ -85,7 +103,7 @@ overflow:hidden
 
 .progress div{
 height:100%;
-background:white;
+background:var(--gold);
 border-radius:20px;
 width:0%;
 transition:.4s
@@ -101,14 +119,14 @@ gap:15px
 background:#fff;
 border-radius:23px;
 padding:22px;
-box-shadow:0 8px 25px #5d3ba015;
+box-shadow:0 8px 25px #17255412;
 transition:.2s;
-border:1px solid #ffffff
+border:1px solid #edf0f1
 }
 
 .card:hover{
 transform:translateY(-3px);
-box-shadow:0 12px 30px #5d3ba022
+box-shadow:0 12px 30px #17255420
 }
 
 .icon{
@@ -120,15 +138,15 @@ margin-bottom:12px
 
 .card p{
 font-size:14px;
-color:#817a91;
+color:var(--muted);
 line-height:1.5
 }
 
 .xp{
 display:inline-block;
 margin-top:15px;
-background:#f0eaff;
-color:#7047d9;
+background:#fff4df;
+color:#b45309;
 padding:7px 10px;
 border-radius:12px;
 font-size:12px;
@@ -141,18 +159,19 @@ section.active{display:block}
 
 .back{
 background:white;
-color:#7047d9;
+color:var(--navy);
 padding:10px 15px;
 border-radius:13px;
 font-weight:700;
-margin-bottom:18px
+margin-bottom:18px;
+box-shadow:0 3px 12px #17255410
 }
 
 .lesson{
 background:white;
 border-radius:25px;
 padding:25px;
-box-shadow:0 8px 25px #5d3ba015;
+box-shadow:0 8px 25px #17255412;
 margin-bottom:18px
 }
 
@@ -179,16 +198,20 @@ justify-content:center
 }
 
 .primary{
-background:#7047d9;
+background:var(--teal);
 color:white;
 padding:12px 18px;
 border-radius:14px;
 font-weight:700
 }
 
+.primary:hover{
+background:#0b625c
+}
+
 .secondary{
-background:#f0eaff;
-color:#7047d9;
+background:var(--teal-light);
+color:var(--teal);
 padding:12px 18px;
 border-radius:14px;
 font-weight:700
@@ -204,7 +227,7 @@ font-weight:700
 
 textarea,input{
 width:100%;
-border:2px solid #eee7fa;
+border:2px solid var(--line);
 border-radius:15px;
 padding:14px;
 font-size:16px;
@@ -213,25 +236,25 @@ margin:10px 0
 }
 
 textarea:focus,input:focus{
-border-color:#9a78e9
+border-color:var(--teal)
 }
 
 .result{
 margin-top:15px;
 padding:15px;
 border-radius:15px;
-background:#f7f3ff;
+background:#f7fafb;
 line-height:1.7
 }
 
 .success{
-background:#ecfff4;
-color:#246b45
+background:var(--success-bg);
+color:#166534
 }
 
 .error{
-background:#fff0f3;
-color:#9b304d
+background:var(--error-bg);
+color:var(--error)
 }
 
 .words{
@@ -243,11 +266,11 @@ margin-top:15px
 
 .word{
 padding:12px 15px;
-background:#f4efff;
+background:#edf8f6;
 border-radius:14px;
 cursor:pointer;
 font-weight:700;
-color:#6541bf
+color:var(--teal)
 }
 
 .skill{margin:15px 0}
@@ -261,7 +284,7 @@ font-weight:700
 
 .bar{
 height:9px;
-background:#eeeaf5;
+background:#e8edef;
 border-radius:20px;
 margin-top:7px;
 overflow:hidden
@@ -269,7 +292,7 @@ overflow:hidden
 
 .bar div{
 height:100%;
-background:#8058df;
+background:linear-gradient(90deg,var(--teal),var(--orange));
 border-radius:20px;
 transition:.5s
 }
@@ -282,7 +305,7 @@ transform:translateX(-50%);
 background:white;
 border-radius:22px;
 padding:10px;
-box-shadow:0 8px 30px #0002;
+box-shadow:0 8px 30px #17255425;
 display:flex;
 gap:5px;
 z-index:10
@@ -297,8 +320,8 @@ color:#777
 }
 
 .nav button.active{
-background:#eee7ff;
-color:#7047d9;
+background:#e7f8f5;
+color:var(--teal);
 font-weight:800
 }
 
@@ -309,8 +332,8 @@ color:#898295
 
 .counter{
 display:inline-block;
-background:#f0eaff;
-color:#7047d9;
+background:#fff4df;
+color:#b45309;
 padding:7px 12px;
 border-radius:12px;
 font-weight:800;
@@ -321,7 +344,8 @@ margin:12px 0
 width:100%;
 padding:14px;
 margin:7px 0;
-background:#f7f3ff;
+background:#f7fafb;
+border:1px solid #e8edef;
 border-radius:14px;
 text-align:left;
 font-weight:600;
@@ -329,7 +353,7 @@ transition:.2s
 }
 
 .quiz-option:hover{
-background:#e9dfff;
+background:#e7f8f5;
 transform:translateX(3px)
 }
 
@@ -353,8 +377,8 @@ margin-top:20px
 }
 
 .vocab-category{
-background:linear-gradient(145deg,#faf8ff,#f1ebff);
-border:1px solid #eee7fa;
+background:linear-gradient(145deg,#ffffff,#f2f8f7);
+border:1px solid #e3ecea;
 border-radius:22px;
 padding:22px 14px;
 text-align:center;
@@ -364,7 +388,7 @@ transition:.2s
 
 .vocab-category:hover{
 transform:translateY(-4px);
-box-shadow:0 10px 25px #7047d91c
+box-shadow:0 10px 25px #0f766e1c
 }
 
 .vocab-category-icon{
@@ -374,7 +398,7 @@ margin-bottom:10px
 
 .vocab-category-title{
 font-weight:800;
-color:#6541bf
+color:var(--navy)
 }
 
 .vocab-category-count{
@@ -391,8 +415,8 @@ margin-top:20px
 }
 
 .vocab-item{
-background:#faf8ff;
-border:1px solid #eee7fa;
+background:#fafcfc;
+border:1px solid #e4eceb;
 border-radius:20px;
 padding:12px;
 text-align:center
@@ -404,7 +428,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-size:52px;
-background:#f1ebff;
+background:#edf8f6;
 border-radius:16px;
 margin-bottom:9px
 }
@@ -425,7 +449,7 @@ margin-bottom:9px
 width:38px;
 height:38px;
 border-radius:50%;
-background:#7047d9;
+background:var(--teal);
 color:white;
 font-size:17px;
 display:inline-flex;
@@ -436,75 +460,187 @@ justify-content:center
 .category-title{
 margin-top:10px;
 font-size:24px;
-color:#7047d9
+color:var(--navy)
 }
 
 .search{margin:15px 0}
 
 .hidden{display:none!important}
 
-/* GRAMMAR */
+/* =========================
+   GRAMMAR - NEW CLEAN DESIGN
+========================= */
 
 .grammar-card{
-background:#faf8ff;
-border-radius:20px;
-padding:20px;
-margin:15px 0;
-border-left:5px solid #7047d9
+background:#fff;
+border-radius:22px;
+padding:24px;
+margin:18px 0;
+border:1px solid #e5eaec;
+box-shadow:0 5px 18px #1725540b
 }
 
 .grammar-card h3{
-color:#7047d9;
-margin-bottom:10px
+color:var(--navy);
+margin-bottom:12px;
+font-size:22px
 }
 
-.example{
-background:white;
-border-radius:14px;
-padding:12px;
-margin:8px 0;
-line-height:1.7
+.grammar-card h4{
+color:var(--teal);
+margin-bottom:7px
+}
+
+.grammar-intro{
+background:linear-gradient(135deg,#eef8f6,#fff7eb);
+border-radius:20px;
+padding:22px;
+margin:18px 0;
+line-height:1.8
 }
 
 .grammar-rule{
-background:#eee7ff;
+background:#f2f7f8;
+border-radius:16px;
+padding:16px;
+margin-top:14px;
+line-height:1.9;
+border-left:4px solid var(--teal)
+}
+
+.example{
+background:#fffaf2;
+border:1px solid #f5ead7;
 border-radius:14px;
 padding:14px;
-margin-top:12px;
-line-height:1.7
+margin:10px 0;
+line-height:1.9
+}
+
+.example b{
+color:var(--navy)
+}
+
+.verb-change-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+gap:14px;
+margin-top:15px
+}
+
+.verb-change{
+background:#f8fafb;
+border:1px solid #e6ecee;
+border-radius:17px;
+padding:17px;
+line-height:1.8
+}
+
+.verb-change strong{
+color:var(--teal)
+}
+
+.pronoun-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+gap:10px;
+margin-top:15px
+}
+
+.pronoun-box{
+background:#f8fafb;
+border-radius:15px;
+padding:14px;
+text-align:center;
+border:1px solid #e7ecee
+}
+
+.pronoun-box strong{
+display:block;
+font-size:19px;
+color:var(--navy);
+margin-bottom:4px
+}
+
+.table-wrap{
+width:100%;
+overflow-x:auto;
+margin-top:18px;
+border:1px solid #e4eaec;
+border-radius:16px
 }
 
 .tense-table{
 width:100%;
+min-width:780px;
 border-collapse:collapse;
-margin-top:12px;
-overflow:hidden
+background:white
 }
 
 .tense-table td,
 .tense-table th{
-padding:10px;
-border-bottom:1px solid #eee7fa;
-text-align:left
+padding:13px 12px;
+border-bottom:1px solid #edf0f1;
+text-align:left;
+vertical-align:top
 }
 
 .tense-table th{
-color:#7047d9
+background:#f1f7f6;
+color:var(--navy);
+font-size:13px
+}
+
+.tense-table tr:last-child td{
+border-bottom:0
+}
+
+.tense-table td:first-child{
+font-weight:800;
+color:var(--teal)
+}
+
+.tense-title{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+margin-top:24px
+}
+
+.tense-title span{
+font-size:12px;
+background:#fff4df;
+color:#a16207;
+padding:6px 9px;
+border-radius:9px
+}
+
+.grammar-section-label{
+display:inline-block;
+font-size:12px;
+font-weight:800;
+text-transform:uppercase;
+letter-spacing:.5px;
+color:var(--orange);
+margin-bottom:7px
 }
 
 /* CONNECTORS */
 
 .connector{
-background:#faf8ff;
+background:#f8fafb;
 padding:17px;
 border-radius:18px;
-margin:10px 0
+margin:10px 0;
+border:1px solid #e6ecee
 }
 
 .connector-word{
 font-size:21px;
 font-weight:800;
-color:#7047d9
+color:var(--navy)
 }
 
 .connector-example{
@@ -528,18 +664,41 @@ margin:20px 0
 
 .reading-level{
 display:inline-block;
-background:#eee7ff;
-color:#7047d9;
+background:#e7f8f5;
+color:var(--teal);
 padding:6px 10px;
 border-radius:10px;
 font-weight:700;
 font-size:12px
 }
 
+.reading-meta{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin-top:10px
+}
+
+.reading-tag{
+display:inline-block;
+background:#fff4df;
+color:#a16207;
+padding:6px 10px;
+border-radius:10px;
+font-size:12px;
+font-weight:700
+}
+
+.reading-question-title{
+font-size:18px;
+font-weight:800;
+margin:20px 0 10px
+}
+
 /* WRITING */
 
 .prompt{
-background:#f7f3ff;
+background:#f7fafb;
 padding:18px;
 border-radius:18px;
 font-size:18px;
@@ -557,14 +716,33 @@ margin-top:18px
 }
 
 .progress-box{
-background:#faf8ff;
+background:#f8fafb;
 border-radius:18px;
-padding:16px
+padding:16px;
+border:1px solid #e6ecee
 }
 
 .progress-box strong{
 font-size:23px;
-color:#7047d9
+color:var(--navy)
+}
+
+.history-empty{
+padding:15px;
+background:#f8fafb;
+border-radius:15px;
+color:#8a9499;
+font-size:14px
+}
+
+.complete-box{
+text-align:center;
+padding:25px
+}
+
+.complete-box h3{
+color:var(--teal);
+margin-bottom:8px
 }
 
 @media(max-width:600px){
@@ -600,6 +778,14 @@ grid-template-columns:repeat(2,1fr)
 
 .tense-table{
 font-size:12px
+}
+
+.grammar-card{
+padding:18px
+}
+
+.reading-text{
+font-size:17px
 }
 }
 </style>
@@ -941,11 +1127,20 @@ Question <span id="listenNumber">1</span> / 1000
 
 <h2>📖 Reading</h2>
 
+<p class="small">
+Read carefully. The texts become longer and more difficult step by step.
+</p>
+
 <div class="counter">
 Passage <span id="readingNumber">1</span> / 400
 </div>
 
 <div id="readingLevel"></div>
+
+<div class="reading-meta">
+<span class="reading-tag" id="readingDifficulty"></span>
+<span class="reading-tag" id="readingWordsCount"></span>
+</div>
 
 <h3 id="readingTitle" style="margin:18px 0 10px"></h3>
 
@@ -1096,7 +1291,9 @@ Learn the word → understand it → see it in a sentence → hear it.
 </section>
 
 
-<!-- GRAMMAR -->
+<!-- =========================
+     EASY GRAMMAR - REDESIGNED
+========================= -->
 
 <section id="grammar">
 
@@ -1107,155 +1304,553 @@ Learn the word → understand it → see it in a sentence → hear it.
 <h2>📚 Easy Grammar</h2>
 
 <p class="small">
-No pressure. Understand first, then practice.
+No pressure. Understand the idea first, then look at the pattern, then practice it.
 </p>
 
 
+<div class="grammar-intro">
+
+<strong style="font-size:20px;color:var(--navy)">
+🌱 Grammar Roadmap
+</strong>
+
+<p style="margin-top:10px">
+We will learn English grammar in this order:
+</p>
+
+<div class="pronoun-grid">
+
+<div class="pronoun-box">
+<strong>1</strong>
+Present Simple
+</div>
+
+<div class="pronoun-box">
+<strong>2</strong>
+Past Simple
+</div>
+
+<div class="pronoun-box">
+<strong>3</strong>
+Future with WILL
+</div>
+
+<div class="pronoun-box">
+<strong>4</strong>
+Verb changes
+</div>
+
+<div class="pronoun-box">
+<strong>5</strong>
+Negative
+</div>
+
+<div class="pronoun-box">
+<strong>6</strong>
+Questions
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRESENT -->
+
 <div class="grammar-card">
+
+<span class="grammar-section-label">Lesson 1</span>
 
 <h3>🌱 Present Simple</h3>
 
-<p>
-نستخدمه للعادات، الحقائق، والأشياء التي تحدث بشكل متكرر.
+<p style="line-height:1.8">
+نستخدم <b>Present Simple</b> عندما نتحدث عن العادات، الحقائق،
+والأشياء التي تحدث بشكل متكرر.
 </p>
 
 <div class="grammar-rule">
-<b>القاعدة:</b><br>
-I / You / We / They + base verb<br>
-He / She / It + verb + s/es/ies
+
+<b>الفكرة الأساسية:</b><br><br>
+
+مع:
+<b>I / You / We / They</b><br>
+نستعمل الفعل الأساسي.
+
+<br><br>
+
+مع:
+<b>He / She / It</b><br>
+نغيّر شكل الفعل غالبًا بإضافة
+<b>-s / -es / -ies</b>.
+
 </div>
 
 <div class="example">
+
+<b>Examples</b><br><br>
+
 I work every day.<br>
 You work every day.<br>
+We work every day.<br>
+They work every day.<br><br>
+
+He works every day.<br>
 She works every day.<br>
-He studies English.
-</div>
+It works well.
 
 </div>
 
+</div>
+
+
+<!-- SUBJECTS -->
 
 <div class="grammar-card">
+
+<span class="grammar-section-label">Foundation</span>
+
+<h3>👥 The 7 Subjects</h3>
+
+<p style="line-height:1.8">
+هذه هي الضمائر الأساسية التي يجب أن تعرفيها قبل تصريف الأفعال.
+</p>
+
+<div class="pronoun-grid">
+
+<div class="pronoun-box">
+<strong>I</strong>
+أنا
+</div>
+
+<div class="pronoun-box">
+<strong>You</strong>
+أنت / أنتم
+</div>
+
+<div class="pronoun-box">
+<strong>He</strong>
+هو
+</div>
+
+<div class="pronoun-box">
+<strong>She</strong>
+هي
+</div>
+
+<div class="pronoun-box">
+<strong>It</strong>
+هو/هي لشيء أو حيوان
+</div>
+
+<div class="pronoun-box">
+<strong>We</strong>
+نحن
+</div>
+
+<div class="pronoun-box">
+<strong>They</strong>
+هم / هن
+</div>
+
+</div>
+
+<div class="grammar-rule" style="margin-top:18px">
+
+<b>⭐ أهم قاعدة في Present Simple:</b><br><br>
+
+I / You / We / They → <b>work</b><br>
+He / She / It → <b>works</b>
+
+</div>
+
+</div>
+
+
+<!-- HOW VERBS CHANGE -->
+
+<div class="grammar-card">
+
+<span class="grammar-section-label">Verb Rules</span>
+
+<h3>🔤 How Do Verbs Change?</h3>
+
+<p style="line-height:1.8">
+عندما يكون الفاعل <b>He / She / It</b>، لا نضيف دائمًا حرف
+<b>s</b> بطريقة عشوائية. توجد عدة قواعد.
+</p>
+
+<div class="verb-change-grid">
+
+<div class="verb-change">
+
+<h4>1️⃣ Add -S</h4>
+
+<p>
+معظم الأفعال تأخذ <b>-s</b>.
+</p>
+
+<br>
+
+<strong>work → works</strong><br>
+<strong>read → reads</strong><br>
+<strong>play → plays</strong><br>
+<strong>help → helps</strong><br>
+<strong>open → opens</strong>
+
+</div>
+
+
+<div class="verb-change">
+
+<h4>2️⃣ Add -ES</h4>
+
+<p>
+إذا انتهى الفعل بـ:
+<b>s / sh / ch / x / o</b>
+نضيف <b>-es</b>.
+</p>
+
+<br>
+
+<strong>go → goes</strong><br>
+<strong>watch → watches</strong><br>
+<strong>wash → washes</strong><br>
+<strong>fix → fixes</strong><br>
+<strong>do → does</strong>
+
+</div>
+
+
+<div class="verb-change">
+
+<h4>3️⃣ Change Y → IES</h4>
+
+<p>
+إذا انتهى الفعل بـ consonant + y،
+نحذف <b>y</b> ونضيف <b>ies</b>.
+</p>
+
+<br>
+
+<strong>study → studies</strong><br>
+<strong>try → tries</strong><br>
+<strong>carry → carries</strong><br>
+<strong>study → studies</strong>
+
+</div>
+
+
+<div class="verb-change">
+
+<h4>4️⃣ Vowel + Y</h4>
+
+<p>
+إذا كان قبل <b>y</b> حرف متحرك،
+لا نحذف <b>y</b>.
+نضيف فقط <b>s</b>.
+</p>
+
+<br>
+
+<strong>play → plays</strong><br>
+<strong>enjoy → enjoys</strong><br>
+<strong>stay → stays</strong>
+
+</div>
+
+
+<div class="verb-change">
+
+<h4>5️⃣ Irregular Forms</h4>
+
+<p>
+بعض الأفعال لها شكل خاص ويجب حفظه.
+</p>
+
+<br>
+
+<strong>have → has</strong><br>
+<strong>be → is</strong><br>
+<strong>do → does</strong>
+
+</div>
+
+</div>
+
+<div class="grammar-rule">
+
+⚠️ <b>ملاحظة مهمة:</b><br>
+هذه التغييرات تحدث في Present Simple مع
+<b>He / She / It</b>.
+أما مع I / You / We / They فنستعمل الفعل الأساسي.
+
+</div>
+
+</div>
+
+
+<!-- PAST -->
+
+<div class="grammar-card">
+
+<span class="grammar-section-label">Lesson 2</span>
 
 <h3>⏳ Past Simple</h3>
 
-<p>
-نستخدمه لشيء حدث وانتهى في الماضي.
+<p style="line-height:1.8">
+نستخدم <b>Past Simple</b> لشيء حدث وانتهى في الماضي.
+غالبًا نستخدم كلمات مثل:
+<b>yesterday, last week, last year, two days ago</b>.
 </p>
 
 <div class="grammar-rule">
-<b>Regular verbs:</b><br>
+
+<b>Regular verbs</b><br><br>
+
 work → worked<br>
 play → played<br>
-study → studied<br><br>
+watch → watched<br>
+clean → cleaned<br>
+study → studied<br>
+try → tried
 
-<b>Irregular verbs:</b><br>
+</div>
+
+<div class="grammar-rule">
+
+<b>Irregular verbs</b><br><br>
+
 go → went<br>
 eat → ate<br>
-see → saw
-</div>
+see → saw<br>
+drink → drank<br>
+write → wrote<br>
+take → took<br>
+make → made<br>
+speak → spoke
 
 </div>
 
+<div class="example">
+
+I worked yesterday.<br>
+She studied last night.<br>
+They went to university yesterday.<br>
+He ate breakfast this morning.
+
+</div>
+
+</div>
+
+
+<!-- FUTURE -->
 
 <div class="grammar-card">
+
+<span class="grammar-section-label">Lesson 3</span>
 
 <h3>🚀 Future with WILL</h3>
 
-<p>
-نستخدم <b>will + base verb</b> للتحدث عن المستقبل.
-</p>
-
-<div class="example">
-I will work.<br>
-She will travel.<br>
-They will study.
-</div>
-
-</div>
-
-
-<div class="grammar-card">
-
-<h3>🔤 How verbs change</h3>
-
-<h4>1. Add S</h4>
-
-<p>
-work → works<br>
-read → reads<br>
-play → plays
-</p>
-
-<h4 style="margin-top:15px">2. Add ES</h4>
-
-<p>
-go → goes<br>
-watch → watches<br>
-wash → washes<br>
-fix → fixes
-</p>
-
-<h4 style="margin-top:15px">3. Change Y to IES</h4>
-
-<p>
-study → studies<br>
-try → tries<br>
-carry → carries
+<p style="line-height:1.8">
+نستخدم <b>will + base verb</b> عندما نتحدث عن المستقبل.
+الميزة المهمة هنا: الفعل لا يتغير مع He / She / It.
 </p>
 
 <div class="grammar-rule">
-⚠️ إذا كان قبل Y حرف متحرك مثل play، لا نحذف Y:
-play → plays
-</div>
 
-<h4 style="margin-top:15px">4. Irregular verbs</h4>
-
-<p>
-بعض الأفعال لا تتبع قاعدة -ed ويجب تعلم شكلها الماضي.
-</p>
+I <b>will work</b>.<br>
+You <b>will work</b>.<br>
+He <b>will work</b>.<br>
+She <b>will work</b>.<br>
+We <b>will work</b>.<br>
+They <b>will work</b>.
 
 </div>
 
+<div class="example">
+
+She will travel tomorrow.<br>
+They will study next week.<br>
+I will read tonight.<br>
+He will write a message.
+
+</div>
+
+</div>
+
+
+<!-- VERB TABLES -->
 
 <div class="grammar-card">
 
-<h3>📊 Complete Verb Table</h3>
+<span class="grammar-section-label">Reference</span>
+
+<h3>📊 Complete Verb Tables</h3>
+
+<p style="line-height:1.8">
+هذه الجداول تجمع لك الشكل الأساسي للفعل في الأزمنة المختلفة،
+والنفي والسؤال.
+</p>
 
 <div id="verbTables"></div>
 
 </div>
 
 
+<!-- NEGATIVE -->
+
 <div class="grammar-card">
 
-<h3>🚫 Negative</h3>
+<span class="grammar-section-label">Lesson 4</span>
+
+<h3>🚫 Negative Sentences</h3>
+
+<p style="line-height:1.8">
+النفي يختلف حسب الزمن.
+لاحظي أن الفعل يعود إلى <b>base form</b> بعد
+<b>do / does / did</b>.
+</p>
 
 <div class="example">
-Present:<br>
+
+<b>Present Simple</b><br><br>
+
 I do not work.<br>
-She does not work.<br><br>
+You do not work.<br>
+He does not work.<br>
+She does not work.<br>
+They do not work.
 
-Past:<br>
-I did not work.<br><br>
+</div>
 
-Future:<br>
+<div class="grammar-rule">
+
+⭐ لماذا نقول:
+<b>She does not work</b>
+وليس:
+<b>She does not works</b>؟
+
+لأن <b>does</b> حملت علامة الشخص،
+لذلك يعود الفعل إلى شكله الأساسي:
+<b>work</b>.
+
+</div>
+
+<div class="example">
+
+<b>Past Simple</b><br><br>
+
+I did not work.<br>
+She did not work.<br>
+They did not go.<br>
+He did not eat.
+
+</div>
+
+<div class="grammar-rule">
+
+بعد <b>did not</b> نستخدم الفعل الأساسي:
+
+did not <b>go</b> ✅<br>
+did not <b>went</b> ❌
+
+</div>
+
+<div class="example">
+
+<b>Future</b><br><br>
+
 I will not work.<br>
-I won't work.
-</div>
+She will not travel.<br>
+They will not study.<br><br>
+
+Short form:<br>
+I won't work.<br>
+She won't travel.
 
 </div>
 
+</div>
+
+
+<!-- QUESTIONS -->
 
 <div class="grammar-card">
+
+<span class="grammar-section-label">Lesson 5</span>
 
 <h3>❓ Questions</h3>
 
+<p style="line-height:1.8">
+نستخدم كلمات مساعدة مختلفة حسب الزمن.
+</p>
+
 <div class="example">
+
+<b>Present Simple</b><br><br>
+
 Do you work?<br>
+Do they study?<br>
 Does she work?<br>
-Did they work?<br>
-Will you work tomorrow?
+Does he study?
+
+</div>
+
+<div class="grammar-rule">
+
+مع <b>Does</b> يعود الفعل إلى شكله الأساسي:
+
+Does she <b>work</b>? ✅<br>
+Does she <b>works</b>? ❌
+
+</div>
+
+<div class="example">
+
+<b>Past Simple</b><br><br>
+
+Did you work yesterday?<br>
+Did she study?<br>
+Did they go home?<br>
+Did he eat breakfast?
+
+</div>
+
+<div class="example">
+
+<b>Future</b><br><br>
+
+Will you work tomorrow?<br>
+Will she travel next week?<br>
+Will they study tonight?
+
+</div>
+
+</div>
+
+
+<!-- QUICK SUMMARY -->
+
+<div class="grammar-card">
+
+<span class="grammar-section-label">Quick Review</span>
+
+<h3>🧠 Remember These 6 Rules</h3>
+
+<div class="grammar-rule">
+
+<b>1.</b> I / You / We / They → base verb<br><br>
+
+<b>2.</b> He / She / It → s / es / ies<br><br>
+
+<b>3.</b> Past regular → usually -ed<br><br>
+
+<b>4.</b> Past irregular → special form<br><br>
+
+<b>5.</b> Future → will + base verb<br><br>
+
+<b>6.</b> After do / does / did / will → base verb
+
 </div>
 
 </div>
@@ -1410,7 +2005,6 @@ updateStats();
 function updateStats(){
 
 document.getElementById("xp").textContent=state.xp;
-
 document.getElementById("streak").textContent=state.streak;
 
 document.getElementById("level").textContent=
@@ -1446,31 +2040,12 @@ completed;
 document.getElementById("totalUnits").textContent=
 totalUnits+100;
 
-setSkill("Speaking",
-state.progress.speak,
-1000);
-
-setSkill("Listening",
-state.progress.listen,
-1000);
-
-setSkill("Reading",
-state.progress.reading,
-400);
-
-setSkill("Writing",
-state.progress.writing,
-500);
-
-setSkill("Vocabulary",
-state.progress.vocabulary,
-100);
-
-setSkill(
-"Grammar",
-state.progress.grammar,
-1000
-);
+setSkill("Speaking",state.progress.speak,1000);
+setSkill("Listening",state.progress.listen,1000);
+setSkill("Reading",state.progress.reading,400);
+setSkill("Writing",state.progress.writing,500);
+setSkill("Vocabulary",state.progress.vocabulary,100);
+setSkill("Grammar",state.progress.grammar,1000);
 }
 
 function setSkill(name,value,total){
@@ -1480,14 +2055,10 @@ const percent=Math.min(
 Math.round((value/total)*100)
 );
 
-const id=name.toLowerCase();
-
 const text=document.getElementById("p"+name);
-
 const bar=document.getElementById("b"+name);
 
 if(text)text.textContent=percent+"%";
-
 if(bar)bar.style.width=percent+"%";
 }
 
@@ -1566,8 +2137,8 @@ if(!B.length)return 0;
 
 let same=0;
 
-B.forEach(word=>{
-if(A.includes(word))same++;
+B.forEach((word,i)=>{
+if(A[i]===word)same++;
 });
 
 return Math.round((same/B.length)*100);
@@ -1576,8 +2147,6 @@ return Math.round((same/B.length)*100);
 
 /* =====================================================
    DATA ENGINE
-   Creates large progressive courses instead of
-   repeating one tiny example.
 ===================================================== */
 
 const people=[
@@ -1626,14 +2195,12 @@ const verbs=[
 ["listen","يستمع"],
 ["practice","يتدرب"],
 ["speak","يتحدث"],
-["watch","يشاهد"],
 ["meet","يقابل"],
 ["start","يبدأ"],
 ["finish","ينهي"],
 ["need","يحتاج"],
 ["want","يريد"],
 ["like","يحب"],
-["love","يحب"],
 ["use","يستعمل"],
 ["make","يصنع"],
 ["take","يأخذ"],
@@ -1702,35 +2269,44 @@ const times=[
 ["when I travel","عندما أسافر"]
 ];
 
-function conjugatePresent(subject,verb){
+function isThirdPerson(subject){
 
-const s=subject.toLowerCase();
+const s=subject.toLowerCase().trim();
 
-if(
-["i","you","we","they"].includes(s)||
-s.includes("friends")||
-s.includes("children")||
-s.includes("family")===false
-){
-return verb;
+return ![
+"i",
+"you",
+"we",
+"they"
+].includes(s);
 }
 
-if(s.includes("family"))return verb+"s";
+function conjugatePresent(subject,verb){
+
+if(!isThirdPerson(subject))return verb;
+
+if(verb==="have")return "has";
+if(verb==="be")return "is";
+if(verb==="do")return "does";
 
 if(
 verb.endsWith("ch")||
 verb.endsWith("sh")||
 verb.endsWith("x")||
-verb.endsWith("o")
-)return verb+"es";
+verb.endsWith("o")||
+verb.endsWith("ss")
+){
+return verb+"es";
+}
 
 if(
 verb.endsWith("y")&&
 !"aeiou".includes(
 verb.charAt(verb.length-2)
 )
-)
+){
 return verb.slice(0,-1)+"ies";
+}
 
 return verb+"s";
 }
@@ -1749,19 +2325,26 @@ buy:"bought",
 bring:"brought",
 choose:"chose",
 understand:"understood",
-meet:"met"
+meet:"met",
+have:"had",
+do:"did",
+be:"was"
 };
 
 function pastVerb(v){
 
-return irregularPast[v]||(
-v.endsWith("e")
-?v+"d"
-:v.endsWith("y")&&!["a","e","i","o","u"]
-.includes(v[v.length-2])
-?v.slice(0,-1)+"ied"
-:v+"ed"
-);
+if(irregularPast[v])return irregularPast[v];
+
+if(v.endsWith("e"))return v+"d";
+
+if(
+v.endsWith("y")&&
+!"aeiou".includes(v[v.length-2])
+){
+return v.slice(0,-1)+"ied";
+}
+
+return v+"ed";
 }
 
 
@@ -1814,10 +2397,7 @@ ar=p[1]+" سيذهب/ستذهب إلى "+v[1]+" "+o[1]+" غدًا.";
 
 }
 
-arr.push({
-en,
-ar
-});
+arr.push({en,ar});
 
 }
 
@@ -1830,16 +2410,19 @@ let thinkIndex=state.progress.think;
 
 function renderThink(){
 
+if(thinkIndex>=1000){
+document.getElementById("thinkPrompt").innerHTML=
+'<div class="complete-box"><h3>🏆 Think in English Complete!</h3><p>You completed all 1000 sentences.</p></div>';
+return;
+}
+
 const x=thinkData[thinkIndex];
 
 document.getElementById("thinkNumber").textContent=
 thinkIndex+1;
 
-document.getElementById("thinkPrompt").textContent=
-x.ar;
-
+document.getElementById("thinkPrompt").textContent=x.ar;
 document.getElementById("thinkInput").value="";
-
 document.getElementById("thinkResult").innerHTML="";
 
 renderThinkHistory();
@@ -1858,10 +2441,9 @@ return;
 }
 
 const target=thinkData[thinkIndex].en;
-
 const score=similarity(input,target);
 
-if(score>=100){
+if(score===100){
 
 document.getElementById("thinkResult").innerHTML=`
 
@@ -1876,7 +2458,7 @@ document.getElementById("thinkResult").innerHTML=`
 <br><br>
 
 <button class="primary" onclick="nextThink()">
-Next sentence →
+Save & continue →
 </button>
 
 </div>`;
@@ -1900,7 +2482,7 @@ ${escapeHTML(target)}
 
 <br><br>
 
-Try writing it again exactly and then continue.
+Write it again exactly to complete this lesson.
 
 </div>`;
 
@@ -1912,20 +2494,13 @@ function nextThink(){
 
 if(thinkIndex>=1000)return;
 
-state.progress.think=Math.max(
-state.progress.think,
-thinkIndex+1
-);
+state.progress.think=thinkIndex+1;
 
-state.history.think.push(
-thinkData[thinkIndex]
-);
+state.history.think.push(thinkData[thinkIndex]);
 
 thinkIndex++;
 
 addXP(20);
-
-saveState();
 
 renderThink();
 updateStats();
@@ -1935,15 +2510,18 @@ function renderThinkHistory(){
 
 const box=document.getElementById("thinkHistory");
 
+if(!state.history.think.length){
+box.innerHTML='<div class="history-empty">No completed sentences yet. Complete the first one and it will appear here.</div>';
+return;
+}
+
 box.innerHTML="";
 
-state.history.think
-.slice(-20)
-.forEach((x,i)=>{
+state.history.think.slice(-20).forEach((x,i)=>{
 
 box.innerHTML+=`
 <div class="result success" style="margin-bottom:8px">
-<b>${state.history.think.length-20+i+1>0?state.history.think.length-20+i+1:"✓"}</b>
+<b>✓ Completed ${state.history.think.length-19+i}</b>
 <br>
 ${escapeHTML(x.ar)}
 <br>
@@ -1966,26 +2544,31 @@ let speakIndex=state.progress.speak;
 
 function renderSpeak(){
 
+if(speakIndex>=1000){
+document.getElementById("speakSentence").innerHTML="🏆 All 1000 sentences completed!";
+document.getElementById("speakArabic").textContent="";
+return;
+}
+
 const x=speakData[speakIndex];
 
 document.getElementById("speakNumber").textContent=
 speakIndex+1;
 
 document.getElementById("speakSentence").textContent=x.en;
-
 document.getElementById("speakArabic").textContent=x.ar;
-
 document.getElementById("speakResult").innerHTML="";
 
 renderSpeakHistory();
 }
 
 function speakCurrent(){
-
-speak(speakData[speakIndex].en,1);
+if(speakData[speakIndex])speak(speakData[speakIndex].en,1);
 }
 
 function startSpeaking(){
+
+if(speakIndex>=1000)return;
 
 const Recognition=
 window.SpeechRecognition||
@@ -2017,29 +2600,28 @@ return;
 recognition.onresult=function(event){
 
 const said=event.results[0][0].transcript;
-
 const target=speakData[speakIndex].en;
-
 const score=similarity(said,target);
 
-if(score>=85){
+if(score===100){
 
 document.getElementById("speakResult").innerHTML=`
 
 <div class="result success">
 
-🎉 Excellent!
+🎉 Perfect!
 
 <br><br>
+
 You said: ${escapeHTML(said)}
 
 <br>
-Match: ${score}%
+Match: 100%
 
 <br><br>
 
 <button class="primary" onclick="nextSpeak()">
-Next sentence →
+Save & continue →
 </button>
 
 </div>`;
@@ -2062,9 +2644,9 @@ ${escapeHTML(target)}
 
 Match: ${score}%
 
-<br>
+<br><br>
 
-Repeat until your pronunciation is close enough.
+Repeat the SAME sentence until it matches.
 
 </div>`;
 
@@ -2083,14 +2665,9 @@ document.getElementById("speakResult").innerHTML=
 
 function nextSpeak(){
 
-state.progress.speak=Math.max(
-state.progress.speak,
-speakIndex+1
-);
+state.progress.speak=speakIndex+1;
 
-state.history.speak.push(
-speakData[speakIndex]
-);
+state.history.speak.push(speakData[speakIndex]);
 
 speakIndex++;
 
@@ -2105,9 +2682,12 @@ const box=document.getElementById("speakHistory");
 
 box.innerHTML="<h3>🗣️ Your completed sentences</h3>";
 
-state.history.speak
-.slice(-15)
-.forEach(x=>{
+if(!state.history.speak.length){
+box.innerHTML+='<div class="history-empty">Complete a speaking sentence and it will appear here.</div>';
+return;
+}
+
+state.history.speak.slice(-15).forEach(x=>{
 
 box.innerHTML+=`
 <div class="result success" style="margin-top:8px">
@@ -2150,19 +2730,10 @@ sentence="He "+pastVerb(v[0])+" "+o[0]+" yesterday.";
 answer="He "+pastVerb(v[0])+" "+o[0]+".";
 }
 
-const wrong1=
-v[0]==="study"
-?"She goes shopping."
-:"She does something else.";
+const wrong1="They stay at home.";
+const wrong2="He does something different.";
 
-const wrong2=
-"They stay at home.";
-
-const options=[
-answer,
-wrong1,
-wrong2
-];
+const options=[answer,wrong1,wrong2];
 
 const shift=i%3;
 
@@ -2190,6 +2761,12 @@ let listenIndex=state.progress.listen;
 
 function renderListening(){
 
+if(listenIndex>=1000){
+document.getElementById("listenQuestion").innerHTML=
+'<div class="complete-box"><h3>🏆 Listening Complete!</h3><p>You completed all 1000 questions.</p></div>';
+return;
+}
+
 document.getElementById("listenNumber").textContent=
 listenIndex+1;
 
@@ -2207,7 +2784,6 @@ onclick="speak(listeningData[listenIndex].sentence, listeningRate)">
 <p style="margin:18px 0;font-weight:800">
 What did you hear?
 </p>
-
 `;
 
 q.options.forEach((x,i)=>{
@@ -2234,10 +2810,10 @@ function listenSpeed(rate){
 
 listeningRate=rate;
 
-speak(
-listeningData[listenIndex].sentence,
-rate
-);
+if(listeningData[listenIndex]){
+speak(listeningData[listenIndex].sentence,rate);
+}
+
 }
 
 function answerListening(index){
@@ -2260,7 +2836,7 @@ ${escapeHTML(q.options[index])}
 <br><br>
 
 <button class="primary" onclick="nextListening()">
-Next question →
+Save & continue →
 </button>
 
 </div>`;
@@ -2297,14 +2873,9 @@ Try again
 
 function nextListening(){
 
-state.progress.listen=Math.max(
-state.progress.listen,
-listenIndex+1
-);
+state.progress.listen=listenIndex+1;
 
-state.history.listen.push(
-listeningData[listenIndex]
-);
+state.history.listen.push(listeningData[listenIndex]);
 
 listenIndex++;
 
@@ -2317,11 +2888,14 @@ function renderListenHistory(){
 
 const box=document.getElementById("listenHistory");
 
+if(!state.history.listen.length){
+box.innerHTML='<div class="history-empty">Completed listening questions will appear here.</div>';
+return;
+}
+
 box.innerHTML="";
 
-state.history.listen
-.slice(-12)
-.forEach(x=>{
+state.history.listen.slice(-12).forEach(x=>{
 
 box.innerHTML+=`
 <div class="result success" style="margin-top:8px">
@@ -2337,7 +2911,7 @@ box.innerHTML+=`
 
 
 /* =====================================================
-   READING — 400 LEVELLED PASSAGES
+   READING — 400 PROGRESSIVE UNIQUE PASSAGES
 ===================================================== */
 
 const readingTopics=[
@@ -2355,57 +2929,198 @@ const readingTopics=[
 "Planning the Future",
 "Life in a New City",
 "Meeting New People",
-"Building Good Habits"
+"Building Good Habits",
+"An Important Decision",
+"A New Opportunity",
+"Learning from Experience",
+"Changing Daily Habits",
+"Understanding Other People"
 ];
 
-function buildReading(i){
+const readingPeople=[
+"Maya",
+"Adam",
+"Lina",
+"Omar",
+"Sara",
+"Youssef",
+"Nora",
+"Daniel",
+"Emma",
+"Samir"
+];
 
-const level=
-i<80?"Beginner":
-i<180?"Elementary":
-i<280?"Intermediate":
-i<360?"Upper Intermediate":
-"Advanced";
+const readingPlaces=[
+"university",
+"library",
+"city center",
+"airport",
+"small café",
+"local market",
+"train station",
+"community center",
+"bookshop",
+"park"
+];
 
+const readingActions=[
+"study English",
+"read a short book",
+"prepare for class",
+"organize the day",
+"practice speaking",
+"learn new vocabulary",
+"write in a notebook",
+"visit a new place",
+"talk to a classmate",
+"review yesterday's lesson"
+];
+
+const readingLessons=[
+"small daily habits can create useful progress",
+"practice becomes easier when it is part of a routine",
+"mistakes can be useful when we learn from them",
+"patience is important when learning something new",
+"good preparation can make a difficult task easier",
+"asking questions can help us understand better",
+"consistent effort is often more useful than rushing",
+"experience can change the way we see a problem",
+"clear goals can help us decide what to do next",
+"learning becomes stronger when we use knowledge in real situations"
+];
+
+function makeReadingPassage(i){
+
+const levelIndex=Math.floor(i/40);
+const levelNames=[
+"Beginner",
+"Beginner +",
+"Elementary",
+"Elementary +",
+"Pre-Intermediate",
+"Intermediate",
+"Intermediate +",
+"Upper Intermediate",
+"Advanced",
+"Advanced +"
+];
+
+const level=levelNames[Math.min(levelIndex,9)];
+
+const person=readingPeople[i%readingPeople.length];
+const place=readingPlaces[Math.floor(i/readingPeople.length)%readingPlaces.length];
+const action=readingActions[Math.floor(i/(readingPeople.length*readingPlaces.length))%readingActions.length];
+const lesson=readingLessons[i%readingLessons.length];
 const topic=readingTopics[i%readingTopics.length];
 
-const v=verbs[i%verbs.length][0];
+let sentences=[];
 
-const o=objects[Math.floor(i/verbs.length)%objects.length][0];
+if(levelIndex===0){
 
-const time=times[i%times.length][0];
+sentences=[
+`${person} has a simple day.`,
+`Every morning, ${person} wakes up early and prepares breakfast.`,
+`After breakfast, ${person} goes to the ${place}.`,
+`Today, ${person} wants to ${action}.`,
+`${person} knows that ${lesson}.`
+];
 
-let paragraph;
+}else if(levelIndex===1){
 
-if(i<80){
+sentences=[
+`${person} usually has a quiet morning.`,
+`After getting ready, ${person} goes to the ${place}.`,
+`The first thing ${person} does is ${action}.`,
+`Sometimes the task feels difficult, but ${person} continues.`,
+`By the end of the morning, ${person} feels happy because ${lesson}.`
+];
 
-paragraph=
-"Maya has a simple routine. Every morning, she wakes up, opens the window, and drinks some water. She prepares breakfast and thinks about her plans. Today she wants to study English. She knows that small daily steps can help her improve.";
+}else if(levelIndex===2){
 
-}else if(i<180){
+sentences=[
+`${person} recently decided to change part of the daily routine.`,
+`Instead of spending the whole morning doing the same things, ${person} now plans the day before leaving home.`,
+`At the ${place}, ${person} spends some time to ${action}.`,
+`This small change has made the day more organized.`,
+`${person} has discovered that ${lesson}.`
+];
 
-paragraph=
-"After breakfast, Maya goes to university. She usually studies in the library because it is quiet there. She reads short English texts and writes new words in a notebook. Sometimes she makes mistakes, but she does not stop. She believes that practice is more important than perfection at the beginning.";
+}else if(levelIndex===3){
 
-}else if(i<280){
+sentences=[
+`For several weeks, ${person} has been trying to create a better routine.`,
+`The goal is not to become perfect, but to make steady progress.`,
+`At the ${place}, ${person} usually chooses one useful activity, such as deciding to ${action}.`,
+`When something goes wrong, ${person} writes down what happened and considers what could be improved.`,
+`This approach has taught ${person} that ${lesson}.`
+];
 
-paragraph=
-"Maya has started to change the way she learns English. Instead of memorizing long lists of vocabulary, she tries to use new words in complete sentences. She listens to conversations, reads short stories, and speaks whenever she has the opportunity. This method is slower at first, but it helps her remember language in a more natural way.";
+}else if(levelIndex===4){
 
-}else if(i<360){
+sentences=[
+`At the beginning of the year, ${person} noticed that daily responsibilities were becoming difficult to organize.`,
+`There were classes, personal tasks, and several goals that all seemed important at the same time.`,
+`To solve the problem, ${person} created a simple schedule and reserved a specific period for ${action}.`,
+`The schedule was not perfect, and it had to be changed several times.`,
+`However, these changes helped ${person} understand that ${lesson}.`
+];
 
-paragraph=
-"During the past year, Maya has become more confident about learning languages. She has discovered that understanding a language requires more than knowing grammar rules. She needs to recognize patterns, understand context, and become comfortable making mistakes. When she encounters a difficult sentence, she breaks it into smaller parts before trying to understand the whole idea.";
+}else if(levelIndex===5){
+
+sentences=[
+`${person}'s experience at the ${place} gradually changed the way ${person} approached learning.`,
+`Instead of waiting until a subject became difficult, ${person} began reviewing small amounts of information regularly.`,
+`One part of the routine involved choosing a practical goal, such as deciding to ${action}.`,
+`Although progress was sometimes slow, the regular practice made unfamiliar tasks easier.`,
+`Eventually, ${person} realized that ${lesson}.`
+];
+
+}else if(levelIndex===6){
+
+sentences=[
+`Over time, ${person} began to notice a connection between daily habits and long-term results.`,
+`The change was not dramatic at first; it appeared through small decisions made repeatedly.`,
+`For example, a short visit to the ${place} could become an opportunity to ${action}, reflect on a problem, or learn something unexpected.`,
+`When difficulties appeared, ${person} stopped looking for an immediate solution and instead considered several possible approaches.`,
+`This experience demonstrated that ${lesson}.`
+];
+
+}else if(levelIndex===7){
+
+sentences=[
+`What began as an ordinary routine eventually became an experiment in how people learn and adapt.`,
+`${person} observed that motivation could change from one day to another, while a well-designed routine could provide stability.`,
+`At the ${place}, ${person} therefore focused less on finishing quickly and more on understanding why a particular activity was useful.`,
+`The decision to ${action} became part of a broader strategy involving reflection, repetition, and gradual improvement.`,
+`Although the results were not always visible immediately, the process confirmed that ${lesson}.`
+];
+
+}else if(levelIndex===8){
+
+sentences=[
+`As ${person} gained experience, the idea of progress became more complex than simply completing a list of tasks.`,
+`A productive routine required attention to priorities, the ability to adjust plans, and enough patience to recognize improvements that were difficult to measure.`,
+`During a visit to the ${place}, ${person} used the opportunity to ${action} while also considering how previous experiences had influenced current decisions.`,
+`Rather than treating mistakes as evidence of failure, ${person} began examining them as information that could reveal weaknesses in the learning process.`,
+`This perspective eventually led to the conclusion that ${lesson}.`
+];
 
 }else{
 
-paragraph=
-"Language learning has gradually become a way for Maya to understand how people organize ideas and communicate experience. She no longer sees vocabulary, grammar, listening, speaking, reading, and writing as separate skills. Instead, she understands them as connected parts of one process. A word becomes easier to remember when she encounters it in a meaningful context, hears it spoken naturally, and later uses it herself.";
+sentences=[
+`The experience of ${person} illustrates how gradual changes in behavior can influence both practical results and the way a person understands learning itself.`,
+`At first, the decision to spend more time at the ${place} and deliberately ${action} seemed like a minor adjustment rather than a significant transformation.`,
+`Yet repeated practice created opportunities to notice patterns, question assumptions, and develop strategies that were more effective than simply relying on motivation.`,
+`When unexpected difficulties appeared, ${person} learned to evaluate the situation from several perspectives instead of immediately judging the result as positive or negative.`,
+`In the long term, this approach suggested that ${lesson}, especially when improvement is viewed as an ongoing process rather than a final destination.`
+];
 
 }
 
+const paragraph=sentences.join(" ");
+
 return{
-title:topic+" — Level "+(i+1),
+title:topic+" — Level "+(levelIndex+1),
 level,
 paragraph,
 words:[
@@ -2414,18 +3129,99 @@ words:[
 ["opportunity","فرصة"],
 ["context","سياق"],
 ["experience","تجربة"]
-]
+],
+mainIdea:lesson
 };
+
 }
 
 const readingData=Array.from(
 {length:400},
-(_,i)=>buildReading(i)
+(_,i)=>makeReadingPassage(i)
 );
+
+function readingDistractors(correct,i){
+
+const distractors=[
+"The passage is mainly about preparing a complicated meal.",
+"The passage is mainly about buying clothes in a large shop.",
+"The passage is mainly about repairing a broken machine.",
+"The passage is mainly about choosing a new phone.",
+"The passage is mainly about playing a competitive sport.",
+"The passage is mainly about visiting a crowded restaurant.",
+"The passage is mainly about decorating a new house.",
+"The passage is mainly about looking for a lost object."
+];
+
+const start=i%distractors.length;
+
+return[
+distractors[start],
+distractors[(start+1)%distractors.length],
+distractors[(start+2)%distractors.length],
+distractors[(start+3)%distractors.length]
+].filter(x=>x!==correct);
+}
+
+function makeReadingOptions(r,i){
+
+const correct=
+"The passage is mainly about how "+r.mainIdea+".";
+
+const wrongs=readingDistractors(correct,i).slice(0,4);
+
+const all=[
+correct,
+...wrongs
+];
+
+const shift=i%5;
+
+return{
+options:[
+all[shift],
+all[(shift+1)%5],
+all[(shift+2)%5],
+all[(shift+3)%5],
+all[(shift+4)%5]
+],
+correct:shift===0?0:
+shift===1?4:
+shift===2?3:
+shift===3?2:1
+};
+
+}
+
+/*
+Because the correct answer is intentionally moved to a different
+position on every passage, the user cannot simply memorize
+"the first answer".
+*/
+
+readingData.forEach((r,i)=>{
+
+const q=makeReadingOptions(r,i);
+
+r.options=q.options;
+r.correct=q.options.indexOf(
+"The passage is mainly about how "+r.mainIdea+"."
+);
+
+});
 
 let readingIndex=state.progress.reading;
 
 function renderReading(){
+
+if(readingIndex>=400){
+
+document.getElementById("readingText").innerHTML=
+'<div class="complete-box"><h3>🏆 Reading Complete!</h3><p>You completed all 400 passages.</p></div>';
+
+document.getElementById("readingQuestion").innerHTML="";
+return;
+}
 
 const r=readingData[readingIndex];
 
@@ -2433,7 +3229,13 @@ document.getElementById("readingNumber").textContent=
 readingIndex+1;
 
 document.getElementById("readingLevel").innerHTML=
-`<span class="reading-level">${r.level}</span>`;
+`<span class="reading-level">${escapeHTML(r.level)}</span>`;
+
+document.getElementById("readingDifficulty").textContent=
+"Level "+(Math.floor(readingIndex/40)+1)+" / 10";
+
+document.getElementById("readingWordsCount").textContent=
+r.paragraph.split(/\s+/).length+" words";
 
 document.getElementById("readingTitle").textContent=
 r.title;
@@ -2450,17 +3252,18 @@ r.words.forEach(x=>{
 const b=document.createElement("button");
 
 b.className="word";
-
 b.textContent=x[0];
 
 b.onclick=()=>{
 
 speak(x[0],.8);
 
-document.getElementById("readingQuestion").innerHTML=
+document.getElementById("readingQuestion").insertAdjacentHTML(
+"beforeend",
 `<div class="result">
 <b>${escapeHTML(x[0])}</b> — ${escapeHTML(x[1])}
-</div>`;
+</div>`
+);
 
 };
 
@@ -2470,47 +3273,53 @@ words.appendChild(b);
 
 document.getElementById("readingQuestion").innerHTML=`
 
-<div class="result">
+<div class="reading-question-title">
+🧠 What is the real main idea of this passage?
+</div>
 
-<p>
-What is the main idea of this passage?
+<p class="small">
+Choose the best meaning. There are five choices.
 </p>
 
-<button class="quiz-option"
-onclick="readingAnswer(true)">
-It is about learning and improving through practice.
-</button>
-
-<button class="quiz-option"
-onclick="readingAnswer(false)">
-It is only about cooking food.
-</button>
-
-<button class="quiz-option"
-onclick="readingAnswer(false)">
-It is only about buying clothes.
-</button>
-
-</div>
 `;
+
+r.options.forEach((option,i)=>{
+
+document.getElementById("readingQuestion").innerHTML+=`
+
+<button class="quiz-option"
+onclick="readingAnswer(${i})">
+${escapeHTML(option)}
+</button>
+
+`;
+
+});
 
 renderReadingHistory();
 }
 
-function readingAnswer(ok){
+function readingAnswer(index){
 
-if(ok){
+const r=readingData[readingIndex];
+
+if(index===r.correct){
 
 document.getElementById("readingQuestion").innerHTML=`
 
 <div class="result success">
 
-🎉 Correct!
+🎉 Correct! You understood the passage.
+
+<br><br>
+
+<b>Main idea:</b><br>
+${escapeHTML(r.options[r.correct])}
 
 <br><br>
 
 <button class="primary" onclick="nextReading()">
-Next passage →
+Save reading & continue →
 </button>
 
 </div>`;
@@ -2521,12 +3330,20 @@ document.getElementById("readingQuestion").innerHTML=`
 
 <div class="result error">
 
-❌ Read the passage again and try the same question.
+❌ Not quite.
+
+<br><br>
+
+Read the passage again and think about its main idea.
+
+<br><br>
+
+<b>You must answer this same passage correctly before moving forward.</b>
 
 <br><br>
 
 <button class="secondary" onclick="renderReading()">
-Try again
+↻ Read again
 </button>
 
 </div>`;
@@ -2537,14 +3354,14 @@ Try again
 
 function nextReading(){
 
-state.progress.reading=Math.max(
-state.progress.reading,
-readingIndex+1
-);
+state.progress.reading=readingIndex+1;
 
-state.history.reading.push(
-readingData[readingIndex]
-);
+state.history.reading.push({
+title:readingData[readingIndex].title,
+level:readingData[readingIndex].level,
+paragraph:readingData[readingIndex].paragraph,
+answer:readingData[readingIndex].options[readingData[readingIndex].correct]
+});
 
 readingIndex++;
 
@@ -2557,17 +3374,35 @@ function renderReadingHistory(){
 
 const box=document.getElementById("readingHistory");
 
+if(!state.history.reading.length){
+
+box.innerHTML=
+'<div class="history-empty">Complete your first reading and it will be saved here.</div>';
+
+return;
+}
+
 box.innerHTML="";
 
-state.history.reading
-.slice(-10)
-.forEach(x=>{
+state.history.reading.slice(-10).forEach((x,i)=>{
 
 box.innerHTML+=`
 <div class="result success" style="margin-top:8px">
-📖 ${escapeHTML(x.title)}
+
+<b>✓ Completed reading</b>
+
 <br>
+
+📖 ${escapeHTML(x.title)}
+
+<br>
+
 <span class="small">${escapeHTML(x.level)}</span>
+
+<br><br>
+
+${escapeHTML(x.answer)}
+
 </div>
 `;
 
@@ -2624,7 +3459,6 @@ document.getElementById("writingPrompt").textContent=
 getWritingPrompt(writingIndex);
 
 document.getElementById("writingInput").value="";
-
 document.getElementById("writingResult").innerHTML="";
 
 renderWritingHistory();
@@ -2731,10 +3565,7 @@ Save & continue →
 
 function nextWriting(){
 
-state.progress.writing=Math.max(
-state.progress.writing,
-writingIndex+1
-);
+state.progress.writing=writingIndex+1;
 
 state.history.writing.push({
 prompt:getWritingPrompt(writingIndex),
@@ -2752,11 +3583,17 @@ function renderWritingHistory(){
 
 const box=document.getElementById("writingHistory");
 
+if(!state.history.writing.length){
+
+box.innerHTML=
+'<div class="history-empty">Your completed writing tasks will appear here.</div>';
+
+return;
+}
+
 box.innerHTML="";
 
-state.history.writing
-.slice(-8)
-.forEach(x=>{
+state.history.writing.slice(-8).forEach(x=>{
 
 box.innerHTML+=`
 <div class="result success" style="margin-top:8px">
@@ -2779,9 +3616,7 @@ function makeBuilderData(){
 
 return thinkData.map(x=>{
 
-const words=x.en
-.replace(/[.?!]/g,"")
-.split(" ");
+const words=x.en.replace(/[.?!]/g,"").split(" ");
 
 return{
 ar:x.ar,
@@ -2796,18 +3631,22 @@ words
 const builderData=makeBuilderData();
 
 let builderIndex=state.progress.builder;
-
 let builderChosen=[];
 
 function renderBuilder(){
+
+if(builderIndex>=1000){
+document.getElementById("builderArabic").innerHTML=
+'<div class="complete-box"><h3>🏆 Builder Complete!</h3><p>You completed all 1000 sentences.</p></div>';
+return;
+}
 
 const x=builderData[builderIndex];
 
 document.getElementById("builderNumber").textContent=
 builderIndex+1;
 
-document.getElementById("builderArabic").textContent=
-x.ar;
+document.getElementById("builderArabic").textContent=x.ar;
 
 builderChosen=[];
 
@@ -2826,12 +3665,11 @@ const j=Math.floor(Math.random()*(i+1));
 
 }
 
-shuffled.forEach((word,index)=>{
+shuffled.forEach((word)=>{
 
 const b=document.createElement("button");
 
 b.className="word";
-
 b.textContent=word;
 
 b.onclick=()=>chooseBuilderWord(b,word);
@@ -2876,7 +3714,7 @@ ${escapeHTML(builderData[builderIndex].en)}
 <br><br>
 
 <button class="primary" onclick="nextBuilder()">
-Next sentence →
+Save & continue →
 </button>
 
 </div>`;
@@ -2904,17 +3742,12 @@ document.getElementById("builderResult").innerHTML=`
 }
 
 function resetBuilder(){
-
 renderBuilder();
-
 }
 
 function nextBuilder(){
 
-state.progress.builder=Math.max(
-state.progress.builder,
-builderIndex+1
-);
+state.progress.builder=builderIndex+1;
 
 state.history.builder.push(
 builderData[builderIndex]
@@ -2931,11 +3764,17 @@ function renderBuilderHistory(){
 
 const box=document.getElementById("builderHistory");
 
+if(!state.history.builder.length){
+
+box.innerHTML=
+'<div class="history-empty">Completed sentences will appear here.</div>';
+
+return;
+}
+
 box.innerHTML="";
 
-state.history.builder
-.slice(-10)
-.forEach(x=>{
+state.history.builder.slice(-10).forEach(x=>{
 
 box.innerHTML+=`
 <div class="result success" style="margin-top:8px">
@@ -3353,7 +4192,6 @@ function renderVocabularyCategories(){
 const box=document.getElementById("vocabCategories");
 
 box.className="vocab-category-grid";
-
 box.innerHTML="";
 
 Object.entries(vocabulary).forEach(([category,items])=>{
@@ -3363,7 +4201,6 @@ const div=document.createElement("div");
 div.className="vocab-category";
 
 const icon=category.split(" ")[0];
-
 const title=category.substring(icon.length).trim();
 
 div.innerHTML=`
@@ -3424,10 +4261,7 @@ if(!card.dataset.learned){
 card.dataset.learned="true";
 
 state.progress.vocabulary=
-Math.min(
-100,
-state.progress.vocabulary+1
-);
+Math.min(100,state.progress.vocabulary+1);
 
 addXP(1);
 }
@@ -3460,7 +4294,7 @@ document.getElementById("vocabSearch").value
 if(!value){
 
 renderVocabularyCategories();
-
+document.getElementById("vocabWords").classList.add("hidden");
 return;
 }
 
@@ -3579,70 +4413,30 @@ box.appendChild(div);
 
 
 /* =====================================================
-   GRAMMAR TABLES
+   GRAMMAR TABLES — CLEAN AND COMPLETE
 ===================================================== */
 
 const grammarVerbs=[
-{
-base:"work",
-ar:"يعمل",
-past:"worked"
-},
-{
-base:"study",
-ar:"يدرس",
-past:"studied"
-},
-{
-base:"watch",
-ar:"يشاهد",
-past:"watched"
-},
-{
-base:"play",
-ar:"يلعب",
-past:"played"
-},
-{
-base:"go",
-ar:"يذهب",
-past:"went"
-},
-{
-base:"eat",
-ar:"يأكل",
-past:"ate"
-},
-{
-base:"drink",
-ar:"يشرب",
-past:"drank"
-},
-{
-base:"write",
-ar:"يكتب",
-past:"wrote"
-},
-{
-base:"read",
-ar:"يقرأ",
-past:"read"
-},
-{
-base:"take",
-ar:"يأخذ",
-past:"took"
-},
-{
-base:"make",
-ar:"يصنع",
-past:"made"
-},
-{
-base:"see",
-ar:"يرى",
-past:"saw"
-}
+{base:"work",ar:"يعمل",past:"worked"},
+{base:"study",ar:"يدرس",past:"studied"},
+{base:"watch",ar:"يشاهد",past:"watched"},
+{base:"play",ar:"يلعب",past:"played"},
+{base:"go",ar:"يذهب",past:"went"},
+{base:"eat",ar:"يأكل",past:"ate"},
+{base:"drink",ar:"يشرب",past:"drank"},
+{base:"write",ar:"يكتب",past:"wrote"},
+{base:"read",ar:"يقرأ",past:"read"},
+{base:"take",ar:"يأخذ",past:"took"},
+{base:"make",ar:"يصنع",past:"made"},
+{base:"see",ar:"يرى",past:"saw"},
+{base:"have",ar:"يملك / لديه",past:"had"},
+{base:"do",ar:"يفعل",past:"did"},
+{base:"try",ar:"يحاول",past:"tried"},
+{base:"carry",ar:"يحمل",past:"carried"},
+{base:"fix",ar:"يصلح",past:"fixed"},
+{base:"wash",ar:"يغسل",past:"washed"},
+{base:"help",ar:"يساعد",past:"helped"},
+{base:"open",ar:"يفتح",past:"opened"}
 ];
 
 function renderVerbTables(){
@@ -3653,27 +4447,44 @@ box.innerHTML="";
 
 grammarVerbs.forEach(v=>{
 
+const wrapper=document.createElement("div");
+
+wrapper.className="tense-title";
+
+wrapper.innerHTML=`
+<h4>${escapeHTML(v.base)} — ${escapeHTML(v.ar)}</h4>
+<span>Present · Past · Future</span>
+`;
+
+box.appendChild(wrapper);
+
+const tableWrap=document.createElement("div");
+
+tableWrap.className="table-wrap";
+
 const table=document.createElement("table");
 
 table.className="tense-table";
 
 table.innerHTML=`
 
-<tr>
-<th colspan="6">
-${escapeHTML(v.base)} — ${escapeHTML(v.ar)}
-</th>
-</tr>
+<thead>
 
 <tr>
 <th>Subject</th>
-<th>Present</th>
+<th>Present Simple</th>
 <th>Future</th>
-<th>Past</th>
+<th>Past Simple</th>
 <th>Negative</th>
 <th>Question</th>
 </tr>
+
+</thead>
+
+<tbody></tbody>
 `;
+
+const tbody=table.querySelector("tbody");
 
 const subjects=[
 "I",
@@ -3687,45 +4498,55 @@ const subjects=[
 
 subjects.forEach(s=>{
 
-let present;
+const third=
+["He","She","It"].includes(s);
 
-if(s==="He"||s==="She"||s==="It"){
-present=conjugatePresent(s,v.base);
-}else{
-present=v.base;
-}
+const present=
+third
+?conjugatePresent(s,v.base)
+:v.base;
 
 let past=v.past;
 
-if(v.base==="read"){
-past="read";
+if(v.base==="be"){
+past=["I"].includes(s)?"was":
+["He","She","It"].includes(s)?"was":"were";
 }
 
 const negative=
-s==="He"||s==="She"||s==="It"
+third
 ?"does not "+v.base
 :"do not "+v.base;
 
 const question=
-s==="He"||s==="She"||s==="It"
+third
 ?"Does "+s.toLowerCase()+" "+v.base+"?"
 :"Do "+s.toLowerCase()+" "+v.base+"?";
 
-table.innerHTML+=`
+const row=document.createElement("tr");
 
-<tr>
+row.innerHTML=`
+
 <td>${s}</td>
+
 <td>${present}</td>
+
 <td>${s} will ${v.base}</td>
+
 <td>${past}</td>
+
 <td>${s} ${negative}</td>
+
 <td>${question}</td>
-</tr>
+
 `;
+
+tbody.appendChild(row);
 
 });
 
-box.appendChild(table);
+tableWrap.appendChild(table);
+box.appendChild(tableWrap);
 
 });
 
@@ -3748,7 +4569,7 @@ let q;
 let options;
 let correct;
 
-const type=i%6;
+const type=i%10;
 
 if(type===0){
 
@@ -3781,7 +4602,7 @@ q="I ___ "+v.base+" tomorrow.";
 options=[
 "will "+v.base,
 v.past,
-conjugatePresent("I",v.base)
+v.base
 ];
 
 correct=0;
@@ -3810,7 +4631,7 @@ v.base,
 
 correct=0;
 
-}else{
+}else if(type===5){
 
 q="Will you ___ "+v.base+" tomorrow?";
 
@@ -3821,6 +4642,54 @@ conjugatePresent("He",v.base)
 ];
 
 correct=1;
+
+}else if(type===6){
+
+q="She does not ___ "+v.base+" every day.";
+
+options=[
+conjugatePresent("She",v.base),
+v.base,
+v.past
+];
+
+correct=1;
+
+}else if(type===7){
+
+q="Did they ___ "+v.base+" yesterday?";
+
+options=[
+v.past,
+"will "+v.base,
+v.base
+];
+
+correct=2;
+
+}else if(type===8){
+
+q="He will ___ "+v.base+" tomorrow.";
+
+options=[
+v.past,
+v.base,
+conjugatePresent("He",v.base)
+];
+
+correct=1;
+
+}else{
+
+q="They do not ___ "+v.base+" on Sundays.";
+
+options=[
+conjugatePresent("They",v.base),
+v.past,
+v.base
+];
+
+correct=2;
 
 }
 
@@ -3840,6 +4709,14 @@ const grammarData=makeGrammarData();
 let grammarIndex=state.progress.grammar;
 
 function renderGrammarQuestion(){
+
+if(grammarIndex>=1000){
+
+document.getElementById("grammarExercise").innerHTML=
+'<div class="complete-box"><h3>🏆 Grammar Complete!</h3><p>You completed all 1000 questions.</p></div>';
+
+return;
+}
 
 const q=grammarData[grammarIndex];
 
@@ -3889,7 +4766,7 @@ q.q.replace("___",q.options[q.correct])
 <br><br>
 
 <button class="primary" onclick="nextGrammar()">
-Next →
+Save & continue →
 </button>
 
 </div>`;
@@ -3920,10 +4797,7 @@ Try again
 
 function nextGrammar(){
 
-state.progress.grammar=Math.max(
-state.progress.grammar,
-grammarIndex+1
-);
+state.progress.grammar=grammarIndex+1;
 
 state.history.grammar.push(
 grammarData[grammarIndex]
@@ -3940,11 +4814,17 @@ function renderGrammarHistory(){
 
 const box=document.getElementById("grammarHistory");
 
+if(!state.history.grammar.length){
+
+box.innerHTML=
+'<div class="history-empty">Completed grammar questions will appear here.</div>';
+
+return;
+}
+
 box.innerHTML="";
 
-state.history.grammar
-.slice(-12)
-.forEach(x=>{
+state.history.grammar.slice(-12).forEach(x=>{
 
 box.innerHTML+=`
 <div class="result success" style="margin-top:8px">
@@ -4054,10 +4934,17 @@ for(let i=0;i<1000;i++){
 
 const s=conversationScenarios[i%conversationScenarios.length];
 
+const round=Math.floor(i/conversationScenarios.length)+1;
+
 arr.push({
-alex:s.alex,
-answers:s.answers,
-correct:0
+alex:s.alex+"",
+answers:[
+s.answers[0],
+s.answers[1],
+s.answers[2]
+],
+correct:0,
+round
 });
 
 }
@@ -4070,6 +4957,14 @@ const storyData=makeStories();
 let storyIndex=state.progress.stories;
 
 function renderStory(){
+
+if(storyIndex>=1000){
+
+document.getElementById("storyDialogue").innerHTML=
+'<div class="complete-box"><h3>🏆 Conversation Complete!</h3><p>You completed all 1000 conversation turns.</p></div>';
+
+return;
+}
 
 const s=storyData[storyIndex];
 
@@ -4100,6 +4995,7 @@ onclick="storyAnswer(${i})">
 ${escapeHTML(answer)}
 
 </button>
+
 `;
 
 });
@@ -4134,7 +5030,7 @@ ${escapeHTML(s.answers[index])}
 <br><br>
 
 <button class="primary" onclick="nextStory()">
-Continue conversation →
+Save & continue →
 </button>
 
 </div>`;
@@ -4165,10 +5061,7 @@ Try again
 
 function nextStory(){
 
-state.progress.stories=Math.max(
-state.progress.stories,
-storyIndex+1
-);
+state.progress.stories=storyIndex+1;
 
 state.history.stories.push(
 storyData[storyIndex]
@@ -4185,11 +5078,17 @@ function renderStoryHistory(){
 
 const box=document.getElementById("storyHistory");
 
+if(!state.history.stories.length){
+
+box.innerHTML=
+'<div class="history-empty">Completed conversation turns will appear here.</div>';
+
+return;
+}
+
 box.innerHTML="";
 
-state.history.stories
-.slice(-10)
-.forEach(x=>{
+state.history.stories.slice(-10).forEach(x=>{
 
 box.innerHTML+=`
 
