@@ -2,539 +2,2437 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>English Quest</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>English Quest 🇺🇸</title>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+
 body{
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-background:linear-gradient(135deg,#f5efff,#eee7ff,#f9f4ff);
-color:#29233d;min-height:100vh
+background:linear-gradient(135deg,#f5efff,#eee7ff,#faf7ff);
+color:#29233d;
+min-height:100vh;
+padding-bottom:90px
 }
-button{font:inherit;border:0;cursor:pointer}
-.app{max-width:1100px;margin:auto;padding:20px}
+
+button{
+font:inherit;
+border:0;
+cursor:pointer
+}
+
+.app{
+max-width:1150px;
+margin:auto;
+padding:18px
+}
+
 header{
-display:flex;justify-content:space-between;align-items:center;
-padding:18px 4px 25px
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 4px 25px
 }
-.logo{font-size:25px;font-weight:800;color:#7047d9}
-.logo span{font-size:29px}
-.stats{display:flex;gap:10px}
+
+.logo{
+font-size:25px;
+font-weight:900;
+color:#7047d9
+}
+
+.logo span{font-size:30px}
+
+.stats{
+display:flex;
+gap:8px
+}
+
 .stat{
-background:white;padding:9px 13px;border-radius:15px;
-box-shadow:0 5px 18px #6d4ac01a;font-weight:700;font-size:14px
+background:white;
+padding:9px 13px;
+border-radius:15px;
+box-shadow:0 5px 18px #6d4ac01a;
+font-weight:800;
+font-size:14px
 }
+
 .hero{
 background:linear-gradient(135deg,#7650dc,#a276f3);
-color:white;border-radius:28px;padding:30px;
-box-shadow:0 15px 35px #7047d933;margin-bottom:25px
+color:white;
+border-radius:28px;
+padding:30px;
+box-shadow:0 15px 35px #7047d933;
+margin-bottom:25px
 }
-.hero h1{font-size:32px;margin-bottom:8px}
-.hero p{opacity:.9;margin-bottom:20px}
-.progress{height:10px;background:#ffffff3b;border-radius:20px;overflow:hidden}
-.progress div{height:100%;background:white;border-radius:20px;width:42%}
+
+.hero h1{
+font-size:32px;
+margin-bottom:8px
+}
+
+.hero p{
+opacity:.9;
+margin-bottom:18px
+}
+
+.progress{
+height:10px;
+background:#ffffff3b;
+border-radius:20px;
+overflow:hidden
+}
+
+.progress div{
+height:100%;
+background:white;
+border-radius:20px;
+width:0%
+}
+
 .grid{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
 gap:15px
 }
+
 .card{
-background:#fff;border-radius:23px;padding:22px;
+background:white;
+border-radius:23px;
+padding:22px;
 box-shadow:0 8px 25px #5d3ba015;
-transition:.2s;border:1px solid #ffffff
+transition:.2s;
+border:1px solid white
 }
-.card:hover{transform:translateY(-3px);box-shadow:0 12px 30px #5d3ba022}
-.icon{font-size:35px;margin-bottom:12px}
-.card h3{margin-bottom:7px}
-.card p{font-size:14px;color:#817a91;line-height:1.5}
+
+.card:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 30px #5d3ba022
+}
+
+.icon{
+font-size:35px;
+margin-bottom:12px
+}
+
+.card h3{
+margin-bottom:7px
+}
+
+.card p{
+font-size:14px;
+color:#817a91;
+line-height:1.5
+}
+
 .xp{
-display:inline-block;margin-top:15px;background:#f0eaff;
-color:#7047d9;padding:7px 10px;border-radius:12px;font-size:12px;font-weight:800
+display:inline-block;
+margin-top:15px;
+background:#f0eaff;
+color:#7047d9;
+padding:7px 10px;
+border-radius:12px;
+font-size:12px;
+font-weight:800
 }
+
 section{display:none}
 section.active{display:block}
+
 .back{
-background:white;color:#7047d9;padding:10px 15px;border-radius:13px;
-font-weight:700;margin-bottom:18px
+background:white;
+color:#7047d9;
+padding:10px 15px;
+border-radius:13px;
+font-weight:800;
+margin-bottom:18px
 }
+
 .lesson{
-background:white;border-radius:25px;padding:25px;
-box-shadow:0 8px 25px #5d3ba015;margin-bottom:18px
+background:white;
+border-radius:25px;
+padding:25px;
+box-shadow:0 8px 25px #5d3ba015;
+margin-bottom:18px
 }
-.sentence{
-font-size:25px;font-weight:750;text-align:center;padding:25px 5px
-}
-.arabic{text-align:center;color:#888;margin-bottom:20px}
-.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+
 .primary{
-background:#7047d9;color:white;padding:12px 18px;border-radius:14px;font-weight:700
+background:#7047d9;
+color:white;
+padding:12px 18px;
+border-radius:14px;
+font-weight:800
 }
+
 .secondary{
-background:#f0eaff;color:#7047d9;padding:12px 18px;border-radius:14px;font-weight:700
+background:#f0eaff;
+color:#7047d9;
+padding:12px 18px;
+border-radius:14px;
+font-weight:800
 }
-textarea,input{
-width:100%;border:2px solid #eee7fa;border-radius:15px;
-padding:14px;font-size:16px;outline:none;margin:10px 0
+
+.actions{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+justify-content:center
 }
-textarea:focus,input:focus{border-color:#9a78e9}
-.result{
-margin-top:15px;padding:15px;border-radius:15px;background:#f7f3ff;
-line-height:1.6
+
+.small{
+font-size:13px;
+color:#898295
 }
-.words{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}
+
+/* VOCABULARY */
+
+.vocab-menu{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:14px;
+margin-top:20px
+}
+
+.vocab-category{
+background:linear-gradient(145deg,#fff,#f8f4ff);
+border-radius:22px;
+padding:20px;
+box-shadow:0 7px 20px #5d3ba012;
+cursor:pointer;
+transition:.2s
+}
+
+.vocab-category:hover{
+transform:translateY(-4px)
+}
+
+.vocab-category .big{
+font-size:42px;
+margin-bottom:10px
+}
+
+.vocab-category h3{
+color:#4e368d
+}
+
+/* WORD CARDS */
+
+.word-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+gap:15px;
+margin-top:20px
+}
+
+.word-card{
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 7px 22px #5d3ba015;
+transition:.2s
+}
+
+.word-card:hover{
+transform:translateY(-3px)
+}
+
+.word-image{
+width:100%;
+height:145px;
+object-fit:cover;
+display:block;
+background:#eee
+}
+
+.word-content{
+padding:13px
+}
+
 .word{
-padding:12px 15px;background:#f4efff;border-radius:14px;
-cursor:pointer;font-weight:700;color:#6541bf
+font-size:19px;
+font-weight:900;
+color:#4f3694
 }
-.skill{margin:15px 0}
-.skill-top{display:flex;justify-content:space-between;font-size:13px;font-weight:700}
-.bar{height:9px;background:#eeeaf5;border-radius:20px;margin-top:7px}
-.bar div{height:100%;background:#8058df;border-radius:20px}
-.nav{
-position:fixed;bottom:15px;left:50%;transform:translateX(-50%);
-background:white;border-radius:22px;padding:10px;
-box-shadow:0 8px 30px #0002;display:flex;gap:5px;z-index:10
+
+.translation{
+font-size:14px;
+color:#888;
+margin-top:4px
 }
-.nav button{
-background:transparent;padding:10px 14px;border-radius:15px;
-font-size:13px;color:#777
+
+.pronounce{
+margin-top:10px;
+width:100%;
+padding:9px;
+border-radius:12px;
+background:#eee7ff;
+color:#7047d9;
+font-weight:800
 }
-.nav button.active{background:#eee7ff;color:#7047d9;font-weight:800}
-.small{font-size:13px;color:#898295}
+
+.category-title{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px
+}
+
+/* CONNECTORS */
+
+.connector-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:15px;
+margin-top:20px
+}
+
+.connector{
+background:#faf8ff;
+border:1px solid #eee6ff;
+border-radius:20px;
+padding:18px
+}
+
+.connector-word{
+font-size:24px;
+font-weight:900;
+color:#7047d9
+}
+
+.connector-meaning{
+color:#777;
+margin:5px 0 12px
+}
+
+.example{
+background:white;
+border-radius:14px;
+padding:12px;
+line-height:1.5
+}
+
+/* SENTENCE MAKER */
+
+.builder-area{
+display:flex;
+flex-wrap:wrap;
+gap:9px;
+margin:20px 0
+}
+
+.builder-word{
+background:#f0eaff;
+color:#5f3bb1;
+padding:10px 14px;
+border-radius:13px;
+font-weight:800
+}
+
+.selected-sentence{
+min-height:60px;
+border:2px dashed #cbb8f4;
+border-radius:18px;
+padding:15px;
+font-size:21px;
+font-weight:800;
+margin:15px 0
+}
+
+/* GRAMMAR */
+
+.grammar-card{
+background:#faf8ff;
+border-radius:20px;
+padding:20px;
+margin:15px 0
+}
+
+.grammar-card h3{
+color:#7047d9;
+margin-bottom:10px
+}
+
+.example-line{
+padding:8px 0;
+font-size:18px
+}
+
 .quiz-option{
-width:100%;padding:14px;margin:7px 0;background:#f7f3ff;
-border-radius:14px;text-align:left;font-weight:600
+width:100%;
+padding:14px;
+margin:7px 0;
+background:#f7f3ff;
+border-radius:14px;
+text-align:left;
+font-weight:700
 }
-.quiz-option:hover{background:#e9dfff}
+
+.quiz-option:hover{
+background:#e9dfff
+}
+
+.result{
+margin-top:15px;
+padding:15px;
+border-radius:15px;
+background:#f7f3ff;
+line-height:1.7
+}
+
+textarea,input{
+width:100%;
+border:2px solid #eee7fa;
+border-radius:15px;
+padding:14px;
+font-size:16px;
+outline:none;
+margin:10px 0
+}
+
+.nav{
+position:fixed;
+bottom:15px;
+left:50%;
+transform:translateX(-50%);
+background:white;
+border-radius:22px;
+padding:10px;
+box-shadow:0 8px 30px #0002;
+display:flex;
+gap:5px;
+z-index:10
+}
+
+.nav button{
+background:transparent;
+padding:10px 14px;
+border-radius:15px;
+font-size:13px;
+color:#777
+}
+
+.nav button.active{
+background:#eee7ff;
+color:#7047d9;
+font-weight:900
+}
+
 @media(max-width:600px){
-.app{padding:14px 14px 100px}
-.hero h1{font-size:27px}
-.stats{gap:5px}.stat{font-size:12px;padding:8px}
-.nav{width:95%;justify-content:space-around}
-.nav button{padding:9px 8px;font-size:11px}
+.app{
+padding:14px 14px 100px
+}
+
+.hero h1{
+font-size:27px
+}
+
+.stats{
+gap:5px
+}
+
+.stat{
+font-size:12px;
+padding:8px
+}
+
+.nav{
+width:96%;
+justify-content:space-around
+}
+
+.nav button{
+padding:9px 7px;
+font-size:11px
+}
+
+.word-grid{
+grid-template-columns:repeat(2,1fr)
+}
+
+.word-image{
+height:125px
+}
 }
 </style>
 </head>
 
 <body>
+
 <div class="app">
 
 <header>
 <div class="logo"><span>🌎</span> English Quest</div>
+
 <div class="stats">
 <div class="stat">🔥 <span id="streak">1</span></div>
 <div class="stat">⭐ <span id="xp">0</span> XP</div>
 </div>
 </header>
 
+
+<!-- HOME -->
+
 <section id="home" class="active">
 
 <div class="hero">
 <h1>Ready for your quest? 🚀</h1>
-<p>Learn English. Think English. Speak English.</p>
-<div class="progress"><div id="mainProgress"></div></div>
-<p style="margin-top:10px;font-size:13px">Level <b id="level">1</b> · Survive English</p>
+
+<p>
+Learn English. Think English. Speak English.
+</p>
+
+<div class="progress">
+<div id="mainProgress"></div>
 </div>
+
+<p style="margin-top:10px;font-size:13px">
+Level <b id="level">1</b> · Your English journey
+</p>
+</div>
+
 
 <div class="grid">
 
 <div class="card" onclick="openSection('speak')">
-<div class="icon">🗣️</div><h3>Speak Lab</h3>
-<p>Practice speaking and compare your speech with the target sentence.</p>
+<div class="icon">🗣️</div>
+<h3>Speak Lab</h3>
+<p>Practice speaking and improve your pronunciation.</p>
 <span class="xp">+20 XP</span>
 </div>
+
 
 <div class="card" onclick="openSection('think')">
-<div class="icon">🇲🇦➡️🇺🇸</div><h3>Think in English</h3>
-<p>Turn your thoughts into natural English sentences.</p>
+<div class="icon">🇲🇦➡️🇺🇸</div>
+<h3>Think in English</h3>
+<p>Turn your thoughts into natural English.</p>
 <span class="xp">+20 XP</span>
 </div>
+
 
 <div class="card" onclick="openSection('listen')">
-<div class="icon">🎧</div><h3>Listening Lab</h3>
-<p>Train your ear from slow speech to fast American English.</p>
+<div class="icon">🎧</div>
+<h3>Listening Lab</h3>
+<p>Train your ears with real English sentences.</p>
 <span class="xp">+20 XP</span>
 </div>
+
 
 <div class="card" onclick="openSection('reading')">
-<div class="icon">📖</div><h3>Reading</h3>
-<p>Read stories and discover words naturally.</p>
+<div class="icon">📖</div>
+<h3>Reading</h3>
+<p>Read simple stories and discover vocabulary.</p>
 <span class="xp">+15 XP</span>
 </div>
 
+
 <div class="card" onclick="openSection('writing')">
-<div class="icon">✍️</div><h3>Writing</h3>
-<p>Write, check your mistakes and try again.</p>
+<div class="icon">✍️</div>
+<h3>Writing</h3>
+<p>Write English and practice expressing yourself.</p>
 <span class="xp">+20 XP</span>
 </div>
 
+
 <div class="card" onclick="openSection('builder')">
-<div class="icon">🧩</div><h3>Sentence Builder</h3>
-<p>Build simple sentences and gradually make them richer.</p>
+<div class="icon">🧩</div>
+<h3>Sentence Builder</h3>
+<p>Learn how to build sentences yourself.</p>
 <span class="xp">+15 XP</span>
 </div>
+
 
 <div class="card" onclick="openSection('vocabulary')">
-<div class="icon">🌈</div><h3>Vocabulary Worlds</h3>
-<p>Explore useful vocabulary through themed worlds.</p>
-<span class="xp">+10 XP</span>
+<div class="icon">🌈</div>
+<h3>Vocabulary</h3>
+<p>Learn words visually with real pictures and pronunciation.</p>
+<span class="xp">Explore →</span>
 </div>
+
+
+<div class="card" onclick="openSection('connectors')">
+<div class="icon">🔗</div>
+<h3>Connectors</h3>
+<p>Learn words like in, with, because, but, and, so...</p>
+<span class="xp">Explore →</span>
+</div>
+
 
 <div class="card" onclick="openSection('grammar')">
-<div class="icon">🔗</div><h3>Grammar</h3>
-<p>Discover grammar through real examples instead of memorizing rules.</p>
-<span class="xp">+15 XP</span>
+<div class="icon">📚</div>
+<h3>Grammar</h3>
+<p>Small useful grammar lessons without pressure.</p>
+<span class="xp">Practice →</span>
 </div>
 
+
 <div class="card" onclick="openSection('stories')">
-<div class="icon">🎬</div><h3>Conversation Stories</h3>
-<p>Enter real-life conversations and choose what you would say.</p>
+<div class="icon">🎬</div>
+<h3>Conversation Stories</h3>
+<p>Practice real-life situations.</p>
 <span class="xp">+25 XP</span>
 </div>
 
 </div>
 
-<div class="lesson" style="margin-top:18px">
-<h3>📊 Your Progress</h3>
-
-<div class="skill"><div class="skill-top"><span>🗣 Speaking</span><span>72%</span></div><div class="bar"><div style="width:72%"></div></div></div>
-<div class="skill"><div class="skill-top"><span>🎧 Listening</span><span>61%</span></div><div class="bar"><div style="width:61%"></div></div></div>
-<div class="skill"><div class="skill-top"><span>📖 Reading</span><span>84%</span></div><div class="bar"><div style="width:84%"></div></div></div>
-<div class="skill"><div class="skill-top"><span>✍️ Writing</span><span>53%</span></div><div class="bar"><div style="width:53%"></div></div></div>
-<div class="skill"><div class="skill-top"><span>🧠 Vocabulary</span><span>70%</span></div><div class="bar"><div style="width:70%"></div></div></div>
-<div class="skill"><div class="skill-top"><span>⚡ Grammar</span><span>64%</span></div><div class="bar"><div style="width:64%"></div></div></div>
-</div>
-
 </section>
+
+
+<!-- SPEAK -->
 
 <section id="speak">
-<button class="back" onclick="openSection('home')">← Home</button>
+
+<button class="back" onclick="openSection('home')">
+← Home
+</button>
+
 <div class="lesson">
+
 <h2>🗣️ Speak Lab</h2>
-<p class="small">Listen → speak → compare → repeat.</p>
-<div class="sentence" id="speakSentence">I want to learn English.</div>
-<div class="arabic">أريد أن أتعلم الإنجليزية.</div>
+
+<p class="small">
+Listen → speak → compare → repeat.
+</p>
+
+<div style="font-size:26px;font-weight:800;text-align:center;padding:25px 5px" id="speakSentence">
+I want to learn English.
+</div>
+
+<div style="text-align:center;color:#888;margin-bottom:20px">
+أريد أن أتعلم الإنجليزية.
+</div>
+
 <div class="actions">
-<button class="primary" onclick="speak('I want to learn English.')">🔊 Listen</button>
-<button class="primary" onclick="startSpeaking()">🎙️ Speak</button>
-<button class="secondary" onclick="newSpeakSentence()">↻ New sentence</button>
+
+<button class="primary"
+onclick="speak(document.getElementById('speakSentence').textContent)">
+🔊 Listen
+</button>
+
+<button class="primary"
+onclick="startSpeaking()">
+🎙️ Speak
+</button>
+
+<button class="secondary"
+onclick="newSpeakSentence()">
+↻ New sentence
+</button>
+
 </div>
+
 <div id="speakResult"></div>
+
 </div>
+
 </section>
+
+
+<!-- THINK -->
 
 <section id="think">
-<button class="back" onclick="openSection('home')">← Home</button>
+
+<button class="back" onclick="openSection('home')">
+← Home
+</button>
+
 <div class="lesson">
+
 <h2>🇲🇦➡️🇺🇸 Think in English</h2>
-<p style="margin:12px 0">أنا أريد أن أذهب إلى الجامعة غداً.</p>
-<textarea id="thinkInput" placeholder="Write your English sentence..."></textarea>
-<button class="primary" onclick="checkThink()">Check my answer</button>
+
+<p style="margin:12px 0">
+أنا أريد أن أذهب إلى الجامعة غداً.
+</p>
+
+<textarea id="thinkInput"
+placeholder="Write your English sentence..."></textarea>
+
+<button class="primary" onclick="checkThink()">
+Check my answer
+</button>
+
 <div id="thinkResult"></div>
+
 </div>
+
 </section>
+
+
+<!-- LISTEN -->
 
 <section id="listen">
-<button class="back" onclick="openSection('home')">← Home</button>
+
+<button class="back" onclick="openSection('home')">
+← Home
+</button>
+
 <div class="lesson">
+
 <h2>🎧 Listening Lab</h2>
-<p class="small">Choose your speed.</p>
+
+<p class="small">
+Choose your speed.
+</p>
+
 <div class="actions" style="margin:20px 0">
-<button class="secondary" onclick="listenSpeed(.65)">🐢 Slow</button>
-<button class="primary" onclick="listenSpeed(1)">🙂 Normal</button>
-<button class="secondary" onclick="listenSpeed(1.35)">⚡ Fast</button>
+
+<button class="secondary"
+onclick="listenSpeed(.65)">
+🐢 Slow
+</button>
+
+<button class="primary"
+onclick="listenSpeed(1)">
+🙂 Normal
+</button>
+
+<button class="secondary"
+onclick="listenSpeed(1.35)">
+⚡ Fast
+</button>
+
 </div>
-<button class="primary" onclick="listenQuiz()">Start Listening Challenge</button>
+
+<button class="primary"
+onclick="listenQuiz()">
+Start Listening Challenge
+</button>
+
 <div id="listenResult"></div>
+
 </div>
+
 </section>
 
+
+<!-- READING -->
+
 <section id="reading">
-<button class="back" onclick="openSection('home')">← Home</button>
+
+<button class="back" onclick="openSection('home')">
+← Home
+</button>
+
 <div class="lesson">
+
 <h2>📖 Reading</h2>
-<h3 style="margin:20px 0 10px">A New Day</h3>
+
+<h3 style="margin:20px 0 10px">
+A New Day
+</h3>
+
 <p style="line-height:1.8">
 Every morning, Maya opens her window and looks at the city.
 She drinks coffee, checks her plans, and gets ready for university.
 She wants to improve her English because she dreams of traveling around the world.
 </p>
-<div class="words">
-<div class="word" onclick="wordInfo('dream')">dream</div>
-<div class="word" onclick="wordInfo('improve')">improve</div>
-<div class="word" onclick="wordInfo('travel')">travel</div>
+
 </div>
-<div id="wordResult"></div>
-</div>
+
 </section>
+
+
+<!-- WRITING -->
 
 <section id="writing">
-<button class="back" onclick="openSection('home')">← Home</button>
+
+<button class="back" onclick="openSection('home')">
+← Home
+</button>
+
 <div class="lesson">
+
 <h2>✍️ Writing</h2>
-<p>Write 3–5 sentences about your day.</p>
-<textarea id="writingInput" rows="7" placeholder="Today I..."></textarea>
-<button class="primary" onclick="checkWriting()">Check writing</button>
+
+<p>
+Write 3–5 sentences about your day.
+</p>
+
+<textarea id="writingInput"
+rows="7"
+placeholder="Today I..."></textarea>
+
+<button class="primary"
+onclick="checkWriting()">
+Check writing
+</button>
+
 <div id="writingResult"></div>
+
 </div>
+
 </section>
+
+
+<!-- SENTENCE BUILDER -->
 
 <section id="builder">
-<button class="back" onclick="openSection('home')">← Home</button>
+
+<button class="back" onclick="openSection('home')">
+← Home
+</button>
+
 <div class="lesson">
+
 <h2>🧩 Sentence Builder</h2>
-<p>Build the sentence in the correct order.</p>
-<div class="words" id="builderWords"></div>
-<div id="builderResult"></div>
+
+<p>
+Tap the words to build the sentence.
+</p>
+
+<div class="selected-sentence"
+id="selectedSentence">
+Your sentence...
 </div>
+
+<div class="builder-area"
+id="builderWords">
+</div>
+
+<button class="secondary"
+onclick="resetBuilder()">
+↻ Reset
+</button>
+
+<div id="builderResult"></div>
+
+</div>
+
 </section>
+
+
+<!-- VOCABULARY -->
 
 <section id="vocabulary">
-<button class="back" onclick="openSection('home')">← Home</button>
-<div class="lesson">
+
+<button class="back" onclick="openSection('home')">
+← Home
+</button>
+
+<div class="lesson" id="vocabularyMain">
+
+<div class="category-title">
+
+<div>
 <h2>🌈 Vocabulary Worlds</h2>
-<div class="grid" id="vocabGrid"></div>
+<p class="small">
+Learn with pictures → word → Arabic → 🔊 pronunciation
+</p>
 </div>
+
+</div>
+
+<div class="vocab-menu" id="vocabMenu"></div>
+
+</div>
+
 </section>
+
+
+<!-- WORDS -->
+
+<section id="wordList">
+
+<button class="back" onclick="openVocabulary()">
+← Vocabulary
+</button>
+
+<div class="lesson">
+
+<div class="category-title">
+
+<div>
+<h2 id="wordCategoryTitle"></h2>
+<p class="small">
+Look at the picture, learn the word, then listen 🔊
+</p>
+</div>
+
+</div>
+
+<div class="word-grid" id="wordGrid"></div>
+
+</div>
+
+</section>
+
+
+<!-- CONNECTORS -->
+
+<section id="connectors">
+
+<button class="back" onclick="openSection('home')">
+← Home
+</button>
+
+<div class="lesson">
+
+<h2>🔗 English Connectors & Prepositions</h2>
+
+<p class="small">
+Learn each word through a real sentence.
+</p>
+
+<div class="connector-grid" id="connectorGrid"></div>
+
+</div>
+
+</section>
+
+
+<!-- GRAMMAR -->
 
 <section id="grammar">
-<button class="back" onclick="openSection('home')">← Home</button>
+
+<button class="back" onclick="openSection('home')">
+← Home
+</button>
+
 <div class="lesson">
-<h2>🔗 Grammar through examples</h2>
-<p style="margin:15px 0">Look at the examples:</p>
-<div class="result">
-<b>I work every day.</b><br>
-<b>She works every day.</b><br><br>
-We add <b>-s</b> when the subject is <b>he / she / it</b> in the present simple.
+
+<h2>📚 Grammar — Easy English</h2>
+
+<p class="small">
+No pressure. Learn one small idea at a time.
+</p>
+
+
+<div class="grammar-card">
+
+<h3>🔮 Future — WILL</h3>
+
+<p>
+When we talk about the future, we can use <b>will</b>.
+</p>
+
+<div class="example-line">
+I will marry you. 💜
 </div>
-<button class="primary" onclick="grammarQuiz()">Practice</button>
-<div id="grammarResult"></div>
+
+<div class="example-line">
+You will travel.
 </div>
+
+<div class="example-line">
+He will work.
+</div>
+
+<div class="example-line">
+She will study.
+</div>
+
+<div class="example-line">
+It will rain.
+</div>
+
+<div class="example-line">
+We will go.
+</div>
+
+<div class="example-line">
+They will come.
+</div>
+
+<button class="secondary"
+onclick="speak('I will marry you.')">
+🔊 Hear example
+</button>
+
+</div>
+
+
+<div class="grammar-card">
+
+<h3>⏪ Past</h3>
+
+<p>
+For something that already happened.
+</p>
+
+<div class="example-line">
+I worked yesterday.
+</div>
+
+<div class="example-line">
+She visited Morocco.
+</div>
+
+<div class="example-line">
+They traveled last year.
+</div>
+
+</div>
+
+
+<div class="grammar-card">
+
+<h3>🌱 Present Simple</h3>
+
+<p>
+For habits and things that happen regularly.
+</p>
+
+<div class="example-line">
+I work every day.
+</div>
+
+<div class="example-line">
+You study English.
+</div>
+
+<div class="example-line">
+He works every day.
+</div>
+
+<div class="example-line">
+She studies English.
+</div>
+
+<p style="margin-top:10px;color:#7047d9;font-weight:700">
+💡 With he / she / it, we usually add -s or -es.
+</p>
+
+</div>
+
+
+<div class="grammar-card">
+
+<h3>🏃 Present Continuous</h3>
+
+<p>
+For something happening now.
+</p>
+
+<div class="example-line">
+I am studying.
+</div>
+
+<div class="example-line">
+She is cooking.
+</div>
+
+<div class="example-line">
+They are traveling.
+</div>
+
+</div>
+
+
+<h3 style="margin-top:25px">
+🧠 Practice
+</h3>
+
+<div id="grammarQuizBox"></div>
+
+<button class="primary"
+onclick="startGrammarQuiz()">
+Start Exercise
+</button>
+
+</div>
+
 </section>
+
+
+<!-- STORIES -->
 
 <section id="stories">
-<button class="back" onclick="openSection('home')">← Home</button>
+
+<button class="back" onclick="openSection('home')">
+← Home
+</button>
+
 <div class="lesson">
+
 <h2>🎬 Conversation Story</h2>
+
 <div class="result">
-👨 <b>Alex:</b> Hey! What are you doing this weekend?
+👨 <b>Alex:</b>
+Hey! What are you doing this weekend?
 </div>
-<p style="margin:18px 0;font-weight:700">What would you say?</p>
-<button class="quiz-option" onclick="storyAnswer(1)">I'm going to visit my friend.</button>
-<button class="quiz-option" onclick="storyAnswer(2)">Yesterday I was tired.</button>
-<button class="quiz-option" onclick="storyAnswer(3)">I don't know English.</button>
+
+<p style="margin:18px 0;font-weight:700">
+What would you say?
+</p>
+
+<button class="quiz-option"
+onclick="storyAnswer(1)">
+I'm going to visit my friend.
+</button>
+
+<button class="quiz-option"
+onclick="storyAnswer(2)">
+Yesterday I was tired.
+</button>
+
+<button class="quiz-option"
+onclick="storyAnswer(3)">
+I don't know English.
+</button>
+
 <div id="storyResult"></div>
+
 </div>
+
 </section>
 
+
 </div>
+
 
 <div class="nav">
-<button onclick="openSection('home')" class="active">🏠 Home</button>
-<button onclick="openSection('speak')">🗣️ Speak</button>
-<button onclick="openSection('listen')">🎧 Listen</button>
-<button onclick="openSection('vocabulary')">🌈 Words</button>
+
+<button onclick="openSection('home')">
+🏠 Home
+</button>
+
+<button onclick="openSection('speak')">
+🗣️ Speak
+</button>
+
+<button onclick="openSection('listen')">
+🎧 Listen
+</button>
+
+<button onclick="openSection('vocabulary')">
+🌈 Words
+</button>
+
 </div>
 
+
 <script>
+
+/* =========================
+   BASIC APP
+========================= */
+
 let xp=Number(localStorage.getItem("eq_xp")||0);
+
 let streak=Number(localStorage.getItem("eq_streak")||1);
 
-const sentences=[
-["I want to learn English.","أريد أن أتعلم الإنجليزية."],
-["I am going to university tomorrow.","سأذهب إلى الجامعة غداً."],
-["I love traveling around the world.","أحب السفر حول العالم."],
-["I need to practice every day.","أحتاج إلى التدريب كل يوم."],
-["I feel happy when I learn something new.","أشعر بالسعادة عندما أتعلم شيئاً جديداً."]
-];
 
 function updateStats(){
+
 document.getElementById("xp").textContent=xp;
+
 document.getElementById("streak").textContent=streak;
-document.getElementById("level").textContent=Math.floor(xp/100)+1;
-document.getElementById("mainProgress").style.width=(xp%100)+"%";
+
+document.getElementById("level").textContent=
+Math.floor(xp/100)+1;
+
+document.getElementById("mainProgress").style.width=
+(xp%100)+"%";
+
 localStorage.setItem("eq_xp",xp);
+
 }
+
+
 function addXP(n){
-xp+=n;updateStats();
+
+xp+=n;
+
+updateStats();
+
 }
+
+
 function openSection(id){
-document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
-document.getElementById(id).classList.add("active");
+
+document.querySelectorAll("section")
+.forEach(s=>s.classList.remove("active"));
+
+document.getElementById(id)
+.classList.add("active");
+
 window.scrollTo(0,0);
+
 }
+
+
 function speak(text,rate=1){
+
 if(!("speechSynthesis" in window)){
-alert("Your browser does not support speech synthesis.");
+
+alert("Speech is not supported in this browser.");
+
 return;
+
 }
+
 speechSynthesis.cancel();
-let u=new SpeechSynthesisUtterance(text);
-u.lang="en-US";u.rate=rate;u.pitch=1;
+
+let u=
+new SpeechSynthesisUtterance(text);
+
+u.lang="en-US";
+
+u.rate=rate;
+
+u.pitch=1;
+
 speechSynthesis.speak(u);
+
 }
-function startSpeaking(){
-if(!("webkitSpeechRecognition" in window)&&!("SpeechRecognition" in window)){
-document.getElementById("speakResult").innerHTML=
-'<div class="result">🎙️ Speech recognition is not available in this browser. Try Chrome/Safari with microphone permission.</div>';
-return;
+
+
+/* =========================
+   VOCABULARY DATABASE
+========================= */
+
+const vocabulary={
+
+
+"👗 Clothes":{
+emoji:"👗",
+items:[
+
+["dress","فستان","dress"],
+["shirt","قميص","shirt"],
+["T-shirt","قميص قصير","t-shirt"],
+["blouse","بلوزة","blouse"],
+["skirt","تنورة","skirt"],
+["pants","سروال","pants"],
+["jeans","جينز","jeans"],
+["shorts","سروال قصير","shorts"],
+["jacket","سترة","jacket"],
+["coat","معطف","coat"],
+["sweater","كنزة","sweater"],
+["hoodie","هودي","hoodie"],
+["suit","بدلة","suit"],
+["tie","ربطة عنق","tie"],
+["scarf","وشاح","scarf"],
+["gloves","قفازات","gloves"],
+["hat","قبعة","hat"],
+["cap","قبعة رياضية","cap"],
+["socks","جوارب","socks"],
+["shoes","أحذية","shoes"],
+["boots","جزمة","boots"],
+["sandals","صنادل","sandals"],
+["heels","كعب عالٍ","high heels"],
+["sneakers","حذاء رياضي","sneakers"],
+["pajamas","ملابس نوم","pajamas"],
+["underwear","ملابس داخلية","underwear"],
+["bra","حمالة صدر","bra"],
+["swimsuit","ملابس سباحة","swimsuit"],
+["belt","حزام","belt"],
+["pocket","جيب","pocket"],
+["button","زر","button"],
+["zipper","سحاب","zipper"],
+["raincoat","معطف المطر","raincoat"],
+["cardigan","سترة صوفية مفتوحة","cardigan"],
+["vest","صديري","vest"],
+["uniform","زي موحد","uniform"],
+["tracksuit","بدلة رياضية","tracksuit"],
+["tie","ربطة عنق","necktie"],
+["earrings","أقراط","earrings"],
+["necklace","قلادة","necklace"]
+
+]},
+
+
+"🫀 Human Body":{
+emoji:"🫀",
+items:[
+
+["head","الرأس","head"],
+["hair","الشعر","hair"],
+["face","الوجه","face"],
+["forehead","الجبهة","forehead"],
+["eyebrow","الحاجب","eyebrow"],
+["eyelash","رمش","eyelash"],
+["eye","عين","eye"],
+["ear","أذن","ear"],
+["nose","أنف","nose"],
+["cheek","خد","cheek"],
+["mouth","فم","mouth"],
+["lip","شفة","lip"],
+["tooth","سن","tooth"],
+["tongue","لسان","tongue"],
+["chin","ذقن","chin"],
+["neck","رقبة","neck"],
+["shoulder","كتف","shoulder"],
+["arm","ذراع","arm"],
+["elbow","مرفق","elbow"],
+["wrist","معصم","wrist"],
+["hand","يد","hand"],
+["finger","إصبع","finger"],
+["thumb","إبهام","thumb"],
+["chest","صدر","chest"],
+["back","ظهر","back"],
+["waist","خصر","waist"],
+["stomach","معدة / بطن","stomach"],
+["hip","ورك","hip"],
+["leg","ساق","leg"],
+["knee","ركبة","knee"],
+["ankle","كاحل","ankle"],
+["foot","قدم","foot"],
+["toe","إصبع القدم","toe"],
+["skin","جلد","skin"],
+["heart","قلب","heart"],
+["brain","دماغ","brain"],
+["lung","رئة","lung"],
+["liver","كبد","liver"],
+["kidney","كلية","kidney"],
+["bone","عظم","bone"],
+["muscle","عضلة","muscle"]
+
+]},
+
+
+"🎨 Colors":{
+emoji:"🎨",
+items:[
+
+["red","أحمر","red"],
+["blue","أزرق","blue"],
+["yellow","أصفر","yellow"],
+["green","أخضر","green"],
+["orange","برتقالي","orange"],
+["purple","بنفسجي","purple"],
+["pink","وردي","pink"],
+["brown","بني","brown"],
+["black","أسود","black"],
+["white","أبيض","white"],
+["gray","رمادي","gray"],
+["gold","ذهبي","gold"],
+["silver","فضي","silver"],
+["beige","بيج","beige"],
+["turquoise","فيروزي","turquoise"],
+["teal","أزرق مخضر","teal"],
+["navy","كحلي","navy"],
+["sky blue","أزرق سماوي","sky blue"],
+["baby blue","أزرق فاتح","baby blue"],
+["royal blue","أزرق ملكي","royal blue"],
+["mint","نعناعي","mint"],
+["lime","أخضر ليموني","lime"],
+["olive","زيتوني","olive"],
+["emerald","زمردي","emerald"],
+["forest green","أخضر غابة","forest green"],
+["khaki","كاكي","khaki"],
+["maroon","عنابي","maroon"],
+["burgundy","خمري","burgundy"],
+["crimson","قرمزي","crimson"],
+["scarlet","أحمر قرمزي","scarlet"],
+["coral","مرجاني","coral"],
+["peach","خوخي","peach"],
+["lavender","لافندر","lavender"],
+["lilac","ليلكي","lilac"],
+["violet","بنفسجي مزرق","violet"],
+["magenta","أرجواني فاقع","magenta"],
+["cyan","سماوي","cyan"],
+["indigo","نيلي","indigo"],
+["mustard","أصفر خردلي","mustard"],
+["cream","كريمي","cream"],
+["ivory","عاجي","ivory"],
+["copper","نحاسي","copper"]
+
+]},
+
+
+"🍎 Fruits":{
+emoji:"🍎",
+items:[
+
+["apple","تفاحة","apple"],
+["banana","موز","banana"],
+["orange","برتقال","orange"],
+["lemon","ليمون","lemon"],
+["lime","ليمون أخضر","lime"],
+["grape","عنب","grape"],
+["strawberry","فراولة","strawberry"],
+["watermelon","بطيخ","watermelon"],
+["melon","شمام","melon"],
+["peach","خوخ","peach"],
+["apricot","مشمش","apricot"],
+["plum","برقوق","plum"],
+["pear","إجاص","pear"],
+["cherry","كرز","cherry"],
+["pomegranate","رمان","pomegranate"],
+["fig","تين","fig"],
+["date","تمر","date fruit"],
+["mango","مانغو","mango"],
+["pineapple","أناناس","pineapple"],
+["coconut","جوز الهند","coconut"],
+["kiwi","كيوي","kiwi"],
+["papaya","بابايا","papaya"],
+["avocado","أفوكادو","avocado"],
+["guava","جوافة","guava"],
+["raspberry","توت العليق","raspberry"],
+["blueberry","توت أزرق","blueberry"],
+["blackberry","توت أسود","blackberry"],
+["grapefruit","جريب فروت","grapefruit"],
+["tangerine","يوسفي","tangerine"],
+["passion fruit","فاكهة العاطفة","passion fruit"],
+["dragon fruit","فاكهة التنين","dragon fruit"],
+["persimmon","كاكي","persimmon"],
+["cranberry","توت بري","cranberry"],
+["nectarine","نكتارين","nectarine"],
+["star fruit","فاكهة النجمة","star fruit"],
+["mulberry","توت","mulberry"],
+["jackfruit","جاك فروت","jackfruit"],
+["lychee","ليتشي","lychee"],
+["pistachio fruit","ثمرة الفستق","pistachio fruit"]
+
+]},
+
+
+"🥦 Vegetables":{
+emoji:"🥦",
+items:[
+
+["carrot","جزر","carrot"],
+["potato","بطاطس","potato"],
+["tomato","طماطم","tomato"],
+["onion","بصل","onion"],
+["garlic","ثوم","garlic"],
+["lettuce","خس","lettuce"],
+["cucumber","خيار","cucumber"],
+["pepper","فلفل","bell pepper"],
+["hot pepper","فلفل حار","hot pepper"],
+["eggplant","باذنجان","eggplant"],
+["zucchini","كوسا","zucchini"],
+["broccoli","بروكولي","broccoli"],
+["cauliflower","قرنبيط","cauliflower"],
+["cabbage","ملفوف","cabbage"],
+["spinach","سبانخ","spinach"],
+["peas","بازلاء","peas"],
+["beans","فاصوليا","beans"],
+["green beans","فاصوليا خضراء","green beans"],
+["corn","ذرة","corn"],
+["mushroom","فطر","mushroom"],
+["pumpkin","قرع","pumpkin"],
+["sweet potato","بطاطا حلوة","sweet potato"],
+["beetroot","شمندر","beetroot"],
+["turnip","لفت","turnip"],
+["radish","فجل","radish"],
+["celery","كرفس","celery"],
+["leek","كراث","leek"],
+["artichoke","خرشوف","artichoke"],
+["okra","بامية","okra"],
+["ginger","زنجبيل","ginger"],
+["parsley","بقدونس","parsley"],
+["coriander","كزبرة","coriander"],
+["mint","نعناع","mint"],
+["basil","ريحان","basil"],
+["arugula","جرجير","arugula"],
+["chili","فلفل حار","chili pepper"],
+["asparagus","هليون","asparagus"],
+["brussels sprouts","كرنب بروكسل","brussels sprouts"]
+
+]},
+
+
+"🍽️ World Food":{
+emoji:"🍽️",
+items:[
+
+["pizza","بيتزا","pizza"],
+["burger","برغر","burger"],
+["pasta","معكرونة","pasta"],
+["sushi","سوشي","sushi"],
+["tacos","تاكوس","tacos"],
+["couscous","كسكس","couscous"],
+["tagine","طاجين","tagine"],
+["paella","باييلا","paella"],
+["ramen","رامن","ramen"],
+["curry","كاري","curry"],
+["steak","شريحة لحم","steak"],
+["fried chicken","دجاج مقلي","fried chicken"],
+["sandwich","شطيرة","sandwich"],
+["salad","سلطة","salad"],
+["soup","حساء","soup"],
+["noodles","نودلز","noodles"],
+["rice","أرز","rice"],
+["falafel","فلافل","falafel"],
+["hummus","حمص","hummus"],
+["shawarma","شاورما","shawarma"],
+["kebab","كباب","kebab"],
+["dumplings","زلابية","dumplings"],
+["fish and chips","سمك وبطاطس","fish and chips"],
+["pancakes","فطائر","pancakes"],
+["waffles","وافل","waffles"],
+["omelet","عجة","omelet"],
+["lasagna","لازانيا","lasagna"],
+["fried rice","أرز مقلي","fried rice"],
+["spring rolls","لفائف الربيع","spring rolls"],
+["burrito","بوريتو","burrito"],
+["nachos","ناتشوز","nachos"],
+["hot dog","هوت دوغ","hot dog"],
+["croissant","كرواسون","croissant"],
+["cheesecake","تشيز كيك","cheesecake"],
+["ice cream","آيس كريم","ice cream"]
+
+]},
+
+
+"🏠 Home":{
+emoji:"🏠",
+items:[
+
+["house","منزل","house"],
+["apartment","شقة","apartment"],
+["room","غرفة","room"],
+["bedroom","غرفة النوم","bedroom"],
+["living room","غرفة الجلوس","living room"],
+["kitchen","مطبخ","kitchen"],
+["bathroom","حمام","bathroom"],
+["dining room","غرفة الطعام","dining room"],
+["balcony","شرفة","balcony"],
+["garden","حديقة","garden"],
+["door","باب","door"],
+["window","نافذة","window"],
+["wall","حائط","wall"],
+["floor","أرضية","floor"],
+["ceiling","سقف","ceiling"],
+["stairs","درج","stairs"],
+["bed","سرير","bed"],
+["pillow","وسادة","pillow"],
+["blanket","بطانية","blanket"],
+["sofa","أريكة","sofa"],
+["chair","كرسي","chair"],
+["table","طاولة","table"],
+["desk","مكتب","desk"],
+["wardrobe","خزانة ملابس","wardrobe"],
+["mirror","مرآة","mirror"],
+["lamp","مصباح","lamp"],
+["carpet","سجادة","carpet"],
+["curtain","ستارة","curtain"],
+["fridge","ثلاجة","refrigerator"],
+["oven","فرن","oven"],
+["microwave","ميكروويف","microwave"],
+["sink","حوض","sink"],
+["shower","دوش","shower"],
+["toilet","مرحاض","toilet"],
+["towel","منشفة","towel"],
+["washing machine","غسالة","washing machine"],
+["key","مفتاح","key"],
+["cupboard","خزانة","cupboard"],
+["plate","صحن","plate"],
+["glass","كأس","glass"]
+
+]},
+
+
+"✈️ Travel":{
+emoji:"✈️",
+items:[
+
+["airport","مطار","airport"],
+["passport","جواز السفر","passport"],
+["visa","تأشيرة","visa"],
+["ticket","تذكرة","airplane ticket"],
+["boarding pass","بطاقة الصعود","boarding pass"],
+["flight","رحلة جوية","flight"],
+["airplane","طائرة","airplane"],
+["pilot","طيار","pilot"],
+["flight attendant","مضيف طيران","flight attendant"],
+["airport security","أمن المطار","airport security"],
+["customs","الجمارك","customs"],
+["immigration","مراقبة الجوازات","immigration"],
+["passport control","مراقبة الجوازات","passport control"],
+["departure","المغادرة","departure"],
+["arrival","الوصول","arrival"],
+["gate","بوابة","airport gate"],
+["terminal","مبنى المسافرين","airport terminal"],
+["baggage","الأمتعة","baggage"],
+["luggage","الأمتعة","luggage"],
+["suitcase","حقيبة سفر","suitcase"],
+["backpack","حقيبة ظهر","backpack"],
+["carry-on","حقيبة المقصورة","carry-on luggage"],
+["checked baggage","الأمتعة المشحونة","checked baggage"],
+["baggage claim","استلام الأمتعة","baggage claim"],
+["passport check","فحص الجواز","passport check"],
+["hotel","فندق","hotel"],
+["reservation","حجز","reservation"],
+["reception","الاستقبال","hotel reception"],
+["room","غرفة","hotel room"],
+["key card","بطاقة الغرفة","key card"],
+["taxi","سيارة أجرة","taxi"],
+["train","قطار","train"],
+["bus","حافلة","bus"],
+["station","محطة","station"],
+["map","خريطة","map"],
+["address","عنوان","address"],
+["street","شارع","street"],
+["city","مدينة","city"],
+["tourist","سائح","tourist"],
+["guide","مرشد","tour guide"],
+["emergency","طوارئ","emergency"],
+["police","شرطة","police"],
+["pharmacy","صيدلية","pharmacy"],
+["hospital","مستشفى","hospital"],
+["restaurant","مطعم","restaurant"],
+["menu","قائمة الطعام","menu"],
+["bill","الفاتورة","bill"],
+["money","مال","money"],
+["exchange","صرف العملات","currency exchange"]
+
+]},
+
+
+"🍞 Food Basics":{
+emoji:"🍞",
+items:[
+
+["bread","خبز","bread"],
+["water","ماء","water"],
+["milk","حليب","milk"],
+["cheese","جبن","cheese"],
+["chicken","دجاج","chicken"],
+["beef","لحم بقري","beef"],
+["meat","لحم","meat"],
+["fish","سمك","fish"],
+["egg","بيضة","egg"],
+["rice","أرز","rice"],
+["salt","ملح","salt"],
+["sugar","سكر","sugar"],
+["oil","زيت","oil"],
+["olive oil","زيت الزيتون","olive oil"],
+["butter","زبدة","butter"],
+["honey","عسل","honey"],
+["flour","دقيق","flour"],
+["tea","شاي","tea"],
+["coffee","قهوة","coffee"],
+["mint tea","شاي بالنعناع","mint tea"],
+["pepper","فلفل","pepper"],
+["spice","بهار","spice"],
+["sauce","صلصة","sauce"],
+["vinegar","خل","vinegar"],
+["breakfast","فطور","breakfast"],
+["lunch","غداء","lunch"],
+["dinner","عشاء","dinner"],
+["snack","وجبة خفيفة","snack"],
+["meal","وجبة","meal"],
+["hungry","جائع","hungry"],
+["thirsty","عطشان","thirsty"],
+["delicious","لذيذ","delicious"],
+["sweet","حلو","sweet"],
+["spicy","حار","spicy"],
+["hot","ساخن","hot"],
+["cold","بارد","cold"],
+["fresh","طازج","fresh"],
+["vegetarian","نباتي","vegetarian"]
+
+]},
+
+
+"❤️ Feelings":{
+emoji:"❤️",
+items:[
+
+["happy","سعيد","happy"],
+["sad","حزين","sad"],
+["angry","غاضب","angry"],
+["excited","متحمس","excited"],
+["calm","هادئ","calm"],
+["love","حب","love"],
+["loving","محب","loving"],
+["afraid","خائف","afraid"],
+["scared","خائف","scared"],
+["worried","قلق","worried"],
+["nervous","متوتر","nervous"],
+["relaxed","مرتاح","relaxed"],
+["tired","متعب","tired"],
+["exhausted","مرهق","exhausted"],
+["surprised","متفاجئ","surprised"],
+["confused","مرتبك","confused"],
+["proud","فخور","proud"],
+["shy","خجول","shy"],
+["lonely","وحيد","lonely"],
+["bored","يشعر بالملل","bored"],
+["jealous","غيور","jealous"],
+["hopeful","متفائل","hopeful"],
+["hopeless","فاقد الأمل","hopeless"],
+["grateful","ممتن","grateful"],
+["comfortable","مرتاح","comfortable"],
+["uncomfortable","غير مرتاح","uncomfortable"],
+["disappointed","محبط","disappointed"],
+["embarrassed","محرج","embarrassed"],
+["confident","واثق","confident"],
+["insecure","غير واثق","insecure"],
+["curious","فضولي","curious"],
+["interested","مهتم","interested"],
+["relieved","شعر بالارتياح","relieved"],
+["hurt","مجروح","hurt"],
+["kind","لطيف","kind"],
+["cruel","قاسٍ","cruel"],
+["gentle","حنون","gentle"],
+["peaceful","مسالم / هادئ","peaceful"],
+["grumpy","متذمر","grumpy"],
+["cheerful","مرح","cheerful"]
+
+]},
+
+
+"🌦️ Seasons & Weather":{
+emoji:"🌦️",
+items:[
+
+["spring","الربيع","spring"],
+["summer","الصيف","summer"],
+["autumn","الخريف","autumn"],
+["winter","الشتاء","winter"],
+["sun","شمس","sun"],
+["sunny","مشمس","sunny"],
+["rain","مطر","rain"],
+["rainy","ممطر","rainy"],
+["cloud","سحابة","cloud"],
+["cloudy","غائم","cloudy"],
+["wind","رياح","wind"],
+["windy","عاصف","windy"],
+["snow","ثلج","snow"],
+["snowy","مثلج","snowy"],
+["storm","عاصفة","storm"],
+["thunder","رعد","thunder"],
+["lightning","برق","lightning"],
+["fog","ضباب","fog"],
+["hot","حار","hot"],
+["cold","بارد","cold"],
+["warm","دافئ","warm"],
+["cool","معتدل / بارد قليلاً","cool"],
+["freezing","شديد البرودة","freezing"],
+["humid","رطب","humid"],
+["dry","جاف","dry"],
+["temperature","درجة الحرارة","temperature"],
+["forecast","توقعات الطقس","forecast"],
+["weather","الطقس","weather"],
+["sky","سماء","sky"],
+["rainbow","قوس قزح","rainbow"],
+["ice","جليد","ice"],
+["breeze","نسيم","breeze"],
+["heat","حرارة","heat"],
+["shade","ظل","shade"]
+
 }
-const R=window.SpeechRecognition||window.webkitSpeechRecognition;
-const r=new R();
-r.lang="en-US";r.interimResults=false;r.maxAlternatives=1;
-document.getElementById("speakResult").innerHTML='<div class="result">🎙️ Listening...</div>';
-r.start();
-r.onresult=e=>{
-let said=e.results[0][0].transcript;
-let target=document.getElementById("speakSentence").textContent;
-let score=compareText(said,target);
-document.getElementById("speakResult").innerHTML=
-`<div class="result">
-🎙️ <b>You said:</b> ${said}<br>
-🎯 <b>Target:</b> ${target}<br><br>
-${score>=85?"🎉 Excellent!":score>=65?"👍 Good! Repeat once more.":"💪 Keep practicing!"}
-<br><small>Text match: ${score}%</small>
-</div>`;
-if(score>=85)addXP(20);
+
 };
-r.onerror=()=>{
-document.getElementById("speakResult").innerHTML=
-'<div class="result">Could not access the microphone. Check your browser permission.</div>';
-};
-}
-function compareText(a,b){
-a=a.toLowerCase().replace(/[^\w\s]/g,"").split(/\s+/);
-b=b.toLowerCase().replace(/[^\w\s]/g,"").split(/\s+/);
-let same=a.filter(x=>b.includes(x)).length;
-return Math.round((same/b.length)*100);
-}
-function newSpeakSentence(){
-let x=sentences[Math.floor(Math.random()*sentences.length)];
-document.getElementById("speakSentence").textContent=x[0];
-document.querySelector("#speak .arabic").textContent=x[1];
-document.getElementById("speakResult").innerHTML="";
-}
-function checkThink(){
-let v=document.getElementById("thinkInput").value.trim().toLowerCase();
-let correct="i want to go to university tomorrow";
-let score=compareText(v,correct);
-document.getElementById("thinkResult").innerHTML=
-`<div class="result">
-${score>=90?"✅ Perfect!":"📝 You are close."}<br>
-<b>Correct:</b> I want to go to university tomorrow.<br>
-<small>Match: ${score}%</small>
-</div>`;
-if(score>=90)addXP(20);
-}
-function listenSpeed(rate){
-speak("I want to learn English because I want to travel around the world.",rate);
-addXP(5);
-}
-function listenQuiz(){
-document.getElementById("listenResult").innerHTML=`
-<div class="result">
-<button class="primary" onclick="speak('She goes to university every morning.')">🔊 Play</button>
-<p style="margin:15px 0">What does she do every morning?</p>
-<button class="quiz-option" onclick="listenAnswer(false)">She goes shopping.</button>
-<button class="quiz-option" onclick="listenAnswer(true)">She goes to university.</button>
-<button class="quiz-option" onclick="listenAnswer(false)">She travels.</button>
-</div>`;
-}
-function listenAnswer(ok){
-document.getElementById("listenResult").innerHTML=
-`<div class="result">${ok?"🎉 Correct! +20 XP":"❌ Not quite. Listen again and try."}</div>`;
-if(ok)addXP(20);
-}
-function wordInfo(word){
-let data={
-dream:["حلم","I dream of traveling."],
-improve:["يطوّر / يحسّن","I want to improve my English."],
-travel:["يسافر","I love to travel."]
-};
-let x=data[word];
-document.getElementById("wordResult").innerHTML=
-`<div class="result"><b>${word}</b> — ${x[0]}<br>${x[1]}<br><button class="secondary" onclick="speak('${word}')">🔊 Hear</button></div>`;
-addXP(3);
-}
-function checkWriting(){
-let v=document.getElementById("writingInput").value.trim();
-if(v.length<15){
-document.getElementById("writingResult").innerHTML='<div class="result">✍️ Write a little more so we can check it.</div>';
-return;
-}
-let errors=[];
-if(/\bi am go\b/i.test(v))errors.push("Use “I am going” instead of “I am go”.");
-if(/\bhe go\b/i.test(v))errors.push("Use “he goes” in the present simple.");
-document.getElementById("writingResult").innerHTML=
-`<div class="result">✨ Good effort!<br>${errors.length?errors.join("<br>"):"No basic grammar mistakes detected."}</div>`;
-addXP(20);
-}
-let builderTarget=["I","want","to","learn","English"];
-let builderChosen=[];
-function renderBuilder(){
-document.getElementById("builderWords").innerHTML="";
-builderTarget.forEach((w,i)=>{
-let b=document.createElement("button");
-b.className="word";b.textContent=w;
-b.onclick=()=>chooseWord(i,w);
-document.getElementById("builderWords").appendChild(b);
+
+
+/* =========================
+   VOCABULARY MENU
+========================= */
+
+function renderVocabularyMenu(){
+
+const menu=document.getElementById("vocabMenu");
+
+menu.innerHTML="";
+
+Object.entries(vocabulary).forEach(([category,data])=>{
+
+let card=document.createElement("div");
+
+card.className="vocab-category";
+
+card.innerHTML=`
+
+<div class="big">${data.emoji}</div>
+
+<h3>${category.substring(2)}</h3>
+
+<p style="margin-top:7px">
+${data.items.length} useful words
+</p>
+
+<span class="xp">
+Open →
+</span>
+`;
+
+card.onclick=()=>openWordCategory(category);
+
+menu.appendChild(card);
+
 });
+
 }
-function chooseWord(i,w){
-if(builderChosen.includes(i))return;
-builderChosen.push(i);
-document.getElementById("builderResult").innerHTML=
-`<div class="result">${builderChosen.map(i=>builderTarget[i]).join(" ")}</div>`;
-if(builderChosen.length===builderTarget.length){
-if(builderChosen.every((x,i)=>x===i)){
-document.getElementById("builderResult").innerHTML=
-'<div class="result">🎉 Perfect sentence! +15 XP</div>';addXP(15);
+
+
+function openVocabulary(){
+
+openSection("vocabulary");
+
+}
+
+
+function openWordCategory(category){
+
+document.getElementById("wordCategoryTitle")
+.textContent=
+vocabulary[category].emoji+" "+category.substring(2);
+
+const grid=document.getElementById("wordGrid");
+
+grid.innerHTML="";
+
+vocabulary[category].items.forEach(item=>{
+
+let word=item[0];
+
+let translation=item[1];
+
+let search=item[2];
+
+let image=
+"https://loremflickr.com/500/350/"+
+encodeURIComponent(search)+
+"?lock="+Math.floor(Math.random()*9000);
+
+
+let card=document.createElement("div");
+
+card.className="word-card";
+
+card.innerHTML=`
+
+<img
+class="word-image"
+src="${image}"
+alt="${word}"
+loading="lazy"
+onerror="this.src='https://loremflickr.com/500/350/${encodeURIComponent(search)}'"
+>
+
+<div class="word-content">
+
+<div class="word">
+${word}
+</div>
+
+<div class="translation">
+${translation}
+</div>
+
+<button class="pronounce">
+🔊 Listen
+</button>
+
+</div>
+`;
+
+card.querySelector(".pronounce")
+.onclick=()=>{
+
+speak(word);
+
+addXP(1);
+
+};
+
+grid.appendChild(card);
+
+});
+
+openSection("wordList");
+
+}
+
+
+/* =========================
+   CONNECTORS
+========================= */
+
+const connectors=[
+
+["With","مع","My brother is with my father."],
+["In","في","I am in Morocco."],
+["On","على","The book is on the table."],
+["At","في / عند","I am at the airport."],
+["To","إلى","I am going to America."],
+["From","من","I am from Morocco."],
+["For","من أجل / لـ","This gift is for you."],
+["About","عن","We are talking about travel."],
+["And","و","I like tea and coffee."],
+["But","لكن","I am tired but happy."],
+["Because","لأن","I study because I want to improve."],
+["So","لذلك","I was tired, so I slept."],
+["Or","أو","Tea or coffee?"],
+["If","إذا","If I have time, I will travel."],
+["When","عندما","Call me when you arrive."],
+["Before","قبل","Wash your hands before eating."],
+["After","بعد","I sleep after dinner."],
+["With","مع","I travel with my family."],
+["Without","بدون","I cannot travel without my passport."],
+["Between","بين","The hotel is between two buildings."],
+["Near","قريب من","The hotel is near the airport."],
+["Behind","خلف","The bag is behind the chair."],
+["In front of","أمام","The taxi is in front of the hotel."],
+["Next to","بجانب","The pharmacy is next to the hotel."],
+["Under","تحت","The bag is under the seat."],
+["Over","فوق","The plane is over the city."],
+["Through","عبر","We walked through the airport."],
+["During","خلال","I slept during the flight."],
+["Until","حتى","Wait until I arrive."],
+["Although","رغم أن","Although I was tired, I studied."]
+
+];
+
+
+function renderConnectors(){
+
+let box=document.getElementById("connectorGrid");
+
+box.innerHTML="";
+
+connectors.forEach(c=>{
+
+let div=document.createElement("div");
+
+div.className="connector";
+
+div.innerHTML=`
+
+<div class="connector-word">
+${c[0]}
+</div>
+
+<div class="connector-meaning">
+${c[1]}
+</div>
+
+<div class="example">
+<b>${c[2]}</b>
+<br><br>
+<button class="secondary"
+style="padding:8px 12px"
+>
+🔊 Hear
+</button>
+</div>
+`;
+
+div.querySelector("button")
+.onclick=()=>speak(c[2]);
+
+box.appendChild(div);
+
+});
+
+}
+
+
+/* =========================
+   SENTENCE BUILDER
+========================= */
+
+const builderSentences=[
+
+["I","want","to","learn","English"],
+
+["I","am","from","Morocco"],
+
+["I","love","to","travel"],
+
+["She","is","very","beautiful"],
+
+["I","will","travel","to","America"],
+
+["I","am","learning","English"],
+
+["He","works","every","day"]
+
+];
+
+let currentBuilder=0;
+
+let chosen=[];
+
+
+function renderBuilder(){
+
+const box=document.getElementById("builderWords");
+
+box.innerHTML="";
+
+builderSentences[currentBuilder]
+.forEach((word,index)=>{
+
+let button=document.createElement("button");
+
+button.className="builder-word";
+
+button.textContent=word;
+
+button.onclick=()=>{
+
+chosen.push(word);
+
+document.getElementById("selectedSentence")
+.textContent=chosen.join(" ");
+
+};
+
+box.appendChild(button);
+
+});
+
+}
+
+
+function resetBuilder(){
+
+chosen=[];
+
+document.getElementById("selectedSentence")
+.textContent="Your sentence...";
+
+}
+
+
+function checkBuilder(){
+
+let target=
+builderSentences[currentBuilder].join(" ");
+
+let answer=chosen.join(" ");
+
+if(answer===target){
+
+document.getElementById("builderResult")
+.innerHTML=
+'<div class="result">🎉 Perfect! +15 XP</div>';
+
+addXP(15);
+
 }else{
-document.getElementById("builderResult").innerHTML=
-'<div class="result">Almost! Try again.</div>';builderChosen=[];
+
+document.getElementById("builderResult")
+.innerHTML=
+`<div class="result">
+💜 Keep trying.<br>
+Target: <b>${target}</b>
+</div>`;
+
 }
+
 }
+
+
+/* =========================
+   GRAMMAR QUIZ
+========================= */
+
+const grammarQuestions=[
+
+{
+q:"She ___ English every day.",
+a:["study","studies","studying"],
+correct:1
+},
+
+{
+q:"I ___ travel tomorrow.",
+a:["will","was","am"],
+correct:0
+},
+
+{
+q:"They ___ dinner yesterday.",
+a:["eat","eats","ate"],
+correct:2
+},
+
+{
+q:"He ___ working now.",
+a:["is","are","will"],
+correct:0
+},
+
+{
+q:"We ___ from Morocco.",
+a:["is","are","am"],
+correct:1
+},
+
+{
+q:"I ___ coffee every morning.",
+a:["drink","drinks","drinking"],
+correct:0
 }
+
+];
+
+let grammarIndex=0;
+
+
+function startGrammarQuiz(){
+
+grammarIndex=0;
+
+showGrammarQuestion();
+
+}
+
+
+function showGrammarQuestion(){
+
+let q=grammarQuestions[grammarIndex];
+
+let box=document.getElementById("grammarQuizBox");
+
+box.innerHTML=`
+
+<div class="result">
+
+<h3>${q.q}</h3>
+
+${q.a.map((a,i)=>
+`
+<button class="quiz-option"
+onclick="answerGrammar(${i})">
+${a}
+</button>
+`
+).join("")}
+
+</div>
+
+`;
+
+}
+
+
+function answerGrammar(index){
+
+let q=grammarQuestions[grammarIndex];
+
+if(index===q.correct){
+
+addXP(10);
+
+document.getElementById("grammarQuizBox")
+.innerHTML=
+'<div class="result">🎉 Correct! +10 XP</div>';
+
+grammarIndex++;
+
+setTimeout(()=>{
+
+if(grammarIndex<grammarQuestions.length){
+
+showGrammarQuestion();
+
+}else{
+
+document.getElementById("grammarQuizBox")
+.innerHTML=
+'<div class="result">🏆 You finished the grammar practice!</div>';
+
+}
+
+},700);
+
+}else{
+
+document.getElementById("grammarQuizBox")
+.innerHTML=
+'<div class="result">💜 Not quite. Try the next attempt.</div>';
+
+}
+
+}
+
+
+/* =========================
+   SPEAKING
+========================= */
+
+const sentences=[
+
+["I want to learn English.","أريد أن أتعلم الإنجليزية."],
+
+["I am going to university tomorrow.","سأذهب إلى الجامعة غداً."],
+
+["I love traveling around the world.","أحب السفر حول العالم."],
+
+["I need to practice every day.","أحتاج إلى التدريب كل يوم."],
+
+["I feel happy when I learn something new.","أشعر بالسعادة عندما أتعلم شيئاً جديداً."]
+
+];
+
+
+function startSpeaking(){
+
+if(!("webkitSpeechRecognition" in window)&&
+!("SpeechRecognition" in window)){
+
+document.getElementById("speakResult").innerHTML=
+'<div class="result">🎙️ Speech recognition is not available here. Try Safari/Chrome and allow microphone access.</div>';
+
+return;
+
+}
+
+const R=
+window.SpeechRecognition||
+window.webkitSpeechRecognition;
+
+const r=new R();
+
+r.lang="en-US";
+
+r.interimResults=false;
+
+r.maxAlternatives=1;
+
+document.getElementById("speakResult").innerHTML=
+'<div class="result">🎙️ Listening...</div>';
+
+r.start();
+
+r.onresult=e=>{
+
+let said=e.results[0][0].transcript;
+
+let target=
+document.getElementById("speakSentence")
+.textContent;
+
+let score=compareText(said,target);
+
+document.getElementById("speakResult")
+.innerHTML=
+
+`<div class="result">
+
+🎙️ <b>You said:</b> ${said}
+
+<br>
+
+🎯 <b>Target:</b> ${target}
+
+<br><br>
+
+${score>=85?
+"🎉 Excellent!":
+score>=65?
+"👍 Good! Repeat once more.":
+"💪 Keep practicing!"}
+
+<br>
+
+<small>Text match: ${score}%</small>
+
+</div>`;
+
+if(score>=85)addXP(20);
+
+};
+
+}
+
+
+function compareText(a,b){
+
+a=a.toLowerCase()
+.replace(/[^\w\s]/g,"")
+.split(/\s+/);
+
+b=b.toLowerCase()
+.replace(/[^\w\s]/g,"")
+.split(/\s+/);
+
+let same=
+a.filter(x=>b.includes(x)).length;
+
+return Math.round((same/b.length)*100);
+
+}
+
+
+function newSpeakSentence(){
+
+let x=
+sentences[Math.floor(Math.random()*sentences.length)];
+
+document.getElementById("speakSentence")
+.textContent=x[0];
+
+document.querySelector("#speak .small")
+.textContent=x[1];
+
+document.getElementById("speakResult")
+.innerHTML="";
+
+}
+
+
+/* =========================
+   THINK
+========================= */
+
+function checkThink(){
+
+let v=
+document.getElementById("thinkInput")
+.value.trim().toLowerCase();
+
+let correct=
+"i want to go to university tomorrow";
+
+let score=compareText(v,correct);
+
+document.getElementById("thinkResult")
+.innerHTML=
+
+`<div class="result">
+
+${score>=90?
+"✅ Perfect!":
+"📝 You are close."}
+
+<br>
+
+<b>Correct:</b>
+I want to go to university tomorrow.
+
+<br>
+
+<small>Match: ${score}%</small>
+
+</div>`;
+
+if(score>=90)addXP(20);
+
+}
+
+
+/* =========================
+   LISTENING
+========================= */
+
+function listenSpeed(rate){
+
+speak(
+"I want to learn English because I want to travel around the world.",
+rate
+);
+
+addXP(5);
+
+}
+
+
+function listenQuiz(){
+
+document.getElementById("listenResult")
+.innerHTML=
+
+`
+
+<div class="result">
+
+<button class="primary"
+onclick="speak('She goes to university every morning.')">
+🔊 Play
+</button>
+
+<p style="margin:15px 0">
+What does she do every morning?
+</p>
+
+<button class="quiz-option"
+onclick="listenAnswer(false)">
+She goes shopping.
+</button>
+
+<button class="quiz-option"
+onclick="listenAnswer(true)">
+She goes to university.
+</button>
+
+<button class="quiz-option"
+onclick="listenAnswer(false)">
+She travels.
+</button>
+
+</div>
+
+`;
+
+}
+
+
+function listenAnswer(ok){
+
+document.getElementById("listenResult")
+.innerHTML=
+
+`<div class="result">
+${ok?
+"🎉 Correct! +20 XP":
+"❌ Not quite. Listen again and try."}
+</div>`;
+
+if(ok)addXP(20);
+
+}
+
+
+/* =========================
+   WRITING
+========================= */
+
+function checkWriting(){
+
+let v=
+document.getElementById("writingInput")
+.value.trim();
+
+if(v.length<15){
+
+document.getElementById("writingResult")
+.innerHTML=
+'<div class="result">✍️ Write a little more.</div>';
+
+return;
+
+}
+
+document.getElementById("writingResult")
+.innerHTML=
+'<div class="result">✨ Good effort! Keep writing every day.</div>';
+
+addXP(20);
+
+}
+
+
+/* =========================
+   STORIES
+========================= */
+
+function storyAnswer(n){
+
+document.getElementById("storyResult")
+.innerHTML=
+
+n===1?
+
+'<div class="result">💜 Great! Natural answer. +25 XP</div>':
+
+'<div class="result">Try an answer that matches the question about this weekend.</div>';
+
+if(n===1)addXP(25);
+
+}
+
+
+/* =========================
+   START APP
+========================= */
+
+renderVocabularyMenu();
+
+renderConnectors();
+
 renderBuilder();
 
-let vocab={
-"🍎 Fruits":["apple","banana","orange","grape"],
-"🎨 Colors":["purple","blue","green","yellow"],
-"👗 Clothes":["dress","shirt","shoes","jacket"],
-"👁️ Body":["eye","hand","head","heart"],
-"🏠 Home":["room","door","window","kitchen"],
-"🎓 University":["class","student","teacher","exam"],
-"✈️ Travel":["airport","ticket","hotel","passport"],
-"🍔 Food":["bread","rice","chicken","vegetables"],
-"❤️ Feelings":["happy","sad","excited","calm"],
-"🌦️ Weather":["sunny","rainy","cloudy","windy"]
-};
-Object.entries(vocab).forEach(([title,words])=>{
-let d=document.createElement("div");d.className="card";
-d.innerHTML=`<div class="icon">${title.split(" ")[0]}</div><h3>${title.substring(2)}</h3>
-<p>${words.join(" · ")}</p><span class="xp">Explore →</span>`;
-d.onclick=()=>speak(words.join(", "));
-document.getElementById("vocabGrid").appendChild(d);
-});
-function grammarQuiz(){
-document.getElementById("grammarResult").innerHTML=`
-<div class="result">
-<p>She ___ English every day.</p>
-<button class="quiz-option" onclick="grammarAnswer(false)">study</button>
-<button class="quiz-option" onclick="grammarAnswer(true)">studies</button>
-</div>`;
-}
-function grammarAnswer(ok){
-document.getElementById("grammarResult").innerHTML=
-`<div class="result">${ok?"✅ Correct! +15 XP":"❌ Try again."}</div>`;
-if(ok)addXP(15);
-}
-function storyAnswer(n){
-document.getElementById("storyResult").innerHTML=
-n===1?'<div class="result">💜 Great! That is a natural answer. +25 XP</div>':
-'<div class="result">Try an answer that matches the question about this weekend.</div>';
-if(n===1)addXP(25);
-}
 updateStats();
+
 </script>
+
 </body>
 </html>
