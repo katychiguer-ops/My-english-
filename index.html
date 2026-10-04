@@ -2,18 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>English Quest 🇺🇸</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Quest</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0
+}
 
 body{
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-background:linear-gradient(135deg,#f5efff,#eee7ff,#faf7ff);
+background:linear-gradient(135deg,#f5efff,#eee7ff,#f9f4ff);
 color:#29233d;
-min-height:100vh;
-padding-bottom:90px
+min-height:100vh
 }
 
 button{
@@ -23,29 +26,31 @@ cursor:pointer
 }
 
 .app{
-max-width:1150px;
+max-width:1100px;
 margin:auto;
-padding:18px
+padding:20px
 }
 
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 4px 25px
+padding:18px 4px 25px
 }
 
 .logo{
 font-size:25px;
-font-weight:900;
+font-weight:800;
 color:#7047d9
 }
 
-.logo span{font-size:30px}
+.logo span{
+font-size:29px
+}
 
 .stats{
 display:flex;
-gap:8px
+gap:10px
 }
 
 .stat{
@@ -53,7 +58,7 @@ background:white;
 padding:9px 13px;
 border-radius:15px;
 box-shadow:0 5px 18px #6d4ac01a;
-font-weight:800;
+font-weight:700;
 font-size:14px
 }
 
@@ -73,7 +78,7 @@ margin-bottom:8px
 
 .hero p{
 opacity:.9;
-margin-bottom:18px
+margin-bottom:20px
 }
 
 .progress{
@@ -97,12 +102,12 @@ gap:15px
 }
 
 .card{
-background:white;
+background:#fff;
 border-radius:23px;
 padding:22px;
 box-shadow:0 8px 25px #5d3ba015;
 transition:.2s;
-border:1px solid white
+border:1px solid #ffffff
 }
 
 .card:hover{
@@ -136,15 +141,20 @@ font-size:12px;
 font-weight:800
 }
 
-section{display:none}
-section.active{display:block}
+section{
+display:none
+}
+
+section.active{
+display:block
+}
 
 .back{
 background:white;
 color:#7047d9;
 padding:10px 15px;
 border-radius:13px;
-font-weight:800;
+font-weight:700;
 margin-bottom:18px
 }
 
@@ -156,20 +166,17 @@ box-shadow:0 8px 25px #5d3ba015;
 margin-bottom:18px
 }
 
-.primary{
-background:#7047d9;
-color:white;
-padding:12px 18px;
-border-radius:14px;
-font-weight:800
+.sentence{
+font-size:25px;
+font-weight:750;
+text-align:center;
+padding:25px 5px
 }
 
-.secondary{
-background:#f0eaff;
-color:#7047d9;
-padding:12px 18px;
-border-radius:14px;
-font-weight:800
+.arabic{
+text-align:center;
+color:#888;
+margin-bottom:20px
 }
 
 .actions{
@@ -179,207 +186,24 @@ flex-wrap:wrap;
 justify-content:center
 }
 
-.small{
-font-size:13px;
-color:#898295
-}
-
-/* VOCABULARY */
-
-.vocab-menu{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:14px;
-margin-top:20px
-}
-
-.vocab-category{
-background:linear-gradient(145deg,#fff,#f8f4ff);
-border-radius:22px;
-padding:20px;
-box-shadow:0 7px 20px #5d3ba012;
-cursor:pointer;
-transition:.2s
-}
-
-.vocab-category:hover{
-transform:translateY(-4px)
-}
-
-.vocab-category .big{
-font-size:42px;
-margin-bottom:10px
-}
-
-.vocab-category h3{
-color:#4e368d
-}
-
-/* WORD CARDS */
-
-.word-grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
-gap:15px;
-margin-top:20px
-}
-
-.word-card{
-background:#fff;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 7px 22px #5d3ba015;
-transition:.2s
-}
-
-.word-card:hover{
-transform:translateY(-3px)
-}
-
-.word-image{
-width:100%;
-height:145px;
-object-fit:cover;
-display:block;
-background:#eee
-}
-
-.word-content{
-padding:13px
-}
-
-.word{
-font-size:19px;
-font-weight:900;
-color:#4f3694
-}
-
-.translation{
-font-size:14px;
-color:#888;
-margin-top:4px
-}
-
-.pronounce{
-margin-top:10px;
-width:100%;
-padding:9px;
-border-radius:12px;
-background:#eee7ff;
-color:#7047d9;
-font-weight:800
-}
-
-.category-title{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px
-}
-
-/* CONNECTORS */
-
-.connector-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:15px;
-margin-top:20px
-}
-
-.connector{
-background:#faf8ff;
-border:1px solid #eee6ff;
-border-radius:20px;
-padding:18px
-}
-
-.connector-word{
-font-size:24px;
-font-weight:900;
-color:#7047d9
-}
-
-.connector-meaning{
-color:#777;
-margin:5px 0 12px
-}
-
-.example{
-background:white;
+.primary{
+background:#7047d9;
+color:white;
+padding:12px 18px;
 border-radius:14px;
-padding:12px;
-line-height:1.5
-}
-
-/* SENTENCE MAKER */
-
-.builder-area{
-display:flex;
-flex-wrap:wrap;
-gap:9px;
-margin:20px 0
-}
-
-.builder-word{
-background:#f0eaff;
-color:#5f3bb1;
-padding:10px 14px;
-border-radius:13px;
-font-weight:800
-}
-
-.selected-sentence{
-min-height:60px;
-border:2px dashed #cbb8f4;
-border-radius:18px;
-padding:15px;
-font-size:21px;
-font-weight:800;
-margin:15px 0
-}
-
-/* GRAMMAR */
-
-.grammar-card{
-background:#faf8ff;
-border-radius:20px;
-padding:20px;
-margin:15px 0
-}
-
-.grammar-card h3{
-color:#7047d9;
-margin-bottom:10px
-}
-
-.example-line{
-padding:8px 0;
-font-size:18px
-}
-
-.quiz-option{
-width:100%;
-padding:14px;
-margin:7px 0;
-background:#f7f3ff;
-border-radius:14px;
-text-align:left;
 font-weight:700
 }
 
-.quiz-option:hover{
-background:#e9dfff
+.secondary{
+background:#f0eaff;
+color:#7047d9;
+padding:12px 18px;
+border-radius:14px;
+font-weight:700
 }
 
-.result{
-margin-top:15px;
-padding:15px;
-border-radius:15px;
-background:#f7f3ff;
-line-height:1.7
-}
-
-textarea,input{
+textarea,
+input{
 width:100%;
 border:2px solid #eee7fa;
 border-radius:15px;
@@ -387,6 +211,59 @@ padding:14px;
 font-size:16px;
 outline:none;
 margin:10px 0
+}
+
+textarea:focus,
+input:focus{
+border-color:#9a78e9
+}
+
+.result{
+margin-top:15px;
+padding:15px;
+border-radius:15px;
+background:#f7f3ff;
+line-height:1.6
+}
+
+.words{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:15px
+}
+
+.word{
+padding:12px 15px;
+background:#f4efff;
+border-radius:14px;
+cursor:pointer;
+font-weight:700;
+color:#6541bf
+}
+
+.skill{
+margin:15px 0
+}
+
+.skill-top{
+display:flex;
+justify-content:space-between;
+font-size:13px;
+font-weight:700
+}
+
+.bar{
+height:9px;
+background:#eeeaf5;
+border-radius:20px;
+margin-top:7px
+}
+
+.bar div{
+height:100%;
+background:#8058df;
+border-radius:20px
 }
 
 .nav{
@@ -414,10 +291,163 @@ color:#777
 .nav button.active{
 background:#eee7ff;
 color:#7047d9;
-font-weight:900
+font-weight:800
+}
+
+.small{
+font-size:13px;
+color:#898295
+}
+
+.quiz-option{
+width:100%;
+padding:14px;
+margin:7px 0;
+background:#f7f3ff;
+border-radius:14px;
+text-align:left;
+font-weight:600
+}
+
+.quiz-option:hover{
+background:#e9dfff
+}
+
+/* VOCABULARY */
+
+.vocab-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(145px,1fr));
+gap:12px;
+margin-top:20px
+}
+
+.vocab-item{
+background:#faf8ff;
+border:1px solid #eee7fa;
+border-radius:20px;
+padding:12px;
+text-align:center;
+transition:.2s
+}
+
+.vocab-item:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 20px #7047d91c
+}
+
+.vocab-picture{
+height:90px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:52px;
+background:#f1ebff;
+border-radius:16px;
+margin-bottom:9px
+}
+
+.vocab-word{
+font-weight:800;
+font-size:16px;
+margin-bottom:3px
+}
+
+.vocab-ar{
+font-size:12px;
+color:#888;
+margin-bottom:9px
+}
+
+.mic{
+width:38px;
+height:38px;
+border-radius:50%;
+background:#7047d9;
+color:white;
+font-size:17px;
+display:inline-flex;
+align-items:center;
+justify-content:center
+}
+
+.category-title{
+margin-top:25px;
+font-size:24px;
+color:#7047d9
+}
+
+.search{
+margin:15px 0
+}
+
+/* GRAMMAR */
+
+.grammar-card{
+background:#faf8ff;
+border-radius:20px;
+padding:20px;
+margin:15px 0;
+border-left:5px solid #7047d9
+}
+
+.grammar-card h3{
+color:#7047d9;
+margin-bottom:10px
+}
+
+.example{
+background:white;
+border-radius:14px;
+padding:12px;
+margin:8px 0
+}
+
+.tense-table{
+width:100%;
+border-collapse:collapse;
+margin-top:12px
+}
+
+.tense-table td,
+.tense-table th{
+padding:10px;
+border-bottom:1px solid #eee7fa;
+text-align:left
+}
+
+.tense-table th{
+color:#7047d9
+}
+
+/* CONNECTORS */
+
+.connector{
+background:#faf8ff;
+padding:17px;
+border-radius:18px;
+margin:10px 0
+}
+
+.connector-word{
+font-size:21px;
+font-weight:800;
+color:#7047d9
+}
+
+.connector-example{
+font-size:17px;
+margin-top:6px
+}
+
+.connector-ar{
+color:#888;
+font-size:13px;
+margin-top:4px
 }
 
 @media(max-width:600px){
+
 .app{
 padding:14px 14px 100px
 }
@@ -436,22 +466,19 @@ padding:8px
 }
 
 .nav{
-width:96%;
+width:95%;
 justify-content:space-around
 }
 
 .nav button{
-padding:9px 7px;
+padding:9px 8px;
 font-size:11px
 }
 
-.word-grid{
+.vocab-grid{
 grid-template-columns:repeat(2,1fr)
 }
 
-.word-image{
-height:125px
-}
 }
 </style>
 </head>
@@ -461,20 +488,31 @@ height:125px
 <div class="app">
 
 <header>
-<div class="logo"><span>🌎</span> English Quest</div>
+
+<div class="logo">
+<span>🌎</span> English Quest
+</div>
 
 <div class="stats">
-<div class="stat">🔥 <span id="streak">1</span></div>
-<div class="stat">⭐ <span id="xp">0</span> XP</div>
+
+<div class="stat">
+🔥 <span id="streak">1</span>
+</div>
+
+<div class="stat">
+⭐ <span id="xp">0</span> XP
+</div>
+
 </div>
 </header>
 
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
 
 <section id="home" class="active">
 
 <div class="hero">
+
 <h1>Ready for your quest? 🚀</h1>
 
 <p>
@@ -486,8 +524,9 @@ Learn English. Think English. Speak English.
 </div>
 
 <p style="margin-top:10px;font-size:13px">
-Level <b id="level">1</b> · Your English journey
+Level <b id="level">1</b> · Survive English
 </p>
+
 </div>
 
 
@@ -496,80 +535,145 @@ Level <b id="level">1</b> · Your English journey
 <div class="card" onclick="openSection('speak')">
 <div class="icon">🗣️</div>
 <h3>Speak Lab</h3>
-<p>Practice speaking and improve your pronunciation.</p>
+<p>Practice speaking and compare your speech with the target sentence.</p>
 <span class="xp">+20 XP</span>
 </div>
-
 
 <div class="card" onclick="openSection('think')">
 <div class="icon">🇲🇦➡️🇺🇸</div>
 <h3>Think in English</h3>
-<p>Turn your thoughts into natural English.</p>
+<p>Turn your thoughts into natural English sentences.</p>
 <span class="xp">+20 XP</span>
 </div>
-
 
 <div class="card" onclick="openSection('listen')">
 <div class="icon">🎧</div>
 <h3>Listening Lab</h3>
-<p>Train your ears with real English sentences.</p>
+<p>Train your ear from slow speech to fast American English.</p>
 <span class="xp">+20 XP</span>
 </div>
-
 
 <div class="card" onclick="openSection('reading')">
 <div class="icon">📖</div>
 <h3>Reading</h3>
-<p>Read simple stories and discover vocabulary.</p>
+<p>Read stories and discover words naturally.</p>
 <span class="xp">+15 XP</span>
 </div>
-
 
 <div class="card" onclick="openSection('writing')">
 <div class="icon">✍️</div>
 <h3>Writing</h3>
-<p>Write English and practice expressing yourself.</p>
+<p>Write, check your mistakes and try again.</p>
 <span class="xp">+20 XP</span>
 </div>
-
 
 <div class="card" onclick="openSection('builder')">
 <div class="icon">🧩</div>
 <h3>Sentence Builder</h3>
-<p>Learn how to build sentences yourself.</p>
+<p>Build simple sentences and gradually make them richer.</p>
 <span class="xp">+15 XP</span>
 </div>
 
-
 <div class="card" onclick="openSection('vocabulary')">
 <div class="icon">🌈</div>
-<h3>Vocabulary</h3>
-<p>Learn words visually with real pictures and pronunciation.</p>
-<span class="xp">Explore →</span>
+<h3>Vocabulary Worlds</h3>
+<p>Explore hundreds of useful words with pictures and pronunciation.</p>
+<span class="xp">+10 XP</span>
 </div>
-
 
 <div class="card" onclick="openSection('connectors')">
 <div class="icon">🔗</div>
 <h3>Connectors</h3>
-<p>Learn words like in, with, because, but, and, so...</p>
-<span class="xp">Explore →</span>
+<p>Learn words like in, with, because, although, before and after through examples.</p>
+<span class="xp">+10 XP</span>
 </div>
-
 
 <div class="card" onclick="openSection('grammar')">
 <div class="icon">📚</div>
-<h3>Grammar</h3>
-<p>Small useful grammar lessons without pressure.</p>
-<span class="xp">Practice →</span>
+<h3>Easy Grammar</h3>
+<p>Present, past and future explained simply without pressure.</p>
+<span class="xp">+15 XP</span>
 </div>
 
+<div class="card" onclick="openSection('grammarPractice')">
+<div class="icon">✏️</div>
+<h3>Grammar Practice</h3>
+<p>Practice what you learned with small exercises.</p>
+<span class="xp">+20 XP</span>
+</div>
 
 <div class="card" onclick="openSection('stories')">
 <div class="icon">🎬</div>
 <h3>Conversation Stories</h3>
-<p>Practice real-life situations.</p>
+<p>Enter real-life conversations and choose what you would say.</p>
 <span class="xp">+25 XP</span>
+</div>
+
+</div>
+
+
+<div class="lesson" style="margin-top:18px">
+
+<h3>📊 Your Progress</h3>
+
+<div class="skill">
+<div class="skill-top">
+<span>🗣 Speaking</span>
+<span>72%</span>
+</div>
+<div class="bar">
+<div style="width:72%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-top">
+<span>🎧 Listening</span>
+<span>61%</span>
+</div>
+<div class="bar">
+<div style="width:61%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-top">
+<span>📖 Reading</span>
+<span>84%</span>
+</div>
+<div class="bar">
+<div style="width:84%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-top">
+<span>✍️ Writing</span>
+<span>53%</span>
+</div>
+<div class="bar">
+<div style="width:53%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-top">
+<span>🧠 Vocabulary</span>
+<span>70%</span>
+</div>
+<div class="bar">
+<div style="width:70%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-top">
+<span>⚡ Grammar</span>
+<span>64%</span>
+</div>
+<div class="bar">
+<div style="width:64%"></div>
+</div>
 </div>
 
 </div>
@@ -577,7 +681,7 @@ Level <b id="level">1</b> · Your English journey
 </section>
 
 
-<!-- SPEAK -->
+<!-- ================= SPEAK ================= -->
 
 <section id="speak">
 
@@ -593,11 +697,11 @@ Level <b id="level">1</b> · Your English journey
 Listen → speak → compare → repeat.
 </p>
 
-<div style="font-size:26px;font-weight:800;text-align:center;padding:25px 5px" id="speakSentence">
+<div class="sentence" id="speakSentence">
 I want to learn English.
 </div>
 
-<div style="text-align:center;color:#888;margin-bottom:20px">
+<div class="arabic">
 أريد أن أتعلم الإنجليزية.
 </div>
 
@@ -627,7 +731,7 @@ onclick="newSpeakSentence()">
 </section>
 
 
-<!-- THINK -->
+<!-- ================= THINK ================= -->
 
 <section id="think">
 
@@ -643,9 +747,11 @@ onclick="newSpeakSentence()">
 أنا أريد أن أذهب إلى الجامعة غداً.
 </p>
 
-<textarea id="thinkInput"
+<textarea
+id="thinkInput"
 placeholder="Write your English sentence..."></textarea>
 
+<!-- FIXED -->
 <button class="primary" onclick="checkThink()">
 Check my answer
 </button>
@@ -657,7 +763,7 @@ Check my answer
 </section>
 
 
-<!-- LISTEN -->
+<!-- ================= LISTEN ================= -->
 
 <section id="listen">
 
@@ -704,7 +810,7 @@ Start Listening Challenge
 </section>
 
 
-<!-- READING -->
+<!-- ================= READING ================= -->
 
 <section id="reading">
 
@@ -721,17 +827,37 @@ A New Day
 </h3>
 
 <p style="line-height:1.8">
+
 Every morning, Maya opens her window and looks at the city.
 She drinks coffee, checks her plans, and gets ready for university.
 She wants to improve her English because she dreams of traveling around the world.
+
 </p>
+
+<div class="words">
+
+<div class="word" onclick="wordInfo('dream')">
+dream
+</div>
+
+<div class="word" onclick="wordInfo('improve')">
+improve
+</div>
+
+<div class="word" onclick="wordInfo('travel')">
+travel
+</div>
+
+</div>
+
+<div id="wordResult"></div>
 
 </div>
 
 </section>
 
 
-<!-- WRITING -->
+<!-- ================= WRITING ================= -->
 
 <section id="writing">
 
@@ -747,7 +873,8 @@ She wants to improve her English because she dreams of traveling around the worl
 Write 3–5 sentences about your day.
 </p>
 
-<textarea id="writingInput"
+<textarea
+id="writingInput"
 rows="7"
 placeholder="Today I..."></textarea>
 
@@ -763,7 +890,7 @@ Check writing
 </section>
 
 
-<!-- SENTENCE BUILDER -->
+<!-- ================= BUILDER ================= -->
 
 <section id="builder">
 
@@ -776,31 +903,26 @@ Check writing
 <h2>🧩 Sentence Builder</h2>
 
 <p>
-Tap the words to build the sentence.
+Build the sentence in the correct order.
 </p>
 
-<div class="selected-sentence"
-id="selectedSentence">
-Your sentence...
-</div>
+<div class="words" id="builderWords"></div>
 
-<div class="builder-area"
-id="builderWords">
-</div>
+<div id="builderResult"></div>
 
-<button class="secondary"
+<button
+class="secondary"
+style="margin-top:15px"
 onclick="resetBuilder()">
 ↻ Reset
 </button>
-
-<div id="builderResult"></div>
 
 </div>
 
 </section>
 
 
-<!-- VOCABULARY -->
+<!-- ================= VOCABULARY ================= -->
 
 <section id="vocabulary">
 
@@ -808,55 +930,29 @@ onclick="resetBuilder()">
 ← Home
 </button>
 
-<div class="lesson" id="vocabularyMain">
-
-<div class="category-title">
-
-<div>
-<h2>🌈 Vocabulary Worlds</h2>
-<p class="small">
-Learn with pictures → word → Arabic → 🔊 pronunciation
-</p>
-</div>
-
-</div>
-
-<div class="vocab-menu" id="vocabMenu"></div>
-
-</div>
-
-</section>
-
-
-<!-- WORDS -->
-
-<section id="wordList">
-
-<button class="back" onclick="openVocabulary()">
-← Vocabulary
-</button>
-
 <div class="lesson">
 
-<div class="category-title">
+<h2>🌈 Vocabulary Worlds</h2>
 
-<div>
-<h2 id="wordCategoryTitle"></h2>
 <p class="small">
-Look at the picture, learn the word, then listen 🔊
+Tap 🔊 to hear every word.
 </p>
-</div>
 
-</div>
+<input
+class="search"
+id="vocabSearch"
+placeholder="🔎 Search vocabulary..."
+oninput="searchVocabulary()"
+>
 
-<div class="word-grid" id="wordGrid"></div>
+<div id="vocabContent"></div>
 
 </div>
 
 </section>
 
 
-<!-- CONNECTORS -->
+<!-- ================= CONNECTORS ================= -->
 
 <section id="connectors">
 
@@ -866,20 +962,20 @@ Look at the picture, learn the word, then listen 🔊
 
 <div class="lesson">
 
-<h2>🔗 English Connectors & Prepositions</h2>
+<h2>🔗 English Connectors & Useful Words</h2>
 
 <p class="small">
-Learn each word through a real sentence.
+Learn the word → see it in a sentence → hear it.
 </p>
 
-<div class="connector-grid" id="connectorGrid"></div>
+<div id="connectorContent"></div>
 
 </div>
 
 </section>
 
 
-<!-- GRAMMAR -->
+<!-- ================= GRAMMAR ================= -->
 
 <section id="grammar">
 
@@ -889,106 +985,27 @@ Learn each word through a real sentence.
 
 <div class="lesson">
 
-<h2>📚 Grammar — Easy English</h2>
+<h2>📚 Easy Grammar</h2>
 
 <p class="small">
-No pressure. Learn one small idea at a time.
+No pressure. Understand first, then practice.
 </p>
-
-
-<div class="grammar-card">
-
-<h3>🔮 Future — WILL</h3>
-
-<p>
-When we talk about the future, we can use <b>will</b>.
-</p>
-
-<div class="example-line">
-I will marry you. 💜
-</div>
-
-<div class="example-line">
-You will travel.
-</div>
-
-<div class="example-line">
-He will work.
-</div>
-
-<div class="example-line">
-She will study.
-</div>
-
-<div class="example-line">
-It will rain.
-</div>
-
-<div class="example-line">
-We will go.
-</div>
-
-<div class="example-line">
-They will come.
-</div>
-
-<button class="secondary"
-onclick="speak('I will marry you.')">
-🔊 Hear example
-</button>
-
-</div>
-
-
-<div class="grammar-card">
-
-<h3>⏪ Past</h3>
-
-<p>
-For something that already happened.
-</p>
-
-<div class="example-line">
-I worked yesterday.
-</div>
-
-<div class="example-line">
-She visited Morocco.
-</div>
-
-<div class="example-line">
-They traveled last year.
-</div>
-
-</div>
-
 
 <div class="grammar-card">
 
 <h3>🌱 Present Simple</h3>
 
 <p>
-For habits and things that happen regularly.
+نستخدمه للعادات والأشياء التي تحدث بشكل متكرر.
 </p>
 
-<div class="example-line">
-I work every day.
+<div class="example">
+I work every day.<br>
+She works every day.
 </div>
 
-<div class="example-line">
-You study English.
-</div>
-
-<div class="example-line">
-He works every day.
-</div>
-
-<div class="example-line">
-She studies English.
-</div>
-
-<p style="margin-top:10px;color:#7047d9;font-weight:700">
-💡 With he / she / it, we usually add -s or -es.
+<p>
+مع <b>he / she / it</b> نضيف غالبًا <b>s</b>.
 </p>
 
 </div>
@@ -996,44 +1013,130 @@ She studies English.
 
 <div class="grammar-card">
 
-<h3>🏃 Present Continuous</h3>
+<h3>⏳ Past Simple</h3>
 
 <p>
-For something happening now.
+نستخدمه لشيء حدث وانتهى في الماضي.
 </p>
 
-<div class="example-line">
-I am studying.
+<div class="example">
+I worked yesterday.<br>
+She visited her friend.
 </div>
 
-<div class="example-line">
-She is cooking.
-</div>
-
-<div class="example-line">
-They are traveling.
-</div>
+<p>
+كثير من الأفعال المنتظمة تأخذ <b>-ed</b>.
+</p>
 
 </div>
 
 
-<h3 style="margin-top:25px">
-🧠 Practice
-</h3>
+<div class="grammar-card">
 
-<div id="grammarQuizBox"></div>
+<h3>🚀 Future with WILL</h3>
 
-<button class="primary"
-onclick="startGrammarQuiz()">
-Start Exercise
-</button>
+<p>
+عندما نتحدث عن المستقبل يمكننا استخدام <b>will</b>.
+</p>
+
+<div class="example">
+I will marry you. ❤️
+</div>
+
+<table class="tense-table">
+
+<tr>
+<th>Subject</th>
+<th>Future</th>
+</tr>
+
+<tr>
+<td>I</td>
+<td>I will</td>
+</tr>
+
+<tr>
+<td>You</td>
+<td>You will</td>
+</tr>
+
+<tr>
+<td>He</td>
+<td>He will</td>
+</tr>
+
+<tr>
+<td>She</td>
+<td>She will</td>
+</tr>
+
+<tr>
+<td>It</td>
+<td>It will</td>
+</tr>
+
+<tr>
+<td>We</td>
+<td>We will</td>
+</tr>
+
+<tr>
+<td>They</td>
+<td>They will</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="grammar-card">
+
+<h3>💡 Negative</h3>
+
+<div class="example">
+I will not go.<br>
+I won't go.
+</div>
+
+</div>
+
+
+<div class="grammar-card">
+
+<h3>❓ Questions</h3>
+
+<div class="example">
+Will you come tomorrow?
+</div>
+
+</div>
 
 </div>
 
 </section>
 
 
-<!-- STORIES -->
+<!-- ================= GRAMMAR PRACTICE ================= -->
+
+<section id="grammarPractice">
+
+<button class="back" onclick="openSection('home')">
+← Home
+</button>
+
+<div class="lesson">
+
+<h2>✏️ Grammar Practice</h2>
+
+<div id="grammarExercise"></div>
+
+</div>
+
+</section>
+
+
+<!-- ================= STORIES ================= -->
 
 <section id="stories">
 
@@ -1046,8 +1149,7 @@ Start Exercise
 <h2>🎬 Conversation Story</h2>
 
 <div class="result">
-👨 <b>Alex:</b>
-Hey! What are you doing this weekend?
+👨 <b>Alex:</b> Hey! What are you doing this weekend?
 </div>
 
 <p style="margin:18px 0;font-weight:700">
@@ -1075,9 +1177,10 @@ I don't know English.
 
 </section>
 
-
 </div>
 
+
+<!-- ================= NAV ================= -->
 
 <div class="nav">
 
@@ -1097,36 +1200,46 @@ I don't know English.
 🌈 Words
 </button>
 
+<button onclick="openSection('grammar')">
+📚 Grammar
+</button>
+
 </div>
 
 
 <script>
 
-/* =========================
-   BASIC APP
-========================= */
+/* =====================================================
+   XP
+===================================================== */
 
 let xp=Number(localStorage.getItem("eq_xp")||0);
 
 let streak=Number(localStorage.getItem("eq_streak")||1);
 
-
 function updateStats(){
 
-document.getElementById("xp").textContent=xp;
+const xpElement=document.getElementById("xp");
+const streakElement=document.getElementById("streak");
+const levelElement=document.getElementById("level");
+const progressElement=document.getElementById("mainProgress");
 
-document.getElementById("streak").textContent=streak;
+if(xpElement) xpElement.textContent=xp;
 
-document.getElementById("level").textContent=
-Math.floor(xp/100)+1;
+if(streakElement) streakElement.textContent=streak;
 
-document.getElementById("mainProgress").style.width=
-(xp%100)+"%";
+if(levelElement){
+levelElement.textContent=Math.floor(xp/100)+1;
+}
+
+if(progressElement){
+progressElement.style.width=(xp%100)+"%";
+}
 
 localStorage.setItem("eq_xp",xp);
 
+localStorage.setItem("eq_streak",streak);
 }
-
 
 function addXP(n){
 
@@ -1137,33 +1250,51 @@ updateStats();
 }
 
 
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
 function openSection(id){
 
+const target=document.getElementById(id);
+
+if(!target)return;
+
 document.querySelectorAll("section")
-.forEach(s=>s.classList.remove("active"));
+.forEach(s=>{
+s.classList.remove("active");
+});
 
-document.getElementById(id)
-.classList.add("active");
+target.classList.add("active");
 
-window.scrollTo(0,0);
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
+
+/* =====================================================
+   SPEECH SYNTHESIS
+===================================================== */
 
 function speak(text,rate=1){
 
+if(!text)return;
+
 if(!("speechSynthesis" in window)){
 
-alert("Speech is not supported in this browser.");
+alert("Your browser does not support speech synthesis.");
 
 return;
-
 }
 
-speechSynthesis.cancel();
+try{
 
-let u=
-new SpeechSynthesisUtterance(text);
+window.speechSynthesis.cancel();
+
+const u=new SpeechSynthesisUtterance(text);
 
 u.lang="en-US";
 
@@ -1171,1005 +1302,83 @@ u.rate=rate;
 
 u.pitch=1;
 
-speechSynthesis.speak(u);
+window.speechSynthesis.speak(u);
 
-}
+}catch(error){
 
-
-/* =========================
-   VOCABULARY DATABASE
-========================= */
-
-const vocabulary={
-
-
-"👗 Clothes":{
-emoji:"👗",
-items:[
-
-["dress","فستان","dress"],
-["shirt","قميص","shirt"],
-["T-shirt","قميص قصير","t-shirt"],
-["blouse","بلوزة","blouse"],
-["skirt","تنورة","skirt"],
-["pants","سروال","pants"],
-["jeans","جينز","jeans"],
-["shorts","سروال قصير","shorts"],
-["jacket","سترة","jacket"],
-["coat","معطف","coat"],
-["sweater","كنزة","sweater"],
-["hoodie","هودي","hoodie"],
-["suit","بدلة","suit"],
-["tie","ربطة عنق","tie"],
-["scarf","وشاح","scarf"],
-["gloves","قفازات","gloves"],
-["hat","قبعة","hat"],
-["cap","قبعة رياضية","cap"],
-["socks","جوارب","socks"],
-["shoes","أحذية","shoes"],
-["boots","جزمة","boots"],
-["sandals","صنادل","sandals"],
-["heels","كعب عالٍ","high heels"],
-["sneakers","حذاء رياضي","sneakers"],
-["pajamas","ملابس نوم","pajamas"],
-["underwear","ملابس داخلية","underwear"],
-["bra","حمالة صدر","bra"],
-["swimsuit","ملابس سباحة","swimsuit"],
-["belt","حزام","belt"],
-["pocket","جيب","pocket"],
-["button","زر","button"],
-["zipper","سحاب","zipper"],
-["raincoat","معطف المطر","raincoat"],
-["cardigan","سترة صوفية مفتوحة","cardigan"],
-["vest","صديري","vest"],
-["uniform","زي موحد","uniform"],
-["tracksuit","بدلة رياضية","tracksuit"],
-["tie","ربطة عنق","necktie"],
-["earrings","أقراط","earrings"],
-["necklace","قلادة","necklace"]
-
-]},
-
-
-"🫀 Human Body":{
-emoji:"🫀",
-items:[
-
-["head","الرأس","head"],
-["hair","الشعر","hair"],
-["face","الوجه","face"],
-["forehead","الجبهة","forehead"],
-["eyebrow","الحاجب","eyebrow"],
-["eyelash","رمش","eyelash"],
-["eye","عين","eye"],
-["ear","أذن","ear"],
-["nose","أنف","nose"],
-["cheek","خد","cheek"],
-["mouth","فم","mouth"],
-["lip","شفة","lip"],
-["tooth","سن","tooth"],
-["tongue","لسان","tongue"],
-["chin","ذقن","chin"],
-["neck","رقبة","neck"],
-["shoulder","كتف","shoulder"],
-["arm","ذراع","arm"],
-["elbow","مرفق","elbow"],
-["wrist","معصم","wrist"],
-["hand","يد","hand"],
-["finger","إصبع","finger"],
-["thumb","إبهام","thumb"],
-["chest","صدر","chest"],
-["back","ظهر","back"],
-["waist","خصر","waist"],
-["stomach","معدة / بطن","stomach"],
-["hip","ورك","hip"],
-["leg","ساق","leg"],
-["knee","ركبة","knee"],
-["ankle","كاحل","ankle"],
-["foot","قدم","foot"],
-["toe","إصبع القدم","toe"],
-["skin","جلد","skin"],
-["heart","قلب","heart"],
-["brain","دماغ","brain"],
-["lung","رئة","lung"],
-["liver","كبد","liver"],
-["kidney","كلية","kidney"],
-["bone","عظم","bone"],
-["muscle","عضلة","muscle"]
-
-]},
-
-
-"🎨 Colors":{
-emoji:"🎨",
-items:[
-
-["red","أحمر","red"],
-["blue","أزرق","blue"],
-["yellow","أصفر","yellow"],
-["green","أخضر","green"],
-["orange","برتقالي","orange"],
-["purple","بنفسجي","purple"],
-["pink","وردي","pink"],
-["brown","بني","brown"],
-["black","أسود","black"],
-["white","أبيض","white"],
-["gray","رمادي","gray"],
-["gold","ذهبي","gold"],
-["silver","فضي","silver"],
-["beige","بيج","beige"],
-["turquoise","فيروزي","turquoise"],
-["teal","أزرق مخضر","teal"],
-["navy","كحلي","navy"],
-["sky blue","أزرق سماوي","sky blue"],
-["baby blue","أزرق فاتح","baby blue"],
-["royal blue","أزرق ملكي","royal blue"],
-["mint","نعناعي","mint"],
-["lime","أخضر ليموني","lime"],
-["olive","زيتوني","olive"],
-["emerald","زمردي","emerald"],
-["forest green","أخضر غابة","forest green"],
-["khaki","كاكي","khaki"],
-["maroon","عنابي","maroon"],
-["burgundy","خمري","burgundy"],
-["crimson","قرمزي","crimson"],
-["scarlet","أحمر قرمزي","scarlet"],
-["coral","مرجاني","coral"],
-["peach","خوخي","peach"],
-["lavender","لافندر","lavender"],
-["lilac","ليلكي","lilac"],
-["violet","بنفسجي مزرق","violet"],
-["magenta","أرجواني فاقع","magenta"],
-["cyan","سماوي","cyan"],
-["indigo","نيلي","indigo"],
-["mustard","أصفر خردلي","mustard"],
-["cream","كريمي","cream"],
-["ivory","عاجي","ivory"],
-["copper","نحاسي","copper"]
-
-]},
-
-
-"🍎 Fruits":{
-emoji:"🍎",
-items:[
-
-["apple","تفاحة","apple"],
-["banana","موز","banana"],
-["orange","برتقال","orange"],
-["lemon","ليمون","lemon"],
-["lime","ليمون أخضر","lime"],
-["grape","عنب","grape"],
-["strawberry","فراولة","strawberry"],
-["watermelon","بطيخ","watermelon"],
-["melon","شمام","melon"],
-["peach","خوخ","peach"],
-["apricot","مشمش","apricot"],
-["plum","برقوق","plum"],
-["pear","إجاص","pear"],
-["cherry","كرز","cherry"],
-["pomegranate","رمان","pomegranate"],
-["fig","تين","fig"],
-["date","تمر","date fruit"],
-["mango","مانغو","mango"],
-["pineapple","أناناس","pineapple"],
-["coconut","جوز الهند","coconut"],
-["kiwi","كيوي","kiwi"],
-["papaya","بابايا","papaya"],
-["avocado","أفوكادو","avocado"],
-["guava","جوافة","guava"],
-["raspberry","توت العليق","raspberry"],
-["blueberry","توت أزرق","blueberry"],
-["blackberry","توت أسود","blackberry"],
-["grapefruit","جريب فروت","grapefruit"],
-["tangerine","يوسفي","tangerine"],
-["passion fruit","فاكهة العاطفة","passion fruit"],
-["dragon fruit","فاكهة التنين","dragon fruit"],
-["persimmon","كاكي","persimmon"],
-["cranberry","توت بري","cranberry"],
-["nectarine","نكتارين","nectarine"],
-["star fruit","فاكهة النجمة","star fruit"],
-["mulberry","توت","mulberry"],
-["jackfruit","جاك فروت","jackfruit"],
-["lychee","ليتشي","lychee"],
-["pistachio fruit","ثمرة الفستق","pistachio fruit"]
-
-]},
-
-
-"🥦 Vegetables":{
-emoji:"🥦",
-items:[
-
-["carrot","جزر","carrot"],
-["potato","بطاطس","potato"],
-["tomato","طماطم","tomato"],
-["onion","بصل","onion"],
-["garlic","ثوم","garlic"],
-["lettuce","خس","lettuce"],
-["cucumber","خيار","cucumber"],
-["pepper","فلفل","bell pepper"],
-["hot pepper","فلفل حار","hot pepper"],
-["eggplant","باذنجان","eggplant"],
-["zucchini","كوسا","zucchini"],
-["broccoli","بروكولي","broccoli"],
-["cauliflower","قرنبيط","cauliflower"],
-["cabbage","ملفوف","cabbage"],
-["spinach","سبانخ","spinach"],
-["peas","بازلاء","peas"],
-["beans","فاصوليا","beans"],
-["green beans","فاصوليا خضراء","green beans"],
-["corn","ذرة","corn"],
-["mushroom","فطر","mushroom"],
-["pumpkin","قرع","pumpkin"],
-["sweet potato","بطاطا حلوة","sweet potato"],
-["beetroot","شمندر","beetroot"],
-["turnip","لفت","turnip"],
-["radish","فجل","radish"],
-["celery","كرفس","celery"],
-["leek","كراث","leek"],
-["artichoke","خرشوف","artichoke"],
-["okra","بامية","okra"],
-["ginger","زنجبيل","ginger"],
-["parsley","بقدونس","parsley"],
-["coriander","كزبرة","coriander"],
-["mint","نعناع","mint"],
-["basil","ريحان","basil"],
-["arugula","جرجير","arugula"],
-["chili","فلفل حار","chili pepper"],
-["asparagus","هليون","asparagus"],
-["brussels sprouts","كرنب بروكسل","brussels sprouts"]
-
-]},
-
-
-"🍽️ World Food":{
-emoji:"🍽️",
-items:[
-
-["pizza","بيتزا","pizza"],
-["burger","برغر","burger"],
-["pasta","معكرونة","pasta"],
-["sushi","سوشي","sushi"],
-["tacos","تاكوس","tacos"],
-["couscous","كسكس","couscous"],
-["tagine","طاجين","tagine"],
-["paella","باييلا","paella"],
-["ramen","رامن","ramen"],
-["curry","كاري","curry"],
-["steak","شريحة لحم","steak"],
-["fried chicken","دجاج مقلي","fried chicken"],
-["sandwich","شطيرة","sandwich"],
-["salad","سلطة","salad"],
-["soup","حساء","soup"],
-["noodles","نودلز","noodles"],
-["rice","أرز","rice"],
-["falafel","فلافل","falafel"],
-["hummus","حمص","hummus"],
-["shawarma","شاورما","shawarma"],
-["kebab","كباب","kebab"],
-["dumplings","زلابية","dumplings"],
-["fish and chips","سمك وبطاطس","fish and chips"],
-["pancakes","فطائر","pancakes"],
-["waffles","وافل","waffles"],
-["omelet","عجة","omelet"],
-["lasagna","لازانيا","lasagna"],
-["fried rice","أرز مقلي","fried rice"],
-["spring rolls","لفائف الربيع","spring rolls"],
-["burrito","بوريتو","burrito"],
-["nachos","ناتشوز","nachos"],
-["hot dog","هوت دوغ","hot dog"],
-["croissant","كرواسون","croissant"],
-["cheesecake","تشيز كيك","cheesecake"],
-["ice cream","آيس كريم","ice cream"]
-
-]},
-
-
-"🏠 Home":{
-emoji:"🏠",
-items:[
-
-["house","منزل","house"],
-["apartment","شقة","apartment"],
-["room","غرفة","room"],
-["bedroom","غرفة النوم","bedroom"],
-["living room","غرفة الجلوس","living room"],
-["kitchen","مطبخ","kitchen"],
-["bathroom","حمام","bathroom"],
-["dining room","غرفة الطعام","dining room"],
-["balcony","شرفة","balcony"],
-["garden","حديقة","garden"],
-["door","باب","door"],
-["window","نافذة","window"],
-["wall","حائط","wall"],
-["floor","أرضية","floor"],
-["ceiling","سقف","ceiling"],
-["stairs","درج","stairs"],
-["bed","سرير","bed"],
-["pillow","وسادة","pillow"],
-["blanket","بطانية","blanket"],
-["sofa","أريكة","sofa"],
-["chair","كرسي","chair"],
-["table","طاولة","table"],
-["desk","مكتب","desk"],
-["wardrobe","خزانة ملابس","wardrobe"],
-["mirror","مرآة","mirror"],
-["lamp","مصباح","lamp"],
-["carpet","سجادة","carpet"],
-["curtain","ستارة","curtain"],
-["fridge","ثلاجة","refrigerator"],
-["oven","فرن","oven"],
-["microwave","ميكروويف","microwave"],
-["sink","حوض","sink"],
-["shower","دوش","shower"],
-["toilet","مرحاض","toilet"],
-["towel","منشفة","towel"],
-["washing machine","غسالة","washing machine"],
-["key","مفتاح","key"],
-["cupboard","خزانة","cupboard"],
-["plate","صحن","plate"],
-["glass","كأس","glass"]
-
-]},
-
-
-"✈️ Travel":{
-emoji:"✈️",
-items:[
-
-["airport","مطار","airport"],
-["passport","جواز السفر","passport"],
-["visa","تأشيرة","visa"],
-["ticket","تذكرة","airplane ticket"],
-["boarding pass","بطاقة الصعود","boarding pass"],
-["flight","رحلة جوية","flight"],
-["airplane","طائرة","airplane"],
-["pilot","طيار","pilot"],
-["flight attendant","مضيف طيران","flight attendant"],
-["airport security","أمن المطار","airport security"],
-["customs","الجمارك","customs"],
-["immigration","مراقبة الجوازات","immigration"],
-["passport control","مراقبة الجوازات","passport control"],
-["departure","المغادرة","departure"],
-["arrival","الوصول","arrival"],
-["gate","بوابة","airport gate"],
-["terminal","مبنى المسافرين","airport terminal"],
-["baggage","الأمتعة","baggage"],
-["luggage","الأمتعة","luggage"],
-["suitcase","حقيبة سفر","suitcase"],
-["backpack","حقيبة ظهر","backpack"],
-["carry-on","حقيبة المقصورة","carry-on luggage"],
-["checked baggage","الأمتعة المشحونة","checked baggage"],
-["baggage claim","استلام الأمتعة","baggage claim"],
-["passport check","فحص الجواز","passport check"],
-["hotel","فندق","hotel"],
-["reservation","حجز","reservation"],
-["reception","الاستقبال","hotel reception"],
-["room","غرفة","hotel room"],
-["key card","بطاقة الغرفة","key card"],
-["taxi","سيارة أجرة","taxi"],
-["train","قطار","train"],
-["bus","حافلة","bus"],
-["station","محطة","station"],
-["map","خريطة","map"],
-["address","عنوان","address"],
-["street","شارع","street"],
-["city","مدينة","city"],
-["tourist","سائح","tourist"],
-["guide","مرشد","tour guide"],
-["emergency","طوارئ","emergency"],
-["police","شرطة","police"],
-["pharmacy","صيدلية","pharmacy"],
-["hospital","مستشفى","hospital"],
-["restaurant","مطعم","restaurant"],
-["menu","قائمة الطعام","menu"],
-["bill","الفاتورة","bill"],
-["money","مال","money"],
-["exchange","صرف العملات","currency exchange"]
-
-]},
-
-
-"🍞 Food Basics":{
-emoji:"🍞",
-items:[
-
-["bread","خبز","bread"],
-["water","ماء","water"],
-["milk","حليب","milk"],
-["cheese","جبن","cheese"],
-["chicken","دجاج","chicken"],
-["beef","لحم بقري","beef"],
-["meat","لحم","meat"],
-["fish","سمك","fish"],
-["egg","بيضة","egg"],
-["rice","أرز","rice"],
-["salt","ملح","salt"],
-["sugar","سكر","sugar"],
-["oil","زيت","oil"],
-["olive oil","زيت الزيتون","olive oil"],
-["butter","زبدة","butter"],
-["honey","عسل","honey"],
-["flour","دقيق","flour"],
-["tea","شاي","tea"],
-["coffee","قهوة","coffee"],
-["mint tea","شاي بالنعناع","mint tea"],
-["pepper","فلفل","pepper"],
-["spice","بهار","spice"],
-["sauce","صلصة","sauce"],
-["vinegar","خل","vinegar"],
-["breakfast","فطور","breakfast"],
-["lunch","غداء","lunch"],
-["dinner","عشاء","dinner"],
-["snack","وجبة خفيفة","snack"],
-["meal","وجبة","meal"],
-["hungry","جائع","hungry"],
-["thirsty","عطشان","thirsty"],
-["delicious","لذيذ","delicious"],
-["sweet","حلو","sweet"],
-["spicy","حار","spicy"],
-["hot","ساخن","hot"],
-["cold","بارد","cold"],
-["fresh","طازج","fresh"],
-["vegetarian","نباتي","vegetarian"]
-
-]},
-
-
-"❤️ Feelings":{
-emoji:"❤️",
-items:[
-
-["happy","سعيد","happy"],
-["sad","حزين","sad"],
-["angry","غاضب","angry"],
-["excited","متحمس","excited"],
-["calm","هادئ","calm"],
-["love","حب","love"],
-["loving","محب","loving"],
-["afraid","خائف","afraid"],
-["scared","خائف","scared"],
-["worried","قلق","worried"],
-["nervous","متوتر","nervous"],
-["relaxed","مرتاح","relaxed"],
-["tired","متعب","tired"],
-["exhausted","مرهق","exhausted"],
-["surprised","متفاجئ","surprised"],
-["confused","مرتبك","confused"],
-["proud","فخور","proud"],
-["shy","خجول","shy"],
-["lonely","وحيد","lonely"],
-["bored","يشعر بالملل","bored"],
-["jealous","غيور","jealous"],
-["hopeful","متفائل","hopeful"],
-["hopeless","فاقد الأمل","hopeless"],
-["grateful","ممتن","grateful"],
-["comfortable","مرتاح","comfortable"],
-["uncomfortable","غير مرتاح","uncomfortable"],
-["disappointed","محبط","disappointed"],
-["embarrassed","محرج","embarrassed"],
-["confident","واثق","confident"],
-["insecure","غير واثق","insecure"],
-["curious","فضولي","curious"],
-["interested","مهتم","interested"],
-["relieved","شعر بالارتياح","relieved"],
-["hurt","مجروح","hurt"],
-["kind","لطيف","kind"],
-["cruel","قاسٍ","cruel"],
-["gentle","حنون","gentle"],
-["peaceful","مسالم / هادئ","peaceful"],
-["grumpy","متذمر","grumpy"],
-["cheerful","مرح","cheerful"]
-
-]},
-
-
-"🌦️ Seasons & Weather":{
-emoji:"🌦️",
-items:[
-
-["spring","الربيع","spring"],
-["summer","الصيف","summer"],
-["autumn","الخريف","autumn"],
-["winter","الشتاء","winter"],
-["sun","شمس","sun"],
-["sunny","مشمس","sunny"],
-["rain","مطر","rain"],
-["rainy","ممطر","rainy"],
-["cloud","سحابة","cloud"],
-["cloudy","غائم","cloudy"],
-["wind","رياح","wind"],
-["windy","عاصف","windy"],
-["snow","ثلج","snow"],
-["snowy","مثلج","snowy"],
-["storm","عاصفة","storm"],
-["thunder","رعد","thunder"],
-["lightning","برق","lightning"],
-["fog","ضباب","fog"],
-["hot","حار","hot"],
-["cold","بارد","cold"],
-["warm","دافئ","warm"],
-["cool","معتدل / بارد قليلاً","cool"],
-["freezing","شديد البرودة","freezing"],
-["humid","رطب","humid"],
-["dry","جاف","dry"],
-["temperature","درجة الحرارة","temperature"],
-["forecast","توقعات الطقس","forecast"],
-["weather","الطقس","weather"],
-["sky","سماء","sky"],
-["rainbow","قوس قزح","rainbow"],
-["ice","جليد","ice"],
-["breeze","نسيم","breeze"],
-["heat","حرارة","heat"],
-["shade","ظل","shade"]
-
-}
-
-};
-
-
-/* =========================
-   VOCABULARY MENU
-========================= */
-
-function renderVocabularyMenu(){
-
-const menu=document.getElementById("vocabMenu");
-
-menu.innerHTML="";
-
-Object.entries(vocabulary).forEach(([category,data])=>{
-
-let card=document.createElement("div");
-
-card.className="vocab-category";
-
-card.innerHTML=`
-
-<div class="big">${data.emoji}</div>
-
-<h3>${category.substring(2)}</h3>
-
-<p style="margin-top:7px">
-${data.items.length} useful words
-</p>
-
-<span class="xp">
-Open →
-</span>
-`;
-
-card.onclick=()=>openWordCategory(category);
-
-menu.appendChild(card);
-
-});
-
-}
-
-
-function openVocabulary(){
-
-openSection("vocabulary");
-
-}
-
-
-function openWordCategory(category){
-
-document.getElementById("wordCategoryTitle")
-.textContent=
-vocabulary[category].emoji+" "+category.substring(2);
-
-const grid=document.getElementById("wordGrid");
-
-grid.innerHTML="";
-
-vocabulary[category].items.forEach(item=>{
-
-let word=item[0];
-
-let translation=item[1];
-
-let search=item[2];
-
-let image=
-"https://loremflickr.com/500/350/"+
-encodeURIComponent(search)+
-"?lock="+Math.floor(Math.random()*9000);
-
-
-let card=document.createElement("div");
-
-card.className="word-card";
-
-card.innerHTML=`
-
-<img
-class="word-image"
-src="${image}"
-alt="${word}"
-loading="lazy"
-onerror="this.src='https://loremflickr.com/500/350/${encodeURIComponent(search)}'"
->
-
-<div class="word-content">
-
-<div class="word">
-${word}
-</div>
-
-<div class="translation">
-${translation}
-</div>
-
-<button class="pronounce">
-🔊 Listen
-</button>
-
-</div>
-`;
-
-card.querySelector(".pronounce")
-.onclick=()=>{
-
-speak(word);
-
-addXP(1);
-
-};
-
-grid.appendChild(card);
-
-});
-
-openSection("wordList");
-
-}
-
-
-/* =========================
-   CONNECTORS
-========================= */
-
-const connectors=[
-
-["With","مع","My brother is with my father."],
-["In","في","I am in Morocco."],
-["On","على","The book is on the table."],
-["At","في / عند","I am at the airport."],
-["To","إلى","I am going to America."],
-["From","من","I am from Morocco."],
-["For","من أجل / لـ","This gift is for you."],
-["About","عن","We are talking about travel."],
-["And","و","I like tea and coffee."],
-["But","لكن","I am tired but happy."],
-["Because","لأن","I study because I want to improve."],
-["So","لذلك","I was tired, so I slept."],
-["Or","أو","Tea or coffee?"],
-["If","إذا","If I have time, I will travel."],
-["When","عندما","Call me when you arrive."],
-["Before","قبل","Wash your hands before eating."],
-["After","بعد","I sleep after dinner."],
-["With","مع","I travel with my family."],
-["Without","بدون","I cannot travel without my passport."],
-["Between","بين","The hotel is between two buildings."],
-["Near","قريب من","The hotel is near the airport."],
-["Behind","خلف","The bag is behind the chair."],
-["In front of","أمام","The taxi is in front of the hotel."],
-["Next to","بجانب","The pharmacy is next to the hotel."],
-["Under","تحت","The bag is under the seat."],
-["Over","فوق","The plane is over the city."],
-["Through","عبر","We walked through the airport."],
-["During","خلال","I slept during the flight."],
-["Until","حتى","Wait until I arrive."],
-["Although","رغم أن","Although I was tired, I studied."]
-
-];
-
-
-function renderConnectors(){
-
-let box=document.getElementById("connectorGrid");
-
-box.innerHTML="";
-
-connectors.forEach(c=>{
-
-let div=document.createElement("div");
-
-div.className="connector";
-
-div.innerHTML=`
-
-<div class="connector-word">
-${c[0]}
-</div>
-
-<div class="connector-meaning">
-${c[1]}
-</div>
-
-<div class="example">
-<b>${c[2]}</b>
-<br><br>
-<button class="secondary"
-style="padding:8px 12px"
->
-🔊 Hear
-</button>
-</div>
-`;
-
-div.querySelector("button")
-.onclick=()=>speak(c[2]);
-
-box.appendChild(div);
-
-});
-
-}
-
-
-/* =========================
-   SENTENCE BUILDER
-========================= */
-
-const builderSentences=[
-
-["I","want","to","learn","English"],
-
-["I","am","from","Morocco"],
-
-["I","love","to","travel"],
-
-["She","is","very","beautiful"],
-
-["I","will","travel","to","America"],
-
-["I","am","learning","English"],
-
-["He","works","every","day"]
-
-];
-
-let currentBuilder=0;
-
-let chosen=[];
-
-
-function renderBuilder(){
-
-const box=document.getElementById("builderWords");
-
-box.innerHTML="";
-
-builderSentences[currentBuilder]
-.forEach((word,index)=>{
-
-let button=document.createElement("button");
-
-button.className="builder-word";
-
-button.textContent=word;
-
-button.onclick=()=>{
-
-chosen.push(word);
-
-document.getElementById("selectedSentence")
-.textContent=chosen.join(" ");
-
-};
-
-box.appendChild(button);
-
-});
-
-}
-
-
-function resetBuilder(){
-
-chosen=[];
-
-document.getElementById("selectedSentence")
-.textContent="Your sentence...";
-
-}
-
-
-function checkBuilder(){
-
-let target=
-builderSentences[currentBuilder].join(" ");
-
-let answer=chosen.join(" ");
-
-if(answer===target){
-
-document.getElementById("builderResult")
-.innerHTML=
-'<div class="result">🎉 Perfect! +15 XP</div>';
-
-addXP(15);
-
-}else{
-
-document.getElementById("builderResult")
-.innerHTML=
-`<div class="result">
-💜 Keep trying.<br>
-Target: <b>${target}</b>
-</div>`;
+console.error(error);
 
 }
 
 }
 
 
-/* =========================
-   GRAMMAR QUIZ
-========================= */
-
-const grammarQuestions=[
-
-{
-q:"She ___ English every day.",
-a:["study","studies","studying"],
-correct:1
-},
-
-{
-q:"I ___ travel tomorrow.",
-a:["will","was","am"],
-correct:0
-},
-
-{
-q:"They ___ dinner yesterday.",
-a:["eat","eats","ate"],
-correct:2
-},
-
-{
-q:"He ___ working now.",
-a:["is","are","will"],
-correct:0
-},
-
-{
-q:"We ___ from Morocco.",
-a:["is","are","am"],
-correct:1
-},
-
-{
-q:"I ___ coffee every morning.",
-a:["drink","drinks","drinking"],
-correct:0
-}
-
-];
-
-let grammarIndex=0;
-
-
-function startGrammarQuiz(){
-
-grammarIndex=0;
-
-showGrammarQuestion();
-
-}
-
-
-function showGrammarQuestion(){
-
-let q=grammarQuestions[grammarIndex];
-
-let box=document.getElementById("grammarQuizBox");
-
-box.innerHTML=`
-
-<div class="result">
-
-<h3>${q.q}</h3>
-
-${q.a.map((a,i)=>
-`
-<button class="quiz-option"
-onclick="answerGrammar(${i})">
-${a}
-</button>
-`
-).join("")}
-
-</div>
-
-`;
-
-}
-
-
-function answerGrammar(index){
-
-let q=grammarQuestions[grammarIndex];
-
-if(index===q.correct){
-
-addXP(10);
-
-document.getElementById("grammarQuizBox")
-.innerHTML=
-'<div class="result">🎉 Correct! +10 XP</div>';
-
-grammarIndex++;
-
-setTimeout(()=>{
-
-if(grammarIndex<grammarQuestions.length){
-
-showGrammarQuestion();
-
-}else{
-
-document.getElementById("grammarQuizBox")
-.innerHTML=
-'<div class="result">🏆 You finished the grammar practice!</div>';
-
-}
-
-},700);
-
-}else{
-
-document.getElementById("grammarQuizBox")
-.innerHTML=
-'<div class="result">💜 Not quite. Try the next attempt.</div>';
-
-}
-
-}
-
-
-/* =========================
-   SPEAKING
-========================= */
+/* =====================================================
+   SPEAK LAB
+===================================================== */
 
 const sentences=[
 
-["I want to learn English.","أريد أن أتعلم الإنجليزية."],
+[
+"I want to learn English.",
+"أريد أن أتعلم الإنجليزية."
+],
 
-["I am going to university tomorrow.","سأذهب إلى الجامعة غداً."],
+[
+"I am going to university tomorrow.",
+"سأذهب إلى الجامعة غداً."
+],
 
-["I love traveling around the world.","أحب السفر حول العالم."],
+[
+"I love traveling around the world.",
+"أحب السفر حول العالم."
+],
 
-["I need to practice every day.","أحتاج إلى التدريب كل يوم."],
+[
+"I need to practice every day.",
+"أحتاج إلى التدريب كل يوم."
+],
 
-["I feel happy when I learn something new.","أشعر بالسعادة عندما أتعلم شيئاً جديداً."]
+[
+"I feel happy when I learn something new.",
+"أشعر بالسعادة عندما أتعلم شيئاً جديداً."
+],
+
+[
+"I would like to visit America one day.",
+"أود زيارة أمريكا يوماً ما."
+],
+
+[
+"I want to speak English confidently.",
+"أريد أن أتحدث الإنجليزية بثقة."
+],
+
+[
+"I am learning something new every day.",
+"أتعلم شيئاً جديداً كل يوم."
+]
 
 ];
 
 
 function startSpeaking(){
 
-if(!("webkitSpeechRecognition" in window)&&
-!("SpeechRecognition" in window)){
+const Recognition=
+window.SpeechRecognition ||
+window.webkitSpeechRecognition;
+
+if(!Recognition){
 
 document.getElementById("speakResult").innerHTML=
-'<div class="result">🎙️ Speech recognition is not available here. Try Safari/Chrome and allow microphone access.</div>';
+
+'<div class="result">🎙️ Speech recognition is not available in this browser. Please use Safari/Chrome with microphone permission enabled.</div>';
 
 return;
 
 }
 
-const R=
-window.SpeechRecognition||
-window.webkitSpeechRecognition;
-
-const r=new R();
+const r=new Recognition();
 
 r.lang="en-US";
 
@@ -2177,39 +1386,59 @@ r.interimResults=false;
 
 r.maxAlternatives=1;
 
-document.getElementById("speakResult").innerHTML=
-'<div class="result">🎙️ Listening...</div>';
+const resultBox=document.getElementById("speakResult");
+
+resultBox.innerHTML=
+'<div class="result">🎙️ Listening... Speak now.</div>';
+
+try{
 
 r.start();
 
-r.onresult=e=>{
+}catch(error){
 
-let said=e.results[0][0].transcript;
+console.error(error);
 
-let target=
-document.getElementById("speakSentence")
-.textContent;
+resultBox.innerHTML=
+'<div class="result">🎙️ Microphone could not start. Please try again.</div>';
 
-let score=compareText(said,target);
+return;
 
-document.getElementById("speakResult")
-.innerHTML=
+}
+
+
+r.onresult=function(e){
+
+const said=e.results[0][0].transcript;
+
+const target=
+document.getElementById("speakSentence").textContent.trim();
+
+const score=compareText(said,target);
+
+resultBox.innerHTML=
 
 `<div class="result">
 
-🎙️ <b>You said:</b> ${said}
+🎙️ <b>You said:</b> ${escapeHTML(said)}
 
 <br>
 
-🎯 <b>Target:</b> ${target}
+🎯 <b>Target:</b> ${escapeHTML(target)}
 
 <br><br>
 
-${score>=85?
-"🎉 Excellent!":
-score>=65?
-"👍 Good! Repeat once more.":
-"💪 Keep practicing!"}
+${
+score>=85
+?
+"🎉 Excellent!"
+:
+score>=65
+?
+"👍 Good! Repeat once more."
+:
+"💪 Keep practicing!"
+}
 
 <br>
 
@@ -2217,7 +1446,36 @@ score>=65?
 
 </div>`;
 
-if(score>=85)addXP(20);
+if(score>=85){
+
+addXP(20);
+
+}
+
+};
+
+
+r.onerror=function(event){
+
+console.log("Speech recognition error:",event.error);
+
+let message=
+"Could not access the microphone.";
+
+if(event.error==="not-allowed"){
+message="Microphone permission was denied. Allow microphone access in your browser settings.";
+}
+
+if(event.error==="no-speech"){
+message="I didn't hear you. Tap Speak and try again.";
+}
+
+if(event.error==="network"){
+message="Speech recognition needs an internet connection in this browser.";
+}
+
+resultBox.innerHTML=
+`<div class="result">🎙️ ${message}</div>`;
 
 };
 
@@ -2226,31 +1484,49 @@ if(score>=85)addXP(20);
 
 function compareText(a,b){
 
-a=a.toLowerCase()
+a=String(a||"")
+.toLowerCase()
 .replace(/[^\w\s]/g,"")
-.split(/\s+/);
+.split(/\s+/)
+.filter(Boolean);
 
-b=b.toLowerCase()
+b=String(b||"")
+.toLowerCase()
 .replace(/[^\w\s]/g,"")
-.split(/\s+/);
+.split(/\s+/)
+.filter(Boolean);
 
-let same=
-a.filter(x=>b.includes(x)).length;
+if(!b.length)return 0;
 
-return Math.round((same/b.length)*100);
+let same=0;
+
+a.forEach(word=>{
+
+if(b.includes(word)){
+same++;
+}
+
+});
+
+return Math.min(
+100,
+Math.round((same/b.length)*100)
+);
 
 }
 
 
 function newSpeakSentence(){
 
-let x=
-sentences[Math.floor(Math.random()*sentences.length)];
+const x=
+sentences[
+Math.floor(Math.random()*sentences.length)
+];
 
 document.getElementById("speakSentence")
 .textContent=x[0];
 
-document.querySelector("#speak .small")
+document.querySelector("#speak .arabic")
 .textContent=x[1];
 
 document.getElementById("speakResult")
@@ -2259,33 +1535,47 @@ document.getElementById("speakResult")
 }
 
 
-/* =========================
-   THINK
-========================= */
+/* =====================================================
+   THINK IN ENGLISH
+===================================================== */
 
 function checkThink(){
 
-let v=
-document.getElementById("thinkInput")
-.value.trim().toLowerCase();
+const input=
+document.getElementById("thinkInput");
 
-let correct=
+if(!input)return;
+
+const v=
+input.value
+.trim()
+.toLowerCase();
+
+const correct=
 "i want to go to university tomorrow";
 
-let score=compareText(v,correct);
+const score=compareText(v,correct);
 
-document.getElementById("thinkResult")
-.innerHTML=
+document.getElementById("thinkResult").innerHTML=
 
 `<div class="result">
 
-${score>=90?
-"✅ Perfect!":
-"📝 You are close."}
+${
+score>=90
+?
+"✅ Perfect!"
+:
+score>=70
+?
+"👍 Very close!"
+:
+"📝 You are close. Keep practicing."
+}
 
 <br>
 
 <b>Correct:</b>
+
 I want to go to university tomorrow.
 
 <br>
@@ -2294,14 +1584,18 @@ I want to go to university tomorrow.
 
 </div>`;
 
-if(score>=90)addXP(20);
+if(score>=90){
+
+addXP(20);
+
+}
 
 }
 
 
-/* =========================
+/* =====================================================
    LISTENING
-========================= */
+===================================================== */
 
 function listenSpeed(rate){
 
@@ -2317,35 +1611,42 @@ addXP(5);
 
 function listenQuiz(){
 
-document.getElementById("listenResult")
-.innerHTML=
-
-`
+document.getElementById("listenResult").innerHTML=`
 
 <div class="result">
 
 <button class="primary"
 onclick="speak('She goes to university every morning.')">
+
 🔊 Play
+
 </button>
 
 <p style="margin:15px 0">
+
 What does she do every morning?
+
 </p>
 
 <button class="quiz-option"
 onclick="listenAnswer(false)">
+
 She goes shopping.
+
 </button>
 
 <button class="quiz-option"
 onclick="listenAnswer(true)">
+
 She goes to university.
+
 </button>
 
 <button class="quiz-option"
 onclick="listenAnswer(false)">
+
 She travels.
+
 </button>
 
 </div>
@@ -2361,74 +1662,1124 @@ document.getElementById("listenResult")
 .innerHTML=
 
 `<div class="result">
-${ok?
-"🎉 Correct! +20 XP":
-"❌ Not quite. Listen again and try."}
+
+${
+ok
+?
+"🎉 Correct! +20 XP"
+:
+"❌ Not quite. Listen again and try."
+}
+
 </div>`;
 
-if(ok)addXP(20);
+if(ok){
+
+addXP(20);
+
+}
 
 }
 
 
-/* =========================
+/* =====================================================
+   READING
+===================================================== */
+
+function wordInfo(word){
+
+const data={
+
+dream:[
+"حلم",
+"I dream of traveling."
+],
+
+improve:[
+"يطوّر / يحسّن",
+"I want to improve my English."
+],
+
+travel:[
+"يسافر",
+"I love to travel."
+]
+
+};
+
+const x=data[word];
+
+if(!x)return;
+
+document.getElementById("wordResult").innerHTML=
+
+`<div class="result">
+
+<b>${word}</b> — ${x[0]}
+
+<br>
+
+${x[1]}
+
+<br>
+
+<button class="secondary"
+onclick="speak('${escapeJS(x[1])}')">
+
+🔊 Hear
+
+</button>
+
+</div>`;
+
+addXP(3);
+
+}
+
+
+/* =====================================================
    WRITING
-========================= */
+===================================================== */
 
 function checkWriting(){
 
-let v=
+const v=
 document.getElementById("writingInput")
-.value.trim();
+.value
+.trim();
 
 if(v.length<15){
 
 document.getElementById("writingResult")
 .innerHTML=
-'<div class="result">✍️ Write a little more.</div>';
+'<div class="result">✍️ Write a little more so we can check it.</div>';
 
 return;
 
 }
 
+const errors=[];
+
+if(/\bi am go\b/i.test(v)){
+
+errors.push(
+"Use “I am going” instead of “I am go”."
+);
+
+}
+
+if(/\bhe go\b/i.test(v)){
+
+errors.push(
+"Use “he goes” in the present simple."
+);
+
+}
+
 document.getElementById("writingResult")
 .innerHTML=
-'<div class="result">✨ Good effort! Keep writing every day.</div>';
+
+`<div class="result">
+
+✨ Good effort!
+
+<br>
+
+${
+errors.length
+?
+errors.join("<br>")
+:
+"No basic grammar mistakes detected."
+}
+
+</div>`;
 
 addXP(20);
 
 }
 
 
-/* =========================
+/* =====================================================
+   SENTENCE BUILDER
+===================================================== */
+
+const builderTarget=[
+"I",
+"want",
+"to",
+"learn",
+"English"
+];
+
+let builderChosen=[];
+
+
+function renderBuilder(){
+
+const container=
+document.getElementById("builderWords");
+
+container.innerHTML="";
+
+builderTarget.forEach((w,i)=>{
+
+const b=document.createElement("button");
+
+b.className="word";
+
+b.textContent=w;
+
+b.onclick=()=>chooseWord(i,w);
+
+container.appendChild(b);
+
+});
+
+}
+
+
+function chooseWord(i,w){
+
+if(builderChosen.includes(i))return;
+
+builderChosen.push(i);
+
+const current=
+builderChosen
+.map(index=>builderTarget[index])
+.join(" ");
+
+document.getElementById("builderResult")
+.innerHTML=
+
+`<div class="result">
+${current}
+</div>`;
+
+if(builderChosen.length===builderTarget.length){
+
+if(builderChosen.every((x,index)=>x===index)){
+
+document.getElementById("builderResult")
+.innerHTML=
+
+'<div class="result">🎉 Perfect sentence! +15 XP</div>';
+
+addXP(15);
+
+}else{
+
+document.getElementById("builderResult")
+.innerHTML=
+
+'<div class="result">Almost! Tap Reset and try again.</div>';
+
+}
+
+}
+
+}
+
+
+function resetBuilder(){
+
+builderChosen=[];
+
+document.getElementById("builderResult")
+.innerHTML="";
+
+renderBuilder();
+
+}
+
+renderBuilder();
+
+
+/* =====================================================
+   VOCABULARY
+===================================================== */
+
+const vocabulary={
+
+"👗 Clothes":[
+["dress","فستان","👗"],
+["shirt","قميص","👕"],
+["T-shirt","قميص قصير","👕"],
+["blouse","بلوزة","👚"],
+["skirt","تنورة","👗"],
+["trousers","بنطال","👖"],
+["jeans","جينز","👖"],
+["shorts","سروال قصير","🩳"],
+["leggings","بنطال ضيق","🩱"],
+["jacket","سترة","🧥"],
+["coat","معطف","🧥"],
+["blazer","بليزر","🧥"],
+["sweater","كنزة","🧶"],
+["hoodie","هودي","👚"],
+["cardigan","كارديغان","🧶"],
+["suit","بدلة","🤵"],
+["tie","ربطة عنق","👔"],
+["scarf","وشاح","🧣"],
+["gloves","قفازات","🧤"],
+["hat","قبعة","👒"],
+["cap","كاب","🧢"],
+["belt","حزام","👖"],
+["socks","جوارب","🧦"],
+["stockings","جوارب طويلة","🧦"],
+["pajamas","ملابس نوم","😴"],
+["underwear","ملابس داخلية","🩲"],
+["bra","حمالة صدر","👙"],
+["swimsuit","ملابس سباحة","🩱"],
+["sandals","صنادل","👡"],
+["shoes","أحذية","👟"],
+["sneakers","أحذية رياضية","👟"],
+["boots","جزمة","🥾"],
+["heels","كعب عالٍ","👠"],
+["slippers","شبشب منزلي","🥿"],
+["raincoat","معطف مطر","🌧️"],
+["vest","سترة بدون أكمام","🦺"],
+["tracksuit","بدلة رياضية","🏃"],
+["uniform","زي موحد","👔"],
+["pocket","جيب","👖"],
+["button","زر","🔘"]
+],
+
+"🧍 Body":[
+["head","الرأس","🧑"],
+["hair","الشعر","💇"],
+["face","الوجه","🙂"],
+["forehead","الجبهة","🙂"],
+["eye","العين","👁️"],
+["eyebrow","الحاجب","🤨"],
+["eyelash","رمش","👁️"],
+["ear","الأذن","👂"],
+["nose","الأنف","👃"],
+["cheek","الخد","😊"],
+["mouth","الفم","👄"],
+["lip","الشفة","💋"],
+["tooth","سن","🦷"],
+["tongue","اللسان","👅"],
+["chin","الذقن","🙂"],
+["neck","الرقبة","🧍"],
+["shoulder","الكتف","💪"],
+["arm","الذراع","💪"],
+["elbow","المرفق","💪"],
+["hand","اليد","✋"],
+["finger","الإصبع","☝️"],
+["thumb","الإبهام","👍"],
+["chest","الصدر","🫁"],
+["breast","الثدي","🩷"],
+["back","الظهر","🧍"],
+["waist","الخصر","🧍"],
+["stomach","المعدة / البطن","🫃"],
+["belly","البطن","🧍"],
+["hip","الورك","🧍"],
+["leg","الساق","🦵"],
+["thigh","الفخذ","🦵"],
+["knee","الركبة","🦵"],
+["ankle","الكاحل","🦶"],
+["foot","القدم","🦶"],
+["toe","إصبع القدم","🦶"],
+["heel","الكعب","🦶"],
+["heart","القلب","❤️"],
+["brain","الدماغ","🧠"],
+["lung","الرئة","🫁"],
+["liver","الكبد","🫀"],
+["kidney","الكلى","🫘"],
+["bone","العظم","🦴"],
+["muscle","العضلة","💪"],
+["blood","الدم","🩸"],
+["skin","الجلد","🖐️"]
+],
+
+"🎨 Colors":[
+["red","أحمر","🔴"],
+["blue","أزرق","🔵"],
+["yellow","أصفر","🟡"],
+["green","أخضر","🟢"],
+["orange","برتقالي","🟠"],
+["purple","بنفسجي","🟣"],
+["pink","وردي","🩷"],
+["brown","بني","🟤"],
+["black","أسود","⚫"],
+["white","أبيض","⚪"],
+["gray","رمادي","🩶"],
+["gold","ذهبي","🥇"],
+["silver","فضي","🥈"],
+["beige","بيج","🟫"],
+["turquoise","فيروزي","🩵"],
+["teal","أزرق مخضر","🟦"],
+["navy","كحلي","🔵"],
+["sky blue","أزرق سماوي","🩵"],
+["baby blue","أزرق فاتح","🩵"],
+["royal blue","أزرق ملكي","🔵"],
+["dark blue","أزرق داكن","🔵"],
+["light blue","أزرق فاتح","🔵"],
+["dark green","أخضر داكن","🟢"],
+["light green","أخضر فاتح","🟢"],
+["lime","ليموني","🟢"],
+["mint","نعناعي","🌿"],
+["olive","زيتي","🫒"],
+["khaki","كاكي","🟫"],
+["maroon","خمري","🔴"],
+["burgundy","عنابي","🔴"],
+["coral","مرجاني","🪸"],
+["peach","خوخي","🍑"],
+["lavender","لافندر","💜"],
+["violet","بنفسجي فاتح","🟣"],
+["magenta","أرجواني","🩷"],
+["cyan","سماوي","🔵"],
+["cream","كريمي","🤍"],
+["ivory","عاجي","🤍"],
+["rose","وردي غامق","🌹"]
+],
+
+"🍎 Fruits":[
+["apple","تفاح","🍎"],
+["banana","موز","🍌"],
+["orange","برتقال","🍊"],
+["lemon","ليمون","🍋"],
+["lime","ليمون أخضر","🍋"],
+["grape","عنب","🍇"],
+["strawberry","فراولة","🍓"],
+["watermelon","بطيخ","🍉"],
+["melon","شمام","🍈"],
+["peach","خوخ","🍑"],
+["nectarine","نكتارين","🍑"],
+["pear","إجاص","🍐"],
+["pineapple","أناناس","🍍"],
+["mango","مانجو","🥭"],
+["kiwi","كيوي","🥝"],
+["cherry","كرز","🍒"],
+["blueberry","توت أزرق","🫐"],
+["raspberry","توت العليق","🫐"],
+["blackberry","توت أسود","🫐"],
+["pomegranate","رمان","❤️"],
+["fig","تين","🟣"],
+["date","تمر","🌴"],
+["coconut","جوز الهند","🥥"],
+["papaya","بابايا","🍊"],
+["guava","جوافة","🍈"],
+["apricot","مشمش","🍑"],
+["plum","برقوق","🟣"],
+["grapefruit","جريب فروت","🍊"],
+["passion fruit","فاكهة العاطفة","🟣"],
+["dragon fruit","فاكهة التنين","🐉"],
+["persimmon","كاكي","🟠"],
+["avocado","أفوكادو","🥑"]
+],
+
+"🥕 Vegetables":[
+["carrot","جزر","🥕"],
+["potato","بطاطس","🥔"],
+["tomato","طماطم","🍅"],
+["onion","بصل","🧅"],
+["garlic","ثوم","🧄"],
+["pepper","فلفل","🌶️"],
+["bell pepper","فلفل حلو","🫑"],
+["cucumber","خيار","🥒"],
+["lettuce","خس","🥬"],
+["spinach","سبانخ","🥬"],
+["cabbage","ملفوف","🥬"],
+["broccoli","بروكلي","🥦"],
+["cauliflower","قرنبيط","🥦"],
+["eggplant","باذنجان","🍆"],
+["zucchini","كوسة","🥒"],
+["peas","بازلاء","🫛"],
+["beans","فاصوليا","🫘"],
+["corn","ذرة","🌽"],
+["mushroom","فطر","🍄"],
+["celery","كرفس","🌿"],
+["beetroot","شمندر","🫜"],
+["turnip","لفت","🫜"],
+["pumpkin","يقطين","🎃"],
+["sweet potato","بطاطا حلوة","🍠"],
+["artichoke","خرشوف","🌿"],
+["asparagus","هليون","🌿"],
+["radish","فجل","🫜"],
+["ginger","زنجبيل","🫚"],
+["leek","كراث","🌿"],
+["okra","بامية","🌿"]
+],
+
+"🍕 Food & Meals":[
+["bread","خبز","🍞"],
+["rice","أرز","🍚"],
+["pasta","معكرونة","🍝"],
+["pizza","بيتزا","🍕"],
+["burger","برغر","🍔"],
+["sandwich","ساندويتش","🥪"],
+["soup","حساء","🍲"],
+["salad","سلطة","🥗"],
+["chicken","دجاج","🍗"],
+["beef","لحم بقري","🥩"],
+["lamb","لحم غنم","🍖"],
+["fish","سمك","🐟"],
+["egg","بيض","🥚"],
+["cheese","جبن","🧀"],
+["yogurt","زبادي","🥛"],
+["milk","حليب","🥛"],
+["butter","زبدة","🧈"],
+["oil","زيت","🫗"],
+["olive oil","زيت الزيتون","🫒"],
+["salt","ملح","🧂"],
+["sugar","سكر","🍬"],
+["pepper","فلفل","🌶️"],
+["spicy","حار","🌶️"],
+["mint","نعناع","🌿"],
+["tea","شاي","🍵"],
+["coffee","قهوة","☕"],
+["water","ماء","💧"],
+["juice","عصير","🧃"],
+["honey","عسل","🍯"],
+["jam","مربى","🍓"],
+["flour","دقيق","🌾"],
+["sauce","صلصة","🥫"],
+["ketchup","كاتشب","🍅"],
+["mayonnaise","مايونيز","🥫"],
+["breakfast","فطور","🍳"],
+["lunch","غداء","🍽️"],
+["dinner","عشاء","🍽️"],
+["dessert","حلوى","🍰"],
+["chocolate","شوكولاتة","🍫"],
+["cake","كعكة","🎂"],
+["ice cream","مثلجات","🍦"]
+],
+
+"🏠 Home":[
+["house","منزل","🏠"],
+["apartment","شقة","🏢"],
+["room","غرفة","🚪"],
+["bedroom","غرفة النوم","🛏️"],
+["living room","غرفة المعيشة","🛋️"],
+["kitchen","مطبخ","🍳"],
+["bathroom","حمام","🛁"],
+["toilet","مرحاض","🚽"],
+["balcony","شرفة","🌇"],
+["garden","حديقة","🌳"],
+["door","باب","🚪"],
+["window","نافذة","🪟"],
+["wall","حائط","🧱"],
+["floor","أرضية","🏠"],
+["ceiling","سقف","🏠"],
+["stairs","درج","🪜"],
+["bed","سرير","🛏️"],
+["pillow","وسادة","🛏️"],
+["blanket","بطانية","🛌"],
+["sofa","أريكة","🛋️"],
+["chair","كرسي","🪑"],
+["table","طاولة","🪑"],
+["desk","مكتب","🖥️"],
+["lamp","مصباح","💡"],
+["mirror","مرآة","🪞"],
+["carpet","سجادة","🟫"],
+["curtain","ستارة","🪟"],
+["fridge","ثلاجة","🧊"],
+["oven","فرن","🔥"],
+["microwave","ميكروويف","📡"],
+["sink","حوض","🚰"],
+["shower","دش","🚿"],
+["bathtub","حوض استحمام","🛁"],
+["washing machine","غسالة","🧺"],
+["television","تلفاز","📺"],
+["remote","جهاز تحكم","🎮"],
+["key","مفتاح","🔑"],
+["cupboard","خزانة","🗄️"],
+["wardrobe","خزانة ملابس","👚"],
+["drawer","درج خزانة","🗄️"]
+],
+
+"✈️ Travel & Airport":[
+["airport","المطار","✈️"],
+["passport","جواز السفر","🛂"],
+["visa","تأشيرة","📄"],
+["ticket","تذكرة","🎫"],
+["boarding pass","بطاقة الصعود","🎫"],
+["flight","رحلة جوية","✈️"],
+["airplane","طائرة","✈️"],
+["pilot","طيار","👨‍✈️"],
+["flight attendant","مضيفة / مضيف","👩‍✈️"],
+["airport security","أمن المطار","🛂"],
+["passport control","مراقبة الجوازات","🛂"],
+["customs","الجمارك","🛃"],
+["immigration","الهجرة","🛂"],
+["check-in","تسجيل الوصول","🛄"],
+["gate","بوابة","🚪"],
+["terminal","مبنى المطار","🏢"],
+["departure","المغادرة","🛫"],
+["arrival","الوصول","🛬"],
+["baggage","الأمتعة","🧳"],
+["luggage","الأمتعة","🧳"],
+["suitcase","حقيبة سفر","🧳"],
+["backpack","حقيبة ظهر","🎒"],
+["carry-on","حقيبة يد","👜"],
+["baggage claim","استلام الأمتعة","🧳"],
+["security check","التفتيش الأمني","🔍"],
+["hotel","فندق","🏨"],
+["reservation","حجز","📅"],
+["reception","الاستقبال","🛎️"],
+["room","غرفة","🛏️"],
+["key card","بطاقة الغرفة","💳"],
+["taxi","سيارة أجرة","🚕"],
+["bus","حافلة","🚌"],
+["train","قطار","🚆"],
+["station","محطة","🚉"],
+["map","خريطة","🗺️"],
+["address","عنوان","📍"],
+["street","شارع","🛣️"],
+["emergency","طوارئ","🚨"],
+["police","شرطة","👮"],
+["hospital","مستشفى","🏥"],
+["pharmacy","صيدلية","💊"],
+["restaurant","مطعم","🍽️"],
+["menu","قائمة الطعام","📋"],
+["bill","الفاتورة","🧾"],
+["cash","نقد","💵"],
+["card","بطاقة","💳"],
+["dollar","دولار","💵"],
+["American English","الإنجليزية الأمريكية","🇺🇸"],
+["where is...?","أين يوجد...؟","❓"],
+["How much?","كم السعر؟","💰"],
+["help","مساعدة","🆘"]
+],
+
+"❤️ Feelings":[
+["happy","سعيد","😊"],
+["sad","حزين","😢"],
+["angry","غاضب","😠"],
+["upset","منزعج","😣"],
+["excited","متحمس","🤩"],
+["nervous","متوتر","😰"],
+["calm","هادئ","😌"],
+["relaxed","مسترخٍ","😌"],
+["tired","متعب","😴"],
+["sleepy","نعسان","🥱"],
+["scared","خائف","😨"],
+["afraid","خائف","😨"],
+["worried","قلق","😟"],
+["surprised","متفاجئ","😲"],
+["shocked","مصدوم","😱"],
+["confused","مرتبك","😵"],
+["bored","يشعر بالملل","🥱"],
+["lonely","وحيد","🥺"],
+["proud","فخور","🥰"],
+["shy","خجول","😊"],
+["embarrassed","محرج","😳"],
+["jealous","غيور","💚"],
+["in love","واقع في الحب","❤️"],
+["loving","محب","❤️"],
+["kind","لطيف","💜"],
+["cruel","قاسٍ","😈"],
+["hopeful","متفائل","🌷"],
+["hopeless","فاقد الأمل","😔"],
+["grateful","ممتن","🙏"],
+["thankful","شاكر","🙏"],
+["comfortable","مرتاح","😌"],
+["uncomfortable","غير مرتاح","😣"],
+["confident","واثق","💪"],
+["insecure","غير واثق","🥺"],
+["strong","قوي","💪"],
+["weak","ضعيف","🫶"],
+["curious","فضولي","🔎"],
+["interested","مهتم","👀"],
+["disappointed","خائب الأمل","😞"],
+["satisfied","راضٍ","😊"]
+],
+
+"🌦️ Seasons & Weather":[
+["spring","الربيع","🌸"],
+["summer","الصيف","☀️"],
+["autumn","الخريف","🍂"],
+["fall","الخريف","🍁"],
+["winter","الشتاء","❄️"],
+["hot","حار","🔥"],
+["cold","بارد","🥶"],
+["warm","دافئ","🌤️"],
+["cool","منعش / بارد قليلاً","🍃"],
+["sunny","مشمس","☀️"],
+["rainy","ممطر","🌧️"],
+["cloudy","غائم","☁️"],
+["windy","عاصف","💨"],
+["stormy","عاصف جدًا","⛈️"],
+["snowy","مثلج","❄️"],
+["foggy","ضبابي","🌫️"],
+["humid","رطب","💧"],
+["dry","جاف","🏜️"],
+["rain","مطر","🌧️"],
+["snow","ثلج","❄️"],
+["cloud","سحابة","☁️"],
+["wind","رياح","💨"],
+["thunder","رعد","⚡"],
+["lightning","برق","🌩️"],
+["rainbow","قوس قزح","🌈"],
+["temperature","درجة الحرارة","🌡️"],
+["sun","شمس","☀️"],
+["moon","قمر","🌙"],
+["sky","سماء","🌌"]
+]
+
+};
+
+
+/* =====================================================
+   VOCABULARY RENDER
+===================================================== */
+
+function renderVocabulary(filter=""){
+
+const container=
+document.getElementById("vocabContent");
+
+container.innerHTML="";
+
+Object.entries(vocabulary)
+.forEach(([category,items])=>{
+
+const filtered=items.filter(item=>
+
+item[0]
+.toLowerCase()
+.includes(filter.toLowerCase())
+
+||
+
+item[1].includes(filter)
+
+);
+
+if(!filtered.length)return;
+
+const title=document.createElement("h3");
+
+title.className="category-title";
+
+title.textContent=category;
+
+container.appendChild(title);
+
+const grid=document.createElement("div");
+
+grid.className="vocab-grid";
+
+filtered.forEach(item=>{
+
+const word=item[0];
+
+const arabic=item[1];
+
+const emoji=item[2];
+
+const card=document.createElement("div");
+
+card.className="vocab-item";
+
+card.innerHTML=`
+
+<div class="vocab-picture">
+${emoji}
+</div>
+
+<div class="vocab-word">
+${escapeHTML(word)}
+</div>
+
+<div class="vocab-ar">
+${escapeHTML(arabic)}
+</div>
+
+<button class="mic">
+🔊
+</button>
+
+`;
+
+card.querySelector(".mic")
+.addEventListener("click",function(){
+
+speakWord(word);
+
+});
+
+grid.appendChild(card);
+
+});
+
+container.appendChild(grid);
+
+});
+
+}
+
+
+function speakWord(word){
+
+speak(word,0.8);
+
+addXP(1);
+
+}
+
+
+function searchVocabulary(){
+
+const value=
+document.getElementById("vocabSearch").value;
+
+renderVocabulary(value);
+
+}
+
+renderVocabulary();
+
+
+/* =====================================================
+   CONNECTORS
+===================================================== */
+
+const connectors=[
+
+["With","مع","My brother is with my father.","أخي مع أبي."],
+["In","في","I am in Morocco.","أنا في المغرب."],
+["On","على / في","The book is on the table.","الكتاب على الطاولة."],
+["At","في / عند","I am at the airport.","أنا في المطار."],
+["From","من","I am from Morocco.","أنا من المغرب."],
+["To","إلى","I am going to America.","أنا ذاهبة إلى أمريكا."],
+["For","من أجل / لـ","This gift is for you.","هذه الهدية لك."],
+["About","عن","We are talking about travel.","نحن نتحدث عن السفر."],
+["Before","قبل","I eat breakfast before university.","آكل الفطور قبل الجامعة."],
+["After","بعد","I study after work.","أدرس بعد العمل."],
+["Because","لأن","I study English because I love languages.","أدرس الإنجليزية لأنني أحب اللغات."],
+["But","لكن","I am tired but happy.","أنا متعبة لكن سعيدة."],
+["And","و","I like tea and coffee.","أحب الشاي والقهوة."],
+["Or","أو","Do you want tea or coffee?","هل تريد الشاي أم القهوة؟"],
+["So","لذلك","I was tired, so I went home.","كنت متعبة، لذلك ذهبت للبيت."],
+["If","إذا","If I have time, I will travel.","إذا كان لدي وقت فسأسافر."],
+["When","عندما","I smile when I am happy.","أبتسم عندما أكون سعيدة."],
+["While","بينما","I listen while I work.","أستمع بينما أعمل."],
+["Although","رغم أن","Although I am tired, I study.","رغم أنني متعبة، أدرس."],
+["Before","قبل أن","Call me before you leave.","اتصل بي قبل أن تغادر."],
+["Until","حتى","I will wait until you arrive.","سأنتظر حتى تصل."],
+["Also","أيضًا","I also speak French.","أتحدث الفرنسية أيضًا."],
+["Too","أيضًا","I love traveling too.","أنا أيضًا أحب السفر."],
+["However","ومع ذلك","It is difficult. However, I will try.","الأمر صعب، ومع ذلك سأحاول."],
+["Then","ثم","I will study, then I will sleep.","سأدرس، ثم سأنام."],
+["First","أولًا","First, open your book.","أولًا افتح كتابك."],
+["Finally","أخيرًا","Finally, I finished my work.","أخيرًا أنهيت عملي."],
+["For example","على سبيل المثال","I love fruit, for example, apples.","أحب الفواكه، مثلًا التفاح."],
+["Instead","بدلًا من ذلك","I will walk instead.","سأمشي بدلًا من ذلك."],
+["Without","بدون","I cannot live without water.","لا أستطيع العيش بدون ماء."]
+];
+
+
+function renderConnectors(){
+
+const box=
+document.getElementById("connectorContent");
+
+box.innerHTML="";
+
+connectors.forEach(x=>{
+
+const div=document.createElement("div");
+
+div.className="connector";
+
+div.innerHTML=`
+
+<div class="connector-word">
+${escapeHTML(x[0])}
+</div>
+
+<div class="connector-ar">
+${escapeHTML(x[1])}
+</div>
+
+<div class="connector-example">
+${escapeHTML(x[2])}
+</div>
+
+<div class="connector-ar">
+${escapeHTML(x[3])}
+</div>
+
+<button class="secondary">
+🔊 Hear sentence
+</button>
+
+`;
+
+div.querySelector("button")
+.addEventListener("click",function(){
+
+speak(x[2]);
+
+});
+
+box.appendChild(div);
+
+});
+
+}
+
+renderConnectors();
+
+
+/* =====================================================
+   GRAMMAR PRACTICE
+===================================================== */
+
+const grammarQuestions=[
+
+{
+q:"She ___ English every day.",
+a:["study","studies","studied"],
+correct:1
+},
+
+{
+q:"I ___ to America tomorrow.",
+a:["will travel","traveled","travelled yesterday"],
+correct:0
+},
+
+{
+q:"Yesterday, I ___ very tired.",
+a:["am","will be","was"],
+correct:2
+},
+
+{
+q:"He ___ coffee every morning.",
+a:["drink","drinks","drank"],
+correct:1
+},
+
+{
+q:"They ___ to the hotel yesterday.",
+a:["went","go","will go"],
+correct:0
+},
+
+{
+q:"We ___ visit Morocco next summer.",
+a:["visited","will","visiting"],
+correct:1
+}
+
+];
+
+
+let currentGrammar=0;
+
+
+function renderGrammarQuestion(){
+
+const q=
+grammarQuestions[currentGrammar];
+
+let html=`
+
+<h3>${escapeHTML(q.q)}</h3>
+
+`;
+
+q.a.forEach((answer,index)=>{
+
+html+=`
+
+<button
+class="quiz-option"
+onclick="answerGrammar(${index})">
+
+${escapeHTML(answer)}
+
+</button>
+
+`;
+
+});
+
+document.getElementById("grammarExercise")
+.innerHTML=html;
+
+}
+
+
+function answerGrammar(index){
+
+const q=
+grammarQuestions[currentGrammar];
+
+if(index===q.correct){
+
+document.getElementById("grammarExercise")
+.innerHTML=
+
+`<div class="result">
+
+🎉 <b>Correct!</b>
+
+<br><br>
+
+${escapeHTML(q.q.replace(
+"___",
+q.a[q.correct]
+))}
+
+<br><br>
+
+<button class="primary"
+onclick="nextGrammar()">
+
+Next →
+
+</button>
+
+</div>`;
+
+addXP(15);
+
+}else{
+
+document.getElementById("grammarExercise")
+.innerHTML=
+
+`<div class="result">
+
+❌ Not quite.
+
+<br>
+
+Try again and look at the tense.
+
+<br><br>
+
+<button class="secondary"
+onclick="renderGrammarQuestion()">
+
+Try again
+
+</button>
+
+</div>`;
+
+}
+
+}
+
+
+function nextGrammar(){
+
+currentGrammar++;
+
+if(currentGrammar>=grammarQuestions.length){
+
+currentGrammar=0;
+
+document.getElementById("grammarExercise")
+.innerHTML=
+
+`<div class="result">
+
+🏆 Amazing! You finished the grammar practice.
+
+<br><br>
+
+You earned XP and practiced:
+
+<br>
+
+Present
+
+<br>
+
+Past
+
+<br>
+
+Future
+
+<br><br>
+
+<button class="primary"
+onclick="renderGrammarQuestion()">
+
+Practice again
+
+</button>
+
+</div>`;
+
+}else{
+
+renderGrammarQuestion();
+
+}
+
+}
+
+renderGrammarQuestion();
+
+
+/* =====================================================
    STORIES
-========================= */
+===================================================== */
 
 function storyAnswer(n){
 
 document.getElementById("storyResult")
 .innerHTML=
 
-n===1?
+n===1
 
-'<div class="result">💜 Great! Natural answer. +25 XP</div>':
+?
+
+'<div class="result">💜 Great! That is a natural answer. +25 XP</div>'
+
+:
 
 '<div class="result">Try an answer that matches the question about this weekend.</div>';
 
-if(n===1)addXP(25);
+if(n===1){
+
+addXP(25);
+
+}
 
 }
 
 
-/* =========================
-   START APP
-========================= */
+/* =====================================================
+   SECURITY / HTML HELPERS
+===================================================== */
 
-renderVocabularyMenu();
+function escapeHTML(value){
 
-renderConnectors();
+return String(value)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
 
-renderBuilder();
+}
+
+
+function escapeJS(value){
+
+return String(value)
+.replace(/\\/g,"\\\\")
+.replace(/'/g,"\\'")
+.replace(/\n/g,"\\n")
+.replace(/\r/g,"\\r");
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
 
 updateStats();
 
