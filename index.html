@@ -6,17 +6,14 @@
 <title>English Quest</title>
 
 <style>
-*{
-box-sizing:border-box;
-margin:0;
-padding:0
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 background:linear-gradient(135deg,#f5efff,#eee7ff,#f9f4ff);
 color:#29233d;
-min-height:100vh
+min-height:100vh;
+padding-bottom:90px
 }
 
 button{
@@ -44,9 +41,7 @@ font-weight:800;
 color:#7047d9
 }
 
-.logo span{
-font-size:29px
-}
+.logo span{font-size:29px}
 
 .stats{
 display:flex;
@@ -92,7 +87,8 @@ overflow:hidden
 height:100%;
 background:white;
 border-radius:20px;
-width:0%
+width:0%;
+transition:.4s
 }
 
 .grid{
@@ -120,9 +116,7 @@ font-size:35px;
 margin-bottom:12px
 }
 
-.card h3{
-margin-bottom:7px
-}
+.card h3{margin-bottom:7px}
 
 .card p{
 font-size:14px;
@@ -141,13 +135,9 @@ font-size:12px;
 font-weight:800
 }
 
-section{
-display:none
-}
+section{display:none}
 
-section.active{
-display:block
-}
+section.active{display:block}
 
 .back{
 background:white;
@@ -170,13 +160,15 @@ margin-bottom:18px
 font-size:25px;
 font-weight:750;
 text-align:center;
-padding:25px 5px
+padding:25px 5px;
+line-height:1.5
 }
 
 .arabic{
 text-align:center;
 color:#888;
-margin-bottom:20px
+margin-bottom:20px;
+font-size:16px
 }
 
 .actions{
@@ -202,8 +194,15 @@ border-radius:14px;
 font-weight:700
 }
 
-textarea,
-input{
+.danger{
+background:#ffe8ed;
+color:#c0395b;
+padding:12px 18px;
+border-radius:14px;
+font-weight:700
+}
+
+textarea,input{
 width:100%;
 border:2px solid #eee7fa;
 border-radius:15px;
@@ -213,8 +212,7 @@ outline:none;
 margin:10px 0
 }
 
-textarea:focus,
-input:focus{
+textarea:focus,input:focus{
 border-color:#9a78e9
 }
 
@@ -223,7 +221,17 @@ margin-top:15px;
 padding:15px;
 border-radius:15px;
 background:#f7f3ff;
-line-height:1.6
+line-height:1.7
+}
+
+.success{
+background:#ecfff4;
+color:#246b45
+}
+
+.error{
+background:#fff0f3;
+color:#9b304d
 }
 
 .words{
@@ -242,9 +250,7 @@ font-weight:700;
 color:#6541bf
 }
 
-.skill{
-margin:15px 0
-}
+.skill{margin:15px 0}
 
 .skill-top{
 display:flex;
@@ -257,13 +263,15 @@ font-weight:700
 height:9px;
 background:#eeeaf5;
 border-radius:20px;
-margin-top:7px
+margin-top:7px;
+overflow:hidden
 }
 
 .bar div{
 height:100%;
 background:#8058df;
-border-radius:20px
+border-radius:20px;
+transition:.5s
 }
 
 .nav{
@@ -299,6 +307,16 @@ font-size:13px;
 color:#898295
 }
 
+.counter{
+display:inline-block;
+background:#f0eaff;
+color:#7047d9;
+padding:7px 12px;
+border-radius:12px;
+font-weight:800;
+margin:12px 0
+}
+
 .quiz-option{
 width:100%;
 padding:14px;
@@ -306,14 +324,64 @@ margin:7px 0;
 background:#f7f3ff;
 border-radius:14px;
 text-align:left;
-font-weight:600
+font-weight:600;
+transition:.2s
 }
 
 .quiz-option:hover{
-background:#e9dfff
+background:#e9dfff;
+transform:translateX(3px)
 }
 
-/* VOCABULARY */
+.quiz-option.correct{
+background:#dff8e9;
+color:#17683e
+}
+
+.quiz-option.wrong{
+background:#ffe1e8;
+color:#a32d4b
+}
+
+/* VOCAB */
+
+.vocab-category-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:14px;
+margin-top:20px
+}
+
+.vocab-category{
+background:linear-gradient(145deg,#faf8ff,#f1ebff);
+border:1px solid #eee7fa;
+border-radius:22px;
+padding:22px 14px;
+text-align:center;
+cursor:pointer;
+transition:.2s
+}
+
+.vocab-category:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px #7047d91c
+}
+
+.vocab-category-icon{
+font-size:42px;
+margin-bottom:10px
+}
+
+.vocab-category-title{
+font-weight:800;
+color:#6541bf
+}
+
+.vocab-category-count{
+font-size:12px;
+color:#888;
+margin-top:5px
+}
 
 .vocab-grid{
 display:grid;
@@ -327,13 +395,7 @@ background:#faf8ff;
 border:1px solid #eee7fa;
 border-radius:20px;
 padding:12px;
-text-align:center;
-transition:.2s
-}
-
-.vocab-item:hover{
-transform:translateY(-3px);
-box-shadow:0 8px 20px #7047d91c
+text-align:center
 }
 
 .vocab-picture{
@@ -372,14 +434,14 @@ justify-content:center
 }
 
 .category-title{
-margin-top:25px;
+margin-top:10px;
 font-size:24px;
 color:#7047d9
 }
 
-.search{
-margin:15px 0
-}
+.search{margin:15px 0}
+
+.hidden{display:none!important}
 
 /* GRAMMAR */
 
@@ -400,13 +462,23 @@ margin-bottom:10px
 background:white;
 border-radius:14px;
 padding:12px;
-margin:8px 0
+margin:8px 0;
+line-height:1.7
+}
+
+.grammar-rule{
+background:#eee7ff;
+border-radius:14px;
+padding:14px;
+margin-top:12px;
+line-height:1.7
 }
 
 .tense-table{
 width:100%;
 border-collapse:collapse;
-margin-top:12px
+margin-top:12px;
+overflow:hidden
 }
 
 .tense-table td,
@@ -446,19 +518,64 @@ font-size:13px;
 margin-top:4px
 }
 
+/* READING */
+
+.reading-text{
+font-size:18px;
+line-height:2;
+margin:20px 0
+}
+
+.reading-level{
+display:inline-block;
+background:#eee7ff;
+color:#7047d9;
+padding:6px 10px;
+border-radius:10px;
+font-weight:700;
+font-size:12px
+}
+
+/* WRITING */
+
+.prompt{
+background:#f7f3ff;
+padding:18px;
+border-radius:18px;
+font-size:18px;
+line-height:1.7;
+margin:15px 0
+}
+
+/* PROGRESS */
+
+.progress-summary{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:12px;
+margin-top:18px
+}
+
+.progress-box{
+background:#faf8ff;
+border-radius:18px;
+padding:16px
+}
+
+.progress-box strong{
+font-size:23px;
+color:#7047d9
+}
+
 @media(max-width:600px){
 
 .app{
 padding:14px 14px 100px
 }
 
-.hero h1{
-font-size:27px
-}
+.hero h1{font-size:27px}
 
-.stats{
-gap:5px
-}
+.stats{gap:5px}
 
 .stat{
 font-size:12px;
@@ -479,6 +596,11 @@ font-size:11px
 grid-template-columns:repeat(2,1fr)
 }
 
+.sentence{font-size:21px}
+
+.tense-table{
+font-size:12px
+}
 }
 </style>
 </head>
@@ -494,20 +616,14 @@ grid-template-columns:repeat(2,1fr)
 </div>
 
 <div class="stats">
-
-<div class="stat">
-🔥 <span id="streak">1</span>
+<div class="stat">🔥 <span id="streak">0</span></div>
+<div class="stat">⭐ <span id="xp">0</span> XP</div>
 </div>
 
-<div class="stat">
-⭐ <span id="xp">0</span> XP
-</div>
-
-</div>
 </header>
 
 
-<!-- ================= HOME ================= -->
+<!-- HOME -->
 
 <section id="home" class="active">
 
@@ -524,7 +640,9 @@ Learn English. Think English. Speak English.
 </div>
 
 <p style="margin-top:10px;font-size:13px">
-Level <b id="level">1</b> · Survive English
+Overall progress:
+<b id="overallPercent">0%</b>
+· Level <b id="level">1</b>
 </p>
 
 </div>
@@ -535,78 +653,78 @@ Level <b id="level">1</b> · Survive English
 <div class="card" onclick="openSection('speak')">
 <div class="icon">🗣️</div>
 <h3>Speak Lab</h3>
-<p>Practice speaking and compare your speech with the target sentence.</p>
-<span class="xp">+20 XP</span>
+<p>1000 progressive sentences. Listen, speak, compare and move forward.</p>
+<span class="xp">1000 lessons</span>
 </div>
 
 <div class="card" onclick="openSection('think')">
 <div class="icon">🇲🇦➡️🇺🇸</div>
 <h3>Think in English</h3>
-<p>Turn your thoughts into natural English sentences.</p>
-<span class="xp">+20 XP</span>
+<p>1000 Arabic-to-English sentences. Correct answers stay below as your history.</p>
+<span class="xp">1000 lessons</span>
 </div>
 
 <div class="card" onclick="openSection('listen')">
 <div class="icon">🎧</div>
 <h3>Listening Lab</h3>
-<p>Train your ear from slow speech to fast American English.</p>
-<span class="xp">+20 XP</span>
+<p>1000 listening questions with three choices. Wrong answers repeat.</p>
+<span class="xp">1000 questions</span>
 </div>
 
 <div class="card" onclick="openSection('reading')">
 <div class="icon">📖</div>
 <h3>Reading</h3>
-<p>Read stories and discover words naturally.</p>
-<span class="xp">+15 XP</span>
+<p>400 passages from beginner level to advanced reading.</p>
+<span class="xp">400 passages</span>
 </div>
 
 <div class="card" onclick="openSection('writing')">
 <div class="icon">✍️</div>
 <h3>Writing</h3>
-<p>Write, check your mistakes and try again.</p>
-<span class="xp">+20 XP</span>
+<p>500 progressive writing tasks. Correct your mistakes and rewrite.</p>
+<span class="xp">500 tasks</span>
 </div>
 
 <div class="card" onclick="openSection('builder')">
 <div class="icon">🧩</div>
 <h3>Sentence Builder</h3>
-<p>Build simple sentences and gradually make them richer.</p>
-<span class="xp">+15 XP</span>
+<p>1000 sentences with Arabic meaning before you build them.</p>
+<span class="xp">1000 sentences</span>
 </div>
 
 <div class="card" onclick="openSection('vocabulary')">
 <div class="icon">🌈</div>
 <h3>Vocabulary Worlds</h3>
-<p>Explore hundreds of useful words with pictures and pronunciation.</p>
-<span class="xp">+10 XP</span>
+<p>Enter organized worlds instead of scrolling through one giant list.</p>
+<span class="xp">Explore</span>
 </div>
 
 <div class="card" onclick="openSection('connectors')">
 <div class="icon">🔗</div>
 <h3>Connectors</h3>
-<p>Learn words like in, with, because, although, before and after through examples.</p>
-<span class="xp">+10 XP</span>
+<p>Useful linking words explained through practical examples.</p>
+<span class="xp">Learn</span>
 </div>
 
 <div class="card" onclick="openSection('grammar')">
 <div class="icon">📚</div>
 <h3>Easy Grammar</h3>
-<p>Present, past and future explained simply without pressure.</p>
-<span class="xp">+15 XP</span>
+<p>Learn the rules, verb families and complete tense tables.</p>
+<span class="xp">Learn</span>
 </div>
 
 <div class="card" onclick="openSection('grammarPractice')">
 <div class="icon">✏️</div>
 <h3>Grammar Practice</h3>
-<p>Practice what you learned with small exercises.</p>
-<span class="xp">+20 XP</span>
+<p>1000 questions with three choices. Mistakes repeat until correct.</p>
+<span class="xp">1000 questions</span>
 </div>
 
 <div class="card" onclick="openSection('stories')">
 <div class="icon">🎬</div>
 <h3>Conversation Stories</h3>
-<p>Enter real-life conversations and choose what you would say.</p>
-<span class="xp">+25 XP</span>
+<p>1000 conversation turns. Choose your reply and continue the story.</p>
+<span class="xp">1000 turns</span>
 </div>
 
 </div>
@@ -619,61 +737,63 @@ Level <b id="level">1</b> · Survive English
 <div class="skill">
 <div class="skill-top">
 <span>🗣 Speaking</span>
-<span>72%</span>
+<span id="pSpeaking">0%</span>
 </div>
-<div class="bar">
-<div style="width:72%"></div>
-</div>
+<div class="bar"><div id="bSpeaking"></div></div>
 </div>
 
 <div class="skill">
 <div class="skill-top">
 <span>🎧 Listening</span>
-<span>61%</span>
+<span id="pListening">0%</span>
 </div>
-<div class="bar">
-<div style="width:61%"></div>
-</div>
+<div class="bar"><div id="bListening"></div></div>
 </div>
 
 <div class="skill">
 <div class="skill-top">
 <span>📖 Reading</span>
-<span>84%</span>
+<span id="pReading">0%</span>
 </div>
-<div class="bar">
-<div style="width:84%"></div>
-</div>
+<div class="bar"><div id="bReading"></div></div>
 </div>
 
 <div class="skill">
 <div class="skill-top">
 <span>✍️ Writing</span>
-<span>53%</span>
+<span id="pWriting">0%</span>
 </div>
-<div class="bar">
-<div style="width:53%"></div>
-</div>
+<div class="bar"><div id="bWriting"></div></div>
 </div>
 
 <div class="skill">
 <div class="skill-top">
 <span>🧠 Vocabulary</span>
-<span>70%</span>
+<span id="pVocabulary">0%</span>
 </div>
-<div class="bar">
-<div style="width:70%"></div>
-</div>
+<div class="bar"><div id="bVocabulary"></div></div>
 </div>
 
 <div class="skill">
 <div class="skill-top">
 <span>⚡ Grammar</span>
-<span>64%</span>
+<span id="pGrammar">0%</span>
 </div>
-<div class="bar">
-<div style="width:64%"></div>
+<div class="bar"><div id="bGrammar"></div></div>
 </div>
+
+<div class="progress-summary">
+
+<div class="progress-box">
+<div>Completed lessons</div>
+<strong id="completedTotal">0</strong>
+</div>
+
+<div class="progress-box">
+<div>Total learning units</div>
+<strong id="totalUnits">0</strong>
+</div>
+
 </div>
 
 </div>
@@ -681,45 +801,36 @@ Level <b id="level">1</b> · Survive English
 </section>
 
 
-<!-- ================= SPEAK ================= -->
+<!-- SPEAK -->
 
 <section id="speak">
 
-<button class="back" onclick="openSection('home')">
-← Home
-</button>
+<button class="back" onclick="openSection('home')">← Home</button>
 
 <div class="lesson">
 
 <h2>🗣️ Speak Lab</h2>
 
 <p class="small">
-Listen → speak → compare → repeat.
+Listen → speak → compare → repeat → next.
 </p>
 
-<div class="sentence" id="speakSentence">
-I want to learn English.
+<div class="counter">
+Sentence <span id="speakNumber">1</span> / 1000
 </div>
 
-<div class="arabic">
-أريد أن أتعلم الإنجليزية.
-</div>
+<div class="sentence" id="speakSentence"></div>
+
+<div class="arabic" id="speakArabic"></div>
 
 <div class="actions">
 
-<button class="primary"
-onclick="speak(document.getElementById('speakSentence').textContent)">
+<button class="primary" onclick="speakCurrent()">
 🔊 Listen
 </button>
 
-<button class="primary"
-onclick="startSpeaking()">
+<button class="primary" onclick="startSpeaking()">
 🎙️ Speak
-</button>
-
-<button class="secondary"
-onclick="newSpeakSentence()">
-↻ New sentence
 </button>
 
 </div>
@@ -728,30 +839,36 @@ onclick="newSpeakSentence()">
 
 </div>
 
+<div class="lesson" id="speakHistory"></div>
+
 </section>
 
 
-<!-- ================= THINK ================= -->
+<!-- THINK -->
 
 <section id="think">
 
-<button class="back" onclick="openSection('home')">
-← Home
-</button>
+<button class="back" onclick="openSection('home')">← Home</button>
 
 <div class="lesson">
 
 <h2>🇲🇦➡️🇺🇸 Think in English</h2>
 
-<p style="margin:12px 0">
-أنا أريد أن أذهب إلى الجامعة غداً.
+<p class="small">
+Translate the idea naturally into English. There are 1000 sentences.
 </p>
+
+<div class="counter">
+Sentence <span id="thinkNumber">1</span> / 1000
+</div>
+
+<div class="prompt" id="thinkPrompt"></div>
 
 <textarea
 id="thinkInput"
-placeholder="Write your English sentence..."></textarea>
+placeholder="Write your English sentence..."
+></textarea>
 
-<!-- FIXED -->
 <button class="primary" onclick="checkThink()">
 Check my answer
 </button>
@@ -760,126 +877,121 @@ Check my answer
 
 </div>
 
+<div class="lesson">
+<h3>✅ Completed sentences</h3>
+<div id="thinkHistory"></div>
+</div>
+
 </section>
 
 
-<!-- ================= LISTEN ================= -->
+<!-- LISTEN -->
 
 <section id="listen">
 
-<button class="back" onclick="openSection('home')">
-← Home
-</button>
+<button class="back" onclick="openSection('home')">← Home</button>
 
 <div class="lesson">
 
 <h2>🎧 Listening Lab</h2>
 
 <p class="small">
-Choose your speed.
+Choose your speed, listen carefully, then answer.
 </p>
 
 <div class="actions" style="margin:20px 0">
 
-<button class="secondary"
-onclick="listenSpeed(.65)">
+<button class="secondary" onclick="listenSpeed(.65)">
 🐢 Slow
 </button>
 
-<button class="primary"
-onclick="listenSpeed(1)">
+<button class="primary" onclick="listenSpeed(1)">
 🙂 Normal
 </button>
 
-<button class="secondary"
-onclick="listenSpeed(1.35)">
+<button class="secondary" onclick="listenSpeed(1.35)">
 ⚡ Fast
 </button>
 
 </div>
 
-<button class="primary"
-onclick="listenQuiz()">
-Start Listening Challenge
-</button>
+<div class="counter">
+Question <span id="listenNumber">1</span> / 1000
+</div>
 
-<div id="listenResult"></div>
+<div id="listenQuestion"></div>
 
+</div>
+
+<div class="lesson">
+<h3>✅ Completed questions</h3>
+<div id="listenHistory"></div>
 </div>
 
 </section>
 
 
-<!-- ================= READING ================= -->
+<!-- READING -->
 
 <section id="reading">
 
-<button class="back" onclick="openSection('home')">
-← Home
-</button>
+<button class="back" onclick="openSection('home')">← Home</button>
 
 <div class="lesson">
 
 <h2>📖 Reading</h2>
 
-<h3 style="margin:20px 0 10px">
-A New Day
-</h3>
-
-<p style="line-height:1.8">
-
-Every morning, Maya opens her window and looks at the city.
-She drinks coffee, checks her plans, and gets ready for university.
-She wants to improve her English because she dreams of traveling around the world.
-
-</p>
-
-<div class="words">
-
-<div class="word" onclick="wordInfo('dream')">
-dream
+<div class="counter">
+Passage <span id="readingNumber">1</span> / 400
 </div>
 
-<div class="word" onclick="wordInfo('improve')">
-improve
-</div>
+<div id="readingLevel"></div>
 
-<div class="word" onclick="wordInfo('travel')">
-travel
-</div>
+<h3 id="readingTitle" style="margin:18px 0 10px"></h3>
+
+<div class="reading-text" id="readingText"></div>
+
+<div class="words" id="readingWords"></div>
+
+<div id="readingQuestion"></div>
 
 </div>
 
-<div id="wordResult"></div>
-
+<div class="lesson">
+<h3>📚 Completed readings</h3>
+<div id="readingHistory"></div>
 </div>
 
 </section>
 
 
-<!-- ================= WRITING ================= -->
+<!-- WRITING -->
 
 <section id="writing">
 
-<button class="back" onclick="openSection('home')">
-← Home
-</button>
+<button class="back" onclick="openSection('home')">← Home</button>
 
 <div class="lesson">
 
 <h2>✍️ Writing</h2>
 
-<p>
-Write 3–5 sentences about your day.
+<p class="small">
+Write, check, correct, rewrite. You move forward only when the text is ready.
 </p>
+
+<div class="counter">
+Writing task <span id="writingNumber">1</span> / 500
+</div>
+
+<div class="prompt" id="writingPrompt"></div>
 
 <textarea
 id="writingInput"
-rows="7"
-placeholder="Today I..."></textarea>
+rows="9"
+placeholder="Write your answer here..."
+></textarea>
 
-<button class="primary"
-onclick="checkWriting()">
+<button class="primary" onclick="checkWriting()">
 Check writing
 </button>
 
@@ -887,85 +999,94 @@ Check writing
 
 </div>
 
-</section>
-
-
-<!-- ================= BUILDER ================= -->
-
-<section id="builder">
-
-<button class="back" onclick="openSection('home')">
-← Home
-</button>
-
 <div class="lesson">
-
-<h2>🧩 Sentence Builder</h2>
-
-<p>
-Build the sentence in the correct order.
-</p>
-
-<div class="words" id="builderWords"></div>
-
-<div id="builderResult"></div>
-
-<button
-class="secondary"
-style="margin-top:15px"
-onclick="resetBuilder()">
-↻ Reset
-</button>
-
+<h3>📝 Completed writing</h3>
+<div id="writingHistory"></div>
 </div>
 
 </section>
 
 
-<!-- ================= VOCABULARY ================= -->
+<!-- BUILDER -->
+
+<section id="builder">
+
+<button class="back" onclick="openSection('home')">← Home</button>
+
+<div class="lesson">
+
+<h2>🧩 Sentence Builder</h2>
+
+<p class="small">
+Understand the Arabic meaning first, then build the English sentence.
+</p>
+
+<div class="counter">
+Sentence <span id="builderNumber">1</span> / 1000
+</div>
+
+<div class="prompt" id="builderArabic"></div>
+
+<div id="builderWords" class="words"></div>
+
+<div id="builderResult"></div>
+
+<button class="secondary" onclick="resetBuilder()">
+↻ Reset
+</button>
+
+</div>
+
+<div class="lesson">
+<h3>✅ Completed sentences</h3>
+<div id="builderHistory"></div>
+</div>
+
+</section>
+
+
+<!-- VOCABULARY -->
 
 <section id="vocabulary">
 
-<button class="back" onclick="openSection('home')">
-← Home
-</button>
+<button class="back" onclick="openSection('home')">← Home</button>
 
 <div class="lesson">
 
 <h2>🌈 Vocabulary Worlds</h2>
 
 <p class="small">
-Tap 🔊 to hear every word.
+Choose a world. Then explore its words.
 </p>
 
 <input
-class="search"
 id="vocabSearch"
+class="search"
 placeholder="🔎 Search vocabulary..."
 oninput="searchVocabulary()"
 >
 
-<div id="vocabContent"></div>
+<div id="vocabCategories"></div>
+
+<div id="vocabWords" class="hidden"></div>
 
 </div>
 
 </section>
 
 
-<!-- ================= CONNECTORS ================= -->
+<!-- CONNECTORS -->
 
 <section id="connectors">
 
-<button class="back" onclick="openSection('home')">
-← Home
-</button>
+<button class="back" onclick="openSection('home')">← Home</button>
 
 <div class="lesson">
 
 <h2>🔗 English Connectors & Useful Words</h2>
 
 <p class="small">
-Learn the word → see it in a sentence → hear it.
+Learn the word → understand it → see it in a sentence → hear it.
 </p>
 
 <div id="connectorContent"></div>
@@ -975,13 +1096,11 @@ Learn the word → see it in a sentence → hear it.
 </section>
 
 
-<!-- ================= GRAMMAR ================= -->
+<!-- GRAMMAR -->
 
 <section id="grammar">
 
-<button class="back" onclick="openSection('home')">
-← Home
-</button>
+<button class="back" onclick="openSection('home')">← Home</button>
 
 <div class="lesson">
 
@@ -991,22 +1110,27 @@ Learn the word → see it in a sentence → hear it.
 No pressure. Understand first, then practice.
 </p>
 
+
 <div class="grammar-card">
 
 <h3>🌱 Present Simple</h3>
 
 <p>
-نستخدمه للعادات والأشياء التي تحدث بشكل متكرر.
+نستخدمه للعادات، الحقائق، والأشياء التي تحدث بشكل متكرر.
 </p>
+
+<div class="grammar-rule">
+<b>القاعدة:</b><br>
+I / You / We / They + base verb<br>
+He / She / It + verb + s/es/ies
+</div>
 
 <div class="example">
 I work every day.<br>
-She works every day.
+You work every day.<br>
+She works every day.<br>
+He studies English.
 </div>
-
-<p>
-مع <b>he / she / it</b> نضيف غالبًا <b>s</b>.
-</p>
 
 </div>
 
@@ -1019,14 +1143,17 @@ She works every day.
 نستخدمه لشيء حدث وانتهى في الماضي.
 </p>
 
-<div class="example">
-I worked yesterday.<br>
-She visited her friend.
-</div>
+<div class="grammar-rule">
+<b>Regular verbs:</b><br>
+work → worked<br>
+play → played<br>
+study → studied<br><br>
 
-<p>
-كثير من الأفعال المنتظمة تأخذ <b>-ed</b>.
-</p>
+<b>Irregular verbs:</b><br>
+go → went<br>
+eat → ate<br>
+see → saw
+</div>
 
 </div>
 
@@ -1036,67 +1163,85 @@ She visited her friend.
 <h3>🚀 Future with WILL</h3>
 
 <p>
-عندما نتحدث عن المستقبل يمكننا استخدام <b>will</b>.
+نستخدم <b>will + base verb</b> للتحدث عن المستقبل.
 </p>
 
 <div class="example">
-I will marry you. ❤️
+I will work.<br>
+She will travel.<br>
+They will study.
 </div>
-
-<table class="tense-table">
-
-<tr>
-<th>Subject</th>
-<th>Future</th>
-</tr>
-
-<tr>
-<td>I</td>
-<td>I will</td>
-</tr>
-
-<tr>
-<td>You</td>
-<td>You will</td>
-</tr>
-
-<tr>
-<td>He</td>
-<td>He will</td>
-</tr>
-
-<tr>
-<td>She</td>
-<td>She will</td>
-</tr>
-
-<tr>
-<td>It</td>
-<td>It will</td>
-</tr>
-
-<tr>
-<td>We</td>
-<td>We will</td>
-</tr>
-
-<tr>
-<td>They</td>
-<td>They will</td>
-</tr>
-
-</table>
 
 </div>
 
 
 <div class="grammar-card">
 
-<h3>💡 Negative</h3>
+<h3>🔤 How verbs change</h3>
+
+<h4>1. Add S</h4>
+
+<p>
+work → works<br>
+read → reads<br>
+play → plays
+</p>
+
+<h4 style="margin-top:15px">2. Add ES</h4>
+
+<p>
+go → goes<br>
+watch → watches<br>
+wash → washes<br>
+fix → fixes
+</p>
+
+<h4 style="margin-top:15px">3. Change Y to IES</h4>
+
+<p>
+study → studies<br>
+try → tries<br>
+carry → carries
+</p>
+
+<div class="grammar-rule">
+⚠️ إذا كان قبل Y حرف متحرك مثل play، لا نحذف Y:
+play → plays
+</div>
+
+<h4 style="margin-top:15px">4. Irregular verbs</h4>
+
+<p>
+بعض الأفعال لا تتبع قاعدة -ed ويجب تعلم شكلها الماضي.
+</p>
+
+</div>
+
+
+<div class="grammar-card">
+
+<h3>📊 Complete Verb Table</h3>
+
+<div id="verbTables"></div>
+
+</div>
+
+
+<div class="grammar-card">
+
+<h3>🚫 Negative</h3>
 
 <div class="example">
-I will not go.<br>
-I won't go.
+Present:<br>
+I do not work.<br>
+She does not work.<br><br>
+
+Past:<br>
+I did not work.<br><br>
+
+Future:<br>
+I will not work.<br>
+I won't work.
 </div>
 
 </div>
@@ -1107,7 +1252,10 @@ I won't go.
 <h3>❓ Questions</h3>
 
 <div class="example">
-Will you come tomorrow?
+Do you work?<br>
+Does she work?<br>
+Did they work?<br>
+Will you work tomorrow?
 </div>
 
 </div>
@@ -1117,62 +1265,61 @@ Will you come tomorrow?
 </section>
 
 
-<!-- ================= GRAMMAR PRACTICE ================= -->
+<!-- GRAMMAR PRACTICE -->
 
 <section id="grammarPractice">
 
-<button class="back" onclick="openSection('home')">
-← Home
-</button>
+<button class="back" onclick="openSection('home')">← Home</button>
 
 <div class="lesson">
 
 <h2>✏️ Grammar Practice</h2>
 
+<p class="small">
+1000 questions. Three choices. Wrong = repeat. Correct = next.
+</p>
+
+<div class="counter">
+Question <span id="grammarNumber">1</span> / 1000
+</div>
+
 <div id="grammarExercise"></div>
 
+</div>
+
+<div class="lesson">
+<h3>✅ Completed grammar questions</h3>
+<div id="grammarHistory"></div>
 </div>
 
 </section>
 
 
-<!-- ================= STORIES ================= -->
+<!-- STORIES -->
 
 <section id="stories">
 
-<button class="back" onclick="openSection('home')">
-← Home
-</button>
+<button class="back" onclick="openSection('home')">← Home</button>
 
 <div class="lesson">
 
 <h2>🎬 Conversation Story</h2>
 
-<div class="result">
-👨 <b>Alex:</b> Hey! What are you doing this weekend?
-</div>
-
-<p style="margin:18px 0;font-weight:700">
-What would you say?
+<p class="small">
+You are not repeating one conversation forever. The story grows step by step.
 </p>
 
-<button class="quiz-option"
-onclick="storyAnswer(1)">
-I'm going to visit my friend.
-</button>
+<div class="counter">
+Conversation <span id="storyNumber">1</span> / 1000
+</div>
 
-<button class="quiz-option"
-onclick="storyAnswer(2)">
-Yesterday I was tired.
-</button>
+<div id="storyDialogue"></div>
 
-<button class="quiz-option"
-onclick="storyAnswer(3)">
-I don't know English.
-</button>
+</div>
 
-<div id="storyResult"></div>
-
+<div class="lesson">
+<h3>💬 Completed conversation</h3>
+<div id="storyHistory"></div>
 </div>
 
 </section>
@@ -1180,29 +1327,15 @@ I don't know English.
 </div>
 
 
-<!-- ================= NAV ================= -->
+<!-- NAV -->
 
 <div class="nav">
 
-<button onclick="openSection('home')">
-🏠 Home
-</button>
-
-<button onclick="openSection('speak')">
-🗣️ Speak
-</button>
-
-<button onclick="openSection('listen')">
-🎧 Listen
-</button>
-
-<button onclick="openSection('vocabulary')">
-🌈 Words
-</button>
-
-<button onclick="openSection('grammar')">
-📚 Grammar
-</button>
+<button onclick="openSection('home')">🏠 Home</button>
+<button onclick="openSection('speak')">🗣️ Speak</button>
+<button onclick="openSection('listen')">🎧 Listen</button>
+<button onclick="openSection('vocabulary')">🌈 Words</button>
+<button onclick="openSection('grammar')">📚 Grammar</button>
 
 </div>
 
@@ -1210,43 +1343,152 @@ I don't know English.
 <script>
 
 /* =====================================================
-   XP
+   CORE STORAGE
 ===================================================== */
 
-let xp=Number(localStorage.getItem("eq_xp")||0);
+const TOTAL={
+speak:1000,
+think:1000,
+listen:1000,
+reading:400,
+writing:500,
+builder:1000,
+grammar:1000,
+stories:1000
+};
 
-let streak=Number(localStorage.getItem("eq_streak")||1);
+const skillTotals={
+Speaking:1000,
+Listening:1000,
+Reading:400,
+Writing:500,
+Vocabulary:100,
+Grammar:1000
+};
+
+let state=JSON.parse(
+localStorage.getItem("englishQuestState")||"null"
+)||{
+xp:0,
+streak:0,
+progress:{
+speak:0,
+think:0,
+listen:0,
+reading:0,
+writing:0,
+builder:0,
+grammar:0,
+stories:0,
+vocabulary:0
+},
+history:{
+speak:[],
+think:[],
+listen:[],
+reading:[],
+writing:[],
+builder:[],
+grammar:[],
+stories:[]
+}
+};
+
+function saveState(){
+localStorage.setItem(
+"englishQuestState",
+JSON.stringify(state)
+);
+}
+
+function addXP(amount){
+state.xp+=amount;
+saveState();
+updateStats();
+}
 
 function updateStats(){
 
-const xpElement=document.getElementById("xp");
-const streakElement=document.getElementById("streak");
-const levelElement=document.getElementById("level");
-const progressElement=document.getElementById("mainProgress");
+document.getElementById("xp").textContent=state.xp;
 
-if(xpElement) xpElement.textContent=xp;
+document.getElementById("streak").textContent=state.streak;
 
-if(streakElement) streakElement.textContent=streak;
+document.getElementById("level").textContent=
+Math.floor(state.xp/100)+1;
 
-if(levelElement){
-levelElement.textContent=Math.floor(xp/100)+1;
+const totalUnits=
+Object.values(TOTAL).reduce((a,b)=>a+b,0);
+
+const completed=
+state.progress.speak+
+state.progress.think+
+state.progress.listen+
+state.progress.reading+
+state.progress.writing+
+state.progress.builder+
+state.progress.grammar+
+state.progress.stories+
+Math.min(state.progress.vocabulary,100);
+
+const overall=Math.round(
+(completed/(totalUnits+100))*100
+);
+
+document.getElementById("overallPercent").textContent=
+overall+"%";
+
+document.getElementById("mainProgress").style.width=
+overall+"%";
+
+document.getElementById("completedTotal").textContent=
+completed;
+
+document.getElementById("totalUnits").textContent=
+totalUnits+100;
+
+setSkill("Speaking",
+state.progress.speak,
+1000);
+
+setSkill("Listening",
+state.progress.listen,
+1000);
+
+setSkill("Reading",
+state.progress.reading,
+400);
+
+setSkill("Writing",
+state.progress.writing,
+500);
+
+setSkill("Vocabulary",
+state.progress.vocabulary,
+100);
+
+setSkill(
+"Grammar",
+state.progress.grammar,
+1000
+);
 }
 
-if(progressElement){
-progressElement.style.width=(xp%100)+"%";
-}
+function setSkill(name,value,total){
 
-localStorage.setItem("eq_xp",xp);
+const percent=Math.min(
+100,
+Math.round((value/total)*100)
+);
 
-localStorage.setItem("eq_streak",streak);
-}
+const id=name.toLowerCase();
 
-function addXP(n){
+const text=document.getElementById("p"+name);
 
-xp+=n;
+const bar=document.getElementById("b"+name);
 
-updateStats();
+if(text)text.textContent=percent+"%";
 
+if(bar)bar.style.width=percent+"%";
 }
 
 
@@ -1256,16 +1498,12 @@ updateStats();
 
 function openSection(id){
 
+document.querySelectorAll("section")
+.forEach(s=>s.classList.remove("active"));
+
 const target=document.getElementById(id);
 
-if(!target)return;
-
-document.querySelectorAll("section")
-.forEach(s=>{
-s.classList.remove("active");
-});
-
-target.classList.add("active");
+if(target)target.classList.add("active");
 
 window.scrollTo({
 top:0,
@@ -1276,7 +1514,7 @@ behavior:"smooth"
 
 
 /* =====================================================
-   SPEECH SYNTHESIS
+   SPEECH
 ===================================================== */
 
 function speak(text,rate=1){
@@ -1284,620 +1522,1436 @@ function speak(text,rate=1){
 if(!text)return;
 
 if(!("speechSynthesis" in window)){
-
-alert("Your browser does not support speech synthesis.");
-
+alert("Speech synthesis is not available in this browser.");
 return;
 }
-
-try{
 
 window.speechSynthesis.cancel();
 
 const u=new SpeechSynthesisUtterance(text);
 
 u.lang="en-US";
-
 u.rate=rate;
-
 u.pitch=1;
 
 window.speechSynthesis.speak(u);
+}
 
-}catch(error){
+function escapeHTML(value){
 
-console.error(error);
+return String(value)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
 
 }
+
+function normalize(text){
+
+return String(text||"")
+.toLowerCase()
+.replace(/[.,!?;:'"()\-]/g,"")
+.replace(/\s+/g," ")
+.trim();
+}
+
+function similarity(a,b){
+
+const A=normalize(a).split(" ").filter(Boolean);
+const B=normalize(b).split(" ").filter(Boolean);
+
+if(!B.length)return 0;
+
+let same=0;
+
+B.forEach(word=>{
+if(A.includes(word))same++;
+});
+
+return Math.round((same/B.length)*100);
+}
+
+
+/* =====================================================
+   DATA ENGINE
+   Creates large progressive courses instead of
+   repeating one tiny example.
+===================================================== */
+
+const people=[
+["I","أنا"],
+["You","أنت"],
+["We","نحن"],
+["They","هم"],
+["She","هي"],
+["He","هو"],
+["My sister","أختي"],
+["My brother","أخي"],
+["My friend","صديقي"],
+["My mother","أمي"],
+["My father","أبي"],
+["My teacher","أستاذي"],
+["The student","الطالب"],
+["The woman","المرأة"],
+["The man","الرجل"],
+["Our family","عائلتنا"],
+["My friends","أصدقائي"],
+["The children","الأطفال"],
+["The girl","الفتاة"],
+["The boy","الولد"]
+];
+
+const verbs=[
+["learn","يتعلم"],
+["study","يدرس"],
+["work","يعمل"],
+["travel","يسافر"],
+["visit","يزور"],
+["watch","يشاهد"],
+["read","يقرأ"],
+["write","يكتب"],
+["cook","يطبخ"],
+["clean","ينظف"],
+["buy","يشتري"],
+["open","يفتح"],
+["close","يغلق"],
+["call","يتصل"],
+["help","يساعد"],
+["play","يلعب"],
+["walk","يمشي"],
+["drink","يشرب"],
+["eat","يأكل"],
+["listen","يستمع"],
+["practice","يتدرب"],
+["speak","يتحدث"],
+["watch","يشاهد"],
+["meet","يقابل"],
+["start","يبدأ"],
+["finish","ينهي"],
+["need","يحتاج"],
+["want","يريد"],
+["like","يحب"],
+["love","يحب"],
+["use","يستعمل"],
+["make","يصنع"],
+["take","يأخذ"],
+["bring","يحضر"],
+["choose","يختار"],
+["prepare","يحضر"],
+["remember","يتذكر"],
+["understand","يفهم"],
+["improve","يحسن"],
+["enjoy","يستمتع"]
+];
+
+const objects=[
+["English","الإنجليزية"],
+["a book","كتابًا"],
+["coffee","القهوة"],
+["breakfast","الفطور"],
+["dinner","العشاء"],
+["a new word","كلمة جديدة"],
+["my homework","واجبي"],
+["my room","غرفتي"],
+["the kitchen","المطبخ"],
+["the city","المدينة"],
+["the airport","المطار"],
+["the university","الجامعة"],
+["my friend","صديقي"],
+["my family","عائلتي"],
+["a movie","فيلمًا"],
+["music","الموسيقى"],
+["some water","بعض الماء"],
+["a message","رسالة"],
+["a photo","صورة"],
+["a new language","لغة جديدة"],
+["my plans","خططي"],
+["the bus","الحافلة"],
+["the train","القطار"],
+["a ticket","تذكرة"],
+["a hotel","فندقًا"],
+["a restaurant","مطعمًا"],
+["the answer","الإجابة"],
+["the question","السؤال"],
+["a story","قصة"],
+["a sentence","جملة"]
+];
+
+const times=[
+["every morning","كل صباح"],
+["every day","كل يوم"],
+["every evening","كل مساء"],
+["on weekends","في عطلة نهاية الأسبوع"],
+["after work","بعد العمل"],
+["before class","قبل الدرس"],
+["at night","في الليل"],
+["in the morning","في الصباح"],
+["this week","هذا الأسبوع"],
+["next week","الأسبوع القادم"],
+["tomorrow","غدًا"],
+["today","اليوم"],
+["on Monday","يوم الاثنين"],
+["after dinner","بعد العشاء"],
+["before breakfast","قبل الفطور"],
+["when I have time","عندما يكون لدي وقت"],
+["during the weekend","خلال عطلة نهاية الأسبوع"],
+["after university","بعد الجامعة"],
+["before I sleep","قبل أن أنام"],
+["when I travel","عندما أسافر"]
+];
+
+function conjugatePresent(subject,verb){
+
+const s=subject.toLowerCase();
+
+if(
+["i","you","we","they"].includes(s)||
+s.includes("friends")||
+s.includes("children")||
+s.includes("family")===false
+){
+return verb;
+}
+
+if(s.includes("family"))return verb+"s";
+
+if(
+verb.endsWith("ch")||
+verb.endsWith("sh")||
+verb.endsWith("x")||
+verb.endsWith("o")
+)return verb+"es";
+
+if(
+verb.endsWith("y")&&
+!"aeiou".includes(
+verb.charAt(verb.length-2)
+)
+)
+return verb.slice(0,-1)+"ies";
+
+return verb+"s";
+}
+
+const irregularPast={
+go:"went",
+eat:"ate",
+see:"saw",
+take:"took",
+make:"made",
+write:"wrote",
+read:"read",
+speak:"spoke",
+drink:"drank",
+buy:"bought",
+bring:"brought",
+choose:"chose",
+understand:"understood",
+meet:"met"
+};
+
+function pastVerb(v){
+
+return irregularPast[v]||(
+v.endsWith("e")
+?v+"d"
+:v.endsWith("y")&&!["a","e","i","o","u"]
+.includes(v[v.length-2])
+?v.slice(0,-1)+"ied"
+:v+"ed"
+);
+}
+
+
+/* =====================================================
+   THINK IN ENGLISH — 1000
+===================================================== */
+
+function makeThinkData(){
+
+const arr=[];
+
+for(let i=0;i<1000;i++){
+
+const p=people[i%people.length];
+const v=verbs[Math.floor(i/people.length)%verbs.length];
+const o=objects[Math.floor(i/(people.length*verbs.length))%objects.length];
+const t=times[Math.floor(i/300)%times.length];
+
+let en;
+let ar;
+
+const mode=i%5;
+
+if(mode===0){
+
+const pv=conjugatePresent(p[0],v[0]);
+
+en=p[0]+" "+pv+" "+o[0]+" "+t[0]+".";
+ar=p[1]+" "+v[1]+" "+o[1]+" "+t[1]+".";
+
+}else if(mode===1){
+
+en=p[0]+" will "+v[0]+" "+o[0]+" "+t[0]+".";
+ar=p[1]+" سوف "+v[1]+" "+o[1]+" "+t[1]+".";
+
+}else if(mode===2){
+
+en=p[0]+" "+pastVerb(v[0])+" "+o[0]+" yesterday.";
+ar=p[1]+" "+v[1]+" "+o[1]+" أمس.";
+
+}else if(mode===3){
+
+en=p[0]+" wants to "+v[0]+" "+o[0]+".";
+ar=p[1]+" يريد/تريد أن "+v[1]+" "+o[1]+".";
+
+}else{
+
+en=p[0]+" is going to "+v[0]+" "+o[0]+" tomorrow.";
+ar=p[1]+" سيذهب/ستذهب إلى "+v[1]+" "+o[1]+" غدًا.";
+
+}
+
+arr.push({
+en,
+ar
+});
+
+}
+
+return arr;
+}
+
+const thinkData=makeThinkData();
+
+let thinkIndex=state.progress.think;
+
+function renderThink(){
+
+const x=thinkData[thinkIndex];
+
+document.getElementById("thinkNumber").textContent=
+thinkIndex+1;
+
+document.getElementById("thinkPrompt").textContent=
+x.ar;
+
+document.getElementById("thinkInput").value="";
+
+document.getElementById("thinkResult").innerHTML="";
+
+renderThinkHistory();
+}
+
+function checkThink(){
+
+const input=document.getElementById("thinkInput").value.trim();
+
+if(!input){
+
+document.getElementById("thinkResult").innerHTML=
+'<div class="result error">✍️ Write your English sentence first.</div>';
+
+return;
+}
+
+const target=thinkData[thinkIndex].en;
+
+const score=similarity(input,target);
+
+if(score>=100){
+
+document.getElementById("thinkResult").innerHTML=`
+
+<div class="result success">
+
+🎉 Perfect! 100%
+
+<br><br>
+
+<b>Correct:</b> ${escapeHTML(target)}
+
+<br><br>
+
+<button class="primary" onclick="nextThink()">
+Next sentence →
+</button>
+
+</div>`;
+
+}else{
+
+document.getElementById("thinkResult").innerHTML=`
+
+<div class="result error">
+
+📝 Not 100% yet.
+
+<br>
+
+Your match: ${score}%
+
+<br><br>
+
+<b>Correct sentence:</b><br>
+${escapeHTML(target)}
+
+<br><br>
+
+Try writing it again exactly and then continue.
+
+</div>`;
+
+}
+
+}
+
+function nextThink(){
+
+if(thinkIndex>=1000)return;
+
+state.progress.think=Math.max(
+state.progress.think,
+thinkIndex+1
+);
+
+state.history.think.push(
+thinkData[thinkIndex]
+);
+
+thinkIndex++;
+
+addXP(20);
+
+saveState();
+
+renderThink();
+updateStats();
+}
+
+function renderThinkHistory(){
+
+const box=document.getElementById("thinkHistory");
+
+box.innerHTML="";
+
+state.history.think
+.slice(-20)
+.forEach((x,i)=>{
+
+box.innerHTML+=`
+<div class="result success" style="margin-bottom:8px">
+<b>${state.history.think.length-20+i+1>0?state.history.think.length-20+i+1:"✓"}</b>
+<br>
+${escapeHTML(x.ar)}
+<br>
+🇺🇸 ${escapeHTML(x.en)}
+</div>
+`;
+
+});
 
 }
 
 
 /* =====================================================
-   SPEAK LAB
+   SPEAK LAB — 1000
 ===================================================== */
 
-const sentences=[
+const speakData=thinkData;
 
-[
-"I want to learn English.",
-"أريد أن أتعلم الإنجليزية."
-],
+let speakIndex=state.progress.speak;
 
-[
-"I am going to university tomorrow.",
-"سأذهب إلى الجامعة غداً."
-],
+function renderSpeak(){
 
-[
-"I love traveling around the world.",
-"أحب السفر حول العالم."
-],
+const x=speakData[speakIndex];
 
-[
-"I need to practice every day.",
-"أحتاج إلى التدريب كل يوم."
-],
+document.getElementById("speakNumber").textContent=
+speakIndex+1;
 
-[
-"I feel happy when I learn something new.",
-"أشعر بالسعادة عندما أتعلم شيئاً جديداً."
-],
+document.getElementById("speakSentence").textContent=x.en;
 
-[
-"I would like to visit America one day.",
-"أود زيارة أمريكا يوماً ما."
-],
+document.getElementById("speakArabic").textContent=x.ar;
 
-[
-"I want to speak English confidently.",
-"أريد أن أتحدث الإنجليزية بثقة."
-],
+document.getElementById("speakResult").innerHTML="";
 
-[
-"I am learning something new every day.",
-"أتعلم شيئاً جديداً كل يوم."
-]
+renderSpeakHistory();
+}
 
-];
+function speakCurrent(){
 
+speak(speakData[speakIndex].en,1);
+}
 
 function startSpeaking(){
 
 const Recognition=
-window.SpeechRecognition ||
+window.SpeechRecognition||
 window.webkitSpeechRecognition;
 
 if(!Recognition){
 
 document.getElementById("speakResult").innerHTML=
-
-'<div class="result">🎙️ Speech recognition is not available in this browser. Please use Safari/Chrome with microphone permission enabled.</div>';
+'<div class="result error">🎙️ Speech recognition is not available in this browser. Try Safari or Chrome and allow microphone access.</div>';
 
 return;
-
 }
 
-const r=new Recognition();
+const recognition=new Recognition();
 
-r.lang="en-US";
+recognition.lang="en-US";
+recognition.interimResults=false;
+recognition.maxAlternatives=1;
 
-r.interimResults=false;
-
-r.maxAlternatives=1;
-
-const resultBox=document.getElementById("speakResult");
-
-resultBox.innerHTML=
-'<div class="result">🎙️ Listening... Speak now.</div>';
+document.getElementById("speakResult").innerHTML=
+'<div class="result">🎙️ Listening... speak now.</div>';
 
 try{
-
-r.start();
-
-}catch(error){
-
-console.error(error);
-
-resultBox.innerHTML=
-'<div class="result">🎙️ Microphone could not start. Please try again.</div>';
-
+recognition.start();
+}catch(e){
 return;
-
 }
 
+recognition.onresult=function(event){
 
-r.onresult=function(e){
+const said=event.results[0][0].transcript;
 
-const said=e.results[0][0].transcript;
+const target=speakData[speakIndex].en;
 
-const target=
-document.getElementById("speakSentence").textContent.trim();
-
-const score=compareText(said,target);
-
-resultBox.innerHTML=
-
-`<div class="result">
-
-🎙️ <b>You said:</b> ${escapeHTML(said)}
-
-<br>
-
-🎯 <b>Target:</b> ${escapeHTML(target)}
-
-<br><br>
-
-${
-score>=85
-?
-"🎉 Excellent!"
-:
-score>=65
-?
-"👍 Good! Repeat once more."
-:
-"💪 Keep practicing!"
-}
-
-<br>
-
-<small>Text match: ${score}%</small>
-
-</div>`;
+const score=similarity(said,target);
 
 if(score>=85){
 
-addXP(20);
+document.getElementById("speakResult").innerHTML=`
 
-}
+<div class="result success">
 
-};
+🎉 Excellent!
 
-
-r.onerror=function(event){
-
-console.log("Speech recognition error:",event.error);
-
-let message=
-"Could not access the microphone.";
-
-if(event.error==="not-allowed"){
-message="Microphone permission was denied. Allow microphone access in your browser settings.";
-}
-
-if(event.error==="no-speech"){
-message="I didn't hear you. Tap Speak and try again.";
-}
-
-if(event.error==="network"){
-message="Speech recognition needs an internet connection in this browser.";
-}
-
-resultBox.innerHTML=
-`<div class="result">🎙️ ${message}</div>`;
-
-};
-
-}
-
-
-function compareText(a,b){
-
-a=String(a||"")
-.toLowerCase()
-.replace(/[^\w\s]/g,"")
-.split(/\s+/)
-.filter(Boolean);
-
-b=String(b||"")
-.toLowerCase()
-.replace(/[^\w\s]/g,"")
-.split(/\s+/)
-.filter(Boolean);
-
-if(!b.length)return 0;
-
-let same=0;
-
-a.forEach(word=>{
-
-if(b.includes(word)){
-same++;
-}
-
-});
-
-return Math.min(
-100,
-Math.round((same/b.length)*100)
-);
-
-}
-
-
-function newSpeakSentence(){
-
-const x=
-sentences[
-Math.floor(Math.random()*sentences.length)
-];
-
-document.getElementById("speakSentence")
-.textContent=x[0];
-
-document.querySelector("#speak .arabic")
-.textContent=x[1];
-
-document.getElementById("speakResult")
-.innerHTML="";
-
-}
-
-
-/* =====================================================
-   THINK IN ENGLISH
-===================================================== */
-
-function checkThink(){
-
-const input=
-document.getElementById("thinkInput");
-
-if(!input)return;
-
-const v=
-input.value
-.trim()
-.toLowerCase();
-
-const correct=
-"i want to go to university tomorrow";
-
-const score=compareText(v,correct);
-
-document.getElementById("thinkResult").innerHTML=
-
-`<div class="result">
-
-${
-score>=90
-?
-"✅ Perfect!"
-:
-score>=70
-?
-"👍 Very close!"
-:
-"📝 You are close. Keep practicing."
-}
+<br><br>
+You said: ${escapeHTML(said)}
 
 <br>
+Match: ${score}%
 
-<b>Correct:</b>
+<br><br>
 
-I want to go to university tomorrow.
-
-<br>
-
-<small>Match: ${score}%</small>
+<button class="primary" onclick="nextSpeak()">
+Next sentence →
+</button>
 
 </div>`;
 
-if(score>=90){
+}else{
+
+document.getElementById("speakResult").innerHTML=`
+
+<div class="result error">
+
+🎙️ You said:
+${escapeHTML(said)}
+
+<br><br>
+
+Target:
+${escapeHTML(target)}
+
+<br><br>
+
+Match: ${score}%
+
+<br>
+
+Repeat until your pronunciation is close enough.
+
+</div>`;
+
+}
+
+};
+
+recognition.onerror=function(e){
+
+document.getElementById("speakResult").innerHTML=
+`<div class="result error">🎙️ ${e.error==="no-speech"?"I didn't hear you. Try again.":"Microphone error. Please check microphone permission."}</div>`;
+
+};
+
+}
+
+function nextSpeak(){
+
+state.progress.speak=Math.max(
+state.progress.speak,
+speakIndex+1
+);
+
+state.history.speak.push(
+speakData[speakIndex]
+);
+
+speakIndex++;
 
 addXP(20);
 
+renderSpeak();
 }
+
+function renderSpeakHistory(){
+
+const box=document.getElementById("speakHistory");
+
+box.innerHTML="<h3>🗣️ Your completed sentences</h3>";
+
+state.history.speak
+.slice(-15)
+.forEach(x=>{
+
+box.innerHTML+=`
+<div class="result success" style="margin-top:8px">
+🇺🇸 ${escapeHTML(x.en)}
+<br>
+🇲🇦 ${escapeHTML(x.ar)}
+</div>
+`;
+
+});
 
 }
 
 
 /* =====================================================
-   LISTENING
+   LISTENING — 1000
 ===================================================== */
 
-function listenSpeed(rate){
+function makeListeningData(){
 
-speak(
-"I want to learn English because I want to travel around the world.",
-rate
-);
+const arr=[];
 
-addXP(5);
+for(let i=0;i<1000;i++){
+
+const v=verbs[i%verbs.length];
+const o=objects[Math.floor(i/verbs.length)%objects.length];
+const t=times[Math.floor(i/100)%times.length];
+
+let sentence;
+let answer;
+
+if(i%3===0){
+sentence="She "+conjugatePresent("she",v[0])+" "+o[0]+" "+t[0]+".";
+answer="She "+conjugatePresent("she",v[0])+" "+o[0]+".";
+}else if(i%3===1){
+sentence="They will "+v[0]+" "+o[0]+" tomorrow.";
+answer="They will "+v[0]+" "+o[0]+".";
+}else{
+sentence="He "+pastVerb(v[0])+" "+o[0]+" yesterday.";
+answer="He "+pastVerb(v[0])+" "+o[0]+".";
+}
+
+const wrong1=
+v[0]==="study"
+?"She goes shopping."
+:"She does something else.";
+
+const wrong2=
+"They stay at home.";
+
+const options=[
+answer,
+wrong1,
+wrong2
+];
+
+const shift=i%3;
+
+const shuffled=[
+options[shift],
+options[(shift+1)%3],
+options[(shift+2)%3]
+];
+
+arr.push({
+sentence,
+answer,
+options:shuffled,
+correct:shuffled.indexOf(answer)
+});
 
 }
 
+return arr;
+}
 
-function listenQuiz(){
+const listeningData=makeListeningData();
 
-document.getElementById("listenResult").innerHTML=`
+let listenIndex=state.progress.listen;
+
+function renderListening(){
+
+document.getElementById("listenNumber").textContent=
+listenIndex+1;
+
+const q=listeningData[listenIndex];
+
+let html=`
 
 <div class="result">
 
 <button class="primary"
-onclick="speak('She goes to university every morning.')">
-
+onclick="speak(listeningData[listenIndex].sentence, listeningRate)">
 🔊 Play
-
 </button>
 
-<p style="margin:15px 0">
-
-What does she do every morning?
-
+<p style="margin:18px 0;font-weight:800">
+What did you hear?
 </p>
-
-<button class="quiz-option"
-onclick="listenAnswer(false)">
-
-She goes shopping.
-
-</button>
-
-<button class="quiz-option"
-onclick="listenAnswer(true)">
-
-She goes to university.
-
-</button>
-
-<button class="quiz-option"
-onclick="listenAnswer(false)">
-
-She travels.
-
-</button>
-
-</div>
 
 `;
 
+q.options.forEach((x,i)=>{
+
+html+=`
+<button class="quiz-option"
+onclick="answerListening(${i})">
+${escapeHTML(x)}
+</button>
+`;
+
+});
+
+html+="</div>";
+
+document.getElementById("listenQuestion").innerHTML=html;
+
+renderListenHistory();
 }
 
+let listeningRate=1;
 
-function listenAnswer(ok){
+function listenSpeed(rate){
 
-document.getElementById("listenResult")
-.innerHTML=
+listeningRate=rate;
 
-`<div class="result">
-
-${
-ok
-?
-"🎉 Correct! +20 XP"
-:
-"❌ Not quite. Listen again and try."
+speak(
+listeningData[listenIndex].sentence,
+rate
+);
 }
 
-</div>`;
+function answerListening(index){
 
-if(ok){
+const q=listeningData[listenIndex];
 
-addXP(20);
+if(index===q.correct){
 
-}
+document.getElementById("listenQuestion").innerHTML=`
 
-}
+<div class="result success">
 
+🎉 Correct!
 
-/* =====================================================
-   READING
-===================================================== */
+<br><br>
 
-function wordInfo(word){
+<b>You chose:</b>
+${escapeHTML(q.options[index])}
 
-const data={
+<br><br>
 
-dream:[
-"حلم",
-"I dream of traveling."
-],
-
-improve:[
-"يطوّر / يحسّن",
-"I want to improve my English."
-],
-
-travel:[
-"يسافر",
-"I love to travel."
-]
-
-};
-
-const x=data[word];
-
-if(!x)return;
-
-document.getElementById("wordResult").innerHTML=
-
-`<div class="result">
-
-<b>${word}</b> — ${x[0]}
-
-<br>
-
-${x[1]}
-
-<br>
-
-<button class="secondary"
-onclick="speak('${escapeJS(x[1])}')">
-
-🔊 Hear
-
+<button class="primary" onclick="nextListening()">
+Next question →
 </button>
 
 </div>`;
 
-addXP(3);
+}else{
 
-}
+document.getElementById("listenQuestion").innerHTML=`
 
+<div class="result error">
 
-/* =====================================================
-   WRITING
-===================================================== */
-
-function checkWriting(){
-
-const v=
-document.getElementById("writingInput")
-.value
-.trim();
-
-if(v.length<15){
-
-document.getElementById("writingResult")
-.innerHTML=
-'<div class="result">✍️ Write a little more so we can check it.</div>';
-
-return;
-
-}
-
-const errors=[];
-
-if(/\bi am go\b/i.test(v)){
-
-errors.push(
-"Use “I am going” instead of “I am go”."
-);
-
-}
-
-if(/\bhe go\b/i.test(v)){
-
-errors.push(
-"Use “he goes” in the present simple."
-);
-
-}
-
-document.getElementById("writingResult")
-.innerHTML=
-
-`<div class="result">
-
-✨ Good effort!
+❌ Not correct.
 
 <br>
 
-${
-errors.length
-?
-errors.join("<br>")
-:
-"No basic grammar mistakes detected."
-}
+Listen again and try the SAME question.
+
+<br><br>
+
+<button class="primary"
+onclick="speak(listeningData[listenIndex].sentence,listeningRate)">
+🔊 Listen again
+</button>
+
+<button class="secondary"
+onclick="renderListening()">
+Try again
+</button>
 
 </div>`;
 
+}
+
+}
+
+function nextListening(){
+
+state.progress.listen=Math.max(
+state.progress.listen,
+listenIndex+1
+);
+
+state.history.listen.push(
+listeningData[listenIndex]
+);
+
+listenIndex++;
+
 addXP(20);
+
+renderListening();
+}
+
+function renderListenHistory(){
+
+const box=document.getElementById("listenHistory");
+
+box.innerHTML="";
+
+state.history.listen
+.slice(-12)
+.forEach(x=>{
+
+box.innerHTML+=`
+<div class="result success" style="margin-top:8px">
+🔊 ${escapeHTML(x.sentence)}
+<br>
+✓ ${escapeHTML(x.answer)}
+</div>
+`;
+
+});
 
 }
 
 
 /* =====================================================
-   SENTENCE BUILDER
+   READING — 400 LEVELLED PASSAGES
 ===================================================== */
 
-const builderTarget=[
-"I",
-"want",
-"to",
-"learn",
-"English"
+const readingTopics=[
+"Morning Routine",
+"University Day",
+"Learning English",
+"A Trip to the City",
+"A Visit to the Airport",
+"A New Friend",
+"Shopping Day",
+"A Busy Weekend",
+"Travel Plans",
+"Working and Studying",
+"Learning from Mistakes",
+"Planning the Future",
+"Life in a New City",
+"Meeting New People",
+"Building Good Habits"
 ];
 
-let builderChosen=[];
+function buildReading(i){
 
+const level=
+i<80?"Beginner":
+i<180?"Elementary":
+i<280?"Intermediate":
+i<360?"Upper Intermediate":
+"Advanced";
 
-function renderBuilder(){
+const topic=readingTopics[i%readingTopics.length];
 
-const container=
-document.getElementById("builderWords");
+const v=verbs[i%verbs.length][0];
 
-container.innerHTML="";
+const o=objects[Math.floor(i/verbs.length)%objects.length][0];
 
-builderTarget.forEach((w,i)=>{
+const time=times[i%times.length][0];
+
+let paragraph;
+
+if(i<80){
+
+paragraph=
+"Maya has a simple routine. Every morning, she wakes up, opens the window, and drinks some water. She prepares breakfast and thinks about her plans. Today she wants to study English. She knows that small daily steps can help her improve.";
+
+}else if(i<180){
+
+paragraph=
+"After breakfast, Maya goes to university. She usually studies in the library because it is quiet there. She reads short English texts and writes new words in a notebook. Sometimes she makes mistakes, but she does not stop. She believes that practice is more important than perfection at the beginning.";
+
+}else if(i<280){
+
+paragraph=
+"Maya has started to change the way she learns English. Instead of memorizing long lists of vocabulary, she tries to use new words in complete sentences. She listens to conversations, reads short stories, and speaks whenever she has the opportunity. This method is slower at first, but it helps her remember language in a more natural way.";
+
+}else if(i<360){
+
+paragraph=
+"During the past year, Maya has become more confident about learning languages. She has discovered that understanding a language requires more than knowing grammar rules. She needs to recognize patterns, understand context, and become comfortable making mistakes. When she encounters a difficult sentence, she breaks it into smaller parts before trying to understand the whole idea.";
+
+}else{
+
+paragraph=
+"Language learning has gradually become a way for Maya to understand how people organize ideas and communicate experience. She no longer sees vocabulary, grammar, listening, speaking, reading, and writing as separate skills. Instead, she understands them as connected parts of one process. A word becomes easier to remember when she encounters it in a meaningful context, hears it spoken naturally, and later uses it herself.";
+
+}
+
+return{
+title:topic+" — Level "+(i+1),
+level,
+paragraph,
+words:[
+["improve","يحسن"],
+["practice","يتدرب"],
+["opportunity","فرصة"],
+["context","سياق"],
+["experience","تجربة"]
+]
+};
+}
+
+const readingData=Array.from(
+{length:400},
+(_,i)=>buildReading(i)
+);
+
+let readingIndex=state.progress.reading;
+
+function renderReading(){
+
+const r=readingData[readingIndex];
+
+document.getElementById("readingNumber").textContent=
+readingIndex+1;
+
+document.getElementById("readingLevel").innerHTML=
+`<span class="reading-level">${r.level}</span>`;
+
+document.getElementById("readingTitle").textContent=
+r.title;
+
+document.getElementById("readingText").textContent=
+r.paragraph;
+
+const words=document.getElementById("readingWords");
+
+words.innerHTML="";
+
+r.words.forEach(x=>{
 
 const b=document.createElement("button");
 
 b.className="word";
 
-b.textContent=w;
+b.textContent=x[0];
 
-b.onclick=()=>chooseWord(i,w);
+b.onclick=()=>{
 
-container.appendChild(b);
+speak(x[0],.8);
+
+document.getElementById("readingQuestion").innerHTML=
+`<div class="result">
+<b>${escapeHTML(x[0])}</b> — ${escapeHTML(x[1])}
+</div>`;
+
+};
+
+words.appendChild(b);
+
+});
+
+document.getElementById("readingQuestion").innerHTML=`
+
+<div class="result">
+
+<p>
+What is the main idea of this passage?
+</p>
+
+<button class="quiz-option"
+onclick="readingAnswer(true)">
+It is about learning and improving through practice.
+</button>
+
+<button class="quiz-option"
+onclick="readingAnswer(false)">
+It is only about cooking food.
+</button>
+
+<button class="quiz-option"
+onclick="readingAnswer(false)">
+It is only about buying clothes.
+</button>
+
+</div>
+`;
+
+renderReadingHistory();
+}
+
+function readingAnswer(ok){
+
+if(ok){
+
+document.getElementById("readingQuestion").innerHTML=`
+
+<div class="result success">
+
+🎉 Correct!
+
+<br><br>
+
+<button class="primary" onclick="nextReading()">
+Next passage →
+</button>
+
+</div>`;
+
+}else{
+
+document.getElementById("readingQuestion").innerHTML=`
+
+<div class="result error">
+
+❌ Read the passage again and try the same question.
+
+<br><br>
+
+<button class="secondary" onclick="renderReading()">
+Try again
+</button>
+
+</div>`;
+
+}
+
+}
+
+function nextReading(){
+
+state.progress.reading=Math.max(
+state.progress.reading,
+readingIndex+1
+);
+
+state.history.reading.push(
+readingData[readingIndex]
+);
+
+readingIndex++;
+
+addXP(15);
+
+renderReading();
+}
+
+function renderReadingHistory(){
+
+const box=document.getElementById("readingHistory");
+
+box.innerHTML="";
+
+state.history.reading
+.slice(-10)
+.forEach(x=>{
+
+box.innerHTML+=`
+<div class="result success" style="margin-top:8px">
+📖 ${escapeHTML(x.title)}
+<br>
+<span class="small">${escapeHTML(x.level)}</span>
+</div>
+`;
 
 });
 
 }
 
 
-function chooseWord(i,w){
+/* =====================================================
+   WRITING — 500
+===================================================== */
 
-if(builderChosen.includes(i))return;
+const writingPrompts=[
+"Write 3 sentences about your morning.",
+"Describe your university.",
+"Write about what you usually do after waking up.",
+"Describe your favorite food.",
+"Write about a city you would like to visit.",
+"Describe your best friend.",
+"Write about your plans for tomorrow.",
+"Explain why you are learning English.",
+"Describe a normal weekend.",
+"Write about a place where you feel comfortable.",
+"Describe a difficult day and how you handled it.",
+"Write about a skill you want to improve.",
+"Explain what makes a good friend.",
+"Describe your ideal trip.",
+"Write about something you learned recently."
+];
 
-builderChosen.push(i);
+function getWritingPrompt(i){
 
-const current=
-builderChosen
-.map(index=>builderTarget[index])
-.join(" ");
+const base=writingPrompts[i%writingPrompts.length];
 
-document.getElementById("builderResult")
-.innerHTML=
+if(i<100)return base;
 
-`<div class="result">
-${current}
+if(i<200)return base+" Use at least one past-tense sentence.";
+
+if(i<300)return base+" Use present, past, and future sentences.";
+
+if(i<400)return base+" Give reasons and connect your ideas with because, but, so, or although.";
+
+return base+" Write a short organized paragraph with a clear beginning, middle, and ending.";
+}
+
+let writingIndex=state.progress.writing;
+
+function renderWriting(){
+
+document.getElementById("writingNumber").textContent=
+writingIndex+1;
+
+document.getElementById("writingPrompt").textContent=
+getWritingPrompt(writingIndex);
+
+document.getElementById("writingInput").value="";
+
+document.getElementById("writingResult").innerHTML="";
+
+renderWritingHistory();
+}
+
+function writingErrors(text){
+
+const errors=[];
+
+if(/\bi am go\b/i.test(text))
+errors.push("Use “I am going”, not “I am go”.");
+
+if(/\bhe go\b/i.test(text))
+errors.push("Use “he goes” in the present simple.");
+
+if(/\bshe go\b/i.test(text))
+errors.push("Use “she goes” in the present simple.");
+
+if(/\bi goes\b/i.test(text))
+errors.push("Use “I go”, not “I goes”.");
+
+if(/\bdid went\b/i.test(text))
+errors.push("After “did”, use the base verb: did go.");
+
+if(/\bwill went\b/i.test(text))
+errors.push("After “will”, use the base verb: will go.");
+
+if(/\bmore better\b/i.test(text))
+errors.push("Use “better”, not “more better”.");
+
+if(/\bpeople is\b/i.test(text))
+errors.push("Use “people are”.");
+
+if(/\bhe have\b/i.test(text))
+errors.push("Use “he has”.");
+
+if(/\bshe have\b/i.test(text))
+errors.push("Use “she has”.");
+
+if(/\bi has\b/i.test(text))
+errors.push("Use “I have”.");
+
+if(/\bthey was\b/i.test(text))
+errors.push("Use “they were”.");
+
+if(/\bwe was\b/i.test(text))
+errors.push("Use “we were”.");
+
+return errors;
+}
+
+function checkWriting(){
+
+const text=document.getElementById("writingInput").value.trim();
+
+if(text.length<25){
+
+document.getElementById("writingResult").innerHTML=
+`<div class="result error">
+✍️ Your paragraph is too short. Write a little more so you can practice properly.
 </div>`;
 
-if(builderChosen.length===builderTarget.length){
+return;
+}
 
-if(builderChosen.every((x,index)=>x===index)){
+const errors=writingErrors(text);
 
-document.getElementById("builderResult")
-.innerHTML=
+if(errors.length){
 
-'<div class="result">🎉 Perfect sentence! +15 XP</div>';
+document.getElementById("writingResult").innerHTML=`
 
-addXP(15);
+<div class="result error">
 
-}else{
+❌ Correct these points before moving forward:
 
-document.getElementById("builderResult")
-.innerHTML=
+<br><br>
 
-'<div class="result">Almost! Tap Reset and try again.</div>';
+${errors.map(e=>"• "+escapeHTML(e)).join("<br>")}
+
+<br><br>
+
+Rewrite your paragraph and check again.
+
+</div>`;
+
+return;
+}
+
+document.getElementById("writingResult").innerHTML=`
+
+<div class="result success">
+
+🎉 No mistakes detected by the current checker.
+
+<br><br>
+
+<button class="primary" onclick="nextWriting()">
+Save & continue →
+</button>
+
+</div>`;
 
 }
 
+function nextWriting(){
+
+state.progress.writing=Math.max(
+state.progress.writing,
+writingIndex+1
+);
+
+state.history.writing.push({
+prompt:getWritingPrompt(writingIndex),
+answer:document.getElementById("writingInput").value.trim()
+});
+
+writingIndex++;
+
+addXP(20);
+
+renderWriting();
 }
 
+function renderWritingHistory(){
+
+const box=document.getElementById("writingHistory");
+
+box.innerHTML="";
+
+state.history.writing
+.slice(-8)
+.forEach(x=>{
+
+box.innerHTML+=`
+<div class="result success" style="margin-top:8px">
+<b>Prompt:</b> ${escapeHTML(x.prompt)}
+<br><br>
+${escapeHTML(x.answer)}
+</div>
+`;
+
+});
+
 }
-
-
-function resetBuilder(){
-
-builderChosen=[];
-
-document.getElementById("builderResult")
-.innerHTML="";
-
-renderBuilder();
-
-}
-
-renderBuilder();
 
 
 /* =====================================================
-   VOCABULARY
+   SENTENCE BUILDER — 1000
+===================================================== */
+
+function makeBuilderData(){
+
+return thinkData.map(x=>{
+
+const words=x.en
+.replace(/[.?!]/g,"")
+.split(" ");
+
+return{
+ar:x.ar,
+en:x.en,
+words
+};
+
+});
+
+}
+
+const builderData=makeBuilderData();
+
+let builderIndex=state.progress.builder;
+
+let builderChosen=[];
+
+function renderBuilder(){
+
+const x=builderData[builderIndex];
+
+document.getElementById("builderNumber").textContent=
+builderIndex+1;
+
+document.getElementById("builderArabic").textContent=
+x.ar;
+
+builderChosen=[];
+
+const container=document.getElementById("builderWords");
+
+container.innerHTML="";
+
+const shuffled=[...x.words];
+
+for(let i=shuffled.length-1;i>0;i--){
+
+const j=Math.floor(Math.random()*(i+1));
+
+[shuffled[i],shuffled[j]]=
+[shuffled[j],shuffled[i]];
+
+}
+
+shuffled.forEach((word,index)=>{
+
+const b=document.createElement("button");
+
+b.className="word";
+
+b.textContent=word;
+
+b.onclick=()=>chooseBuilderWord(b,word);
+
+container.appendChild(b);
+
+});
+
+document.getElementById("builderResult").innerHTML="";
+
+renderBuilderHistory();
+}
+
+function chooseBuilderWord(button,word){
+
+button.disabled=true;
+button.style.opacity=".45";
+
+builderChosen.push(word);
+
+const current=builderChosen.join(" ");
+
+document.getElementById("builderResult").innerHTML=
+`<div class="result">${escapeHTML(current)}</div>`;
+
+const target=builderData[builderIndex].en
+.replace(/[.?!]/g,"");
+
+if(builderChosen.length===target.split(" ").length){
+
+if(normalize(current)===normalize(target)){
+
+document.getElementById("builderResult").innerHTML=`
+
+<div class="result success">
+
+🎉 Perfect!
+
+<br>
+${escapeHTML(builderData[builderIndex].en)}
+
+<br><br>
+
+<button class="primary" onclick="nextBuilder()">
+Next sentence →
+</button>
+
+</div>`;
+
+}else{
+
+document.getElementById("builderResult").innerHTML=`
+
+<div class="result error">
+
+❌ The order is not correct.
+
+<br><br>
+
+<button class="secondary" onclick="resetBuilder()">
+↻ Try again
+</button>
+
+</div>`;
+
+}
+
+}
+
+}
+
+function resetBuilder(){
+
+renderBuilder();
+
+}
+
+function nextBuilder(){
+
+state.progress.builder=Math.max(
+state.progress.builder,
+builderIndex+1
+);
+
+state.history.builder.push(
+builderData[builderIndex]
+);
+
+builderIndex++;
+
+addXP(15);
+
+renderBuilder();
+}
+
+function renderBuilderHistory(){
+
+const box=document.getElementById("builderHistory");
+
+box.innerHTML="";
+
+state.history.builder
+.slice(-10)
+.forEach(x=>{
+
+box.innerHTML+=`
+<div class="result success" style="margin-top:8px">
+🇲🇦 ${escapeHTML(x.ar)}
+<br>
+🇺🇸 ${escapeHTML(x.en)}
+</div>
+`;
+
+});
+
+}
+
+
+/* =====================================================
+   VOCABULARY WORLDS
 ===================================================== */
 
 const vocabulary={
@@ -1910,39 +2964,22 @@ const vocabulary={
 ["skirt","تنورة","👗"],
 ["trousers","بنطال","👖"],
 ["jeans","جينز","👖"],
-["shorts","سروال قصير","🩳"],
-["leggings","بنطال ضيق","🩱"],
 ["jacket","سترة","🧥"],
 ["coat","معطف","🧥"],
-["blazer","بليزر","🧥"],
 ["sweater","كنزة","🧶"],
 ["hoodie","هودي","👚"],
-["cardigan","كارديغان","🧶"],
-["suit","بدلة","🤵"],
-["tie","ربطة عنق","👔"],
 ["scarf","وشاح","🧣"],
 ["gloves","قفازات","🧤"],
 ["hat","قبعة","👒"],
-["cap","كاب","🧢"],
 ["belt","حزام","👖"],
 ["socks","جوارب","🧦"],
-["stockings","جوارب طويلة","🧦"],
 ["pajamas","ملابس نوم","😴"],
-["underwear","ملابس داخلية","🩲"],
-["bra","حمالة صدر","👙"],
-["swimsuit","ملابس سباحة","🩱"],
-["sandals","صنادل","👡"],
 ["shoes","أحذية","👟"],
 ["sneakers","أحذية رياضية","👟"],
 ["boots","جزمة","🥾"],
 ["heels","كعب عالٍ","👠"],
 ["slippers","شبشب منزلي","🥿"],
-["raincoat","معطف مطر","🌧️"],
-["vest","سترة بدون أكمام","🦺"],
-["tracksuit","بدلة رياضية","🏃"],
-["uniform","زي موحد","👔"],
-["pocket","جيب","👖"],
-["button","زر","🔘"]
+["uniform","زي موحد","👔"]
 ],
 
 "🧍 Body":[
@@ -1952,7 +2989,6 @@ const vocabulary={
 ["forehead","الجبهة","🙂"],
 ["eye","العين","👁️"],
 ["eyebrow","الحاجب","🤨"],
-["eyelash","رمش","👁️"],
 ["ear","الأذن","👂"],
 ["nose","الأنف","👃"],
 ["cheek","الخد","😊"],
@@ -1964,29 +3000,22 @@ const vocabulary={
 ["neck","الرقبة","🧍"],
 ["shoulder","الكتف","💪"],
 ["arm","الذراع","💪"],
-["elbow","المرفق","💪"],
 ["hand","اليد","✋"],
 ["finger","الإصبع","☝️"],
 ["thumb","الإبهام","👍"],
 ["chest","الصدر","🫁"],
-["breast","الثدي","🩷"],
 ["back","الظهر","🧍"],
 ["waist","الخصر","🧍"],
 ["stomach","المعدة / البطن","🫃"],
-["belly","البطن","🧍"],
 ["hip","الورك","🧍"],
 ["leg","الساق","🦵"],
 ["thigh","الفخذ","🦵"],
 ["knee","الركبة","🦵"],
-["ankle","الكاحل","🦶"],
 ["foot","القدم","🦶"],
 ["toe","إصبع القدم","🦶"],
-["heel","الكعب","🦶"],
 ["heart","القلب","❤️"],
 ["brain","الدماغ","🧠"],
 ["lung","الرئة","🫁"],
-["liver","الكبد","🫀"],
-["kidney","الكلى","🫘"],
 ["bone","العظم","🦴"],
 ["muscle","العضلة","💪"],
 ["blood","الدم","🩸"],
@@ -2009,30 +3038,19 @@ const vocabulary={
 ["silver","فضي","🥈"],
 ["beige","بيج","🟫"],
 ["turquoise","فيروزي","🩵"],
-["teal","أزرق مخضر","🟦"],
 ["navy","كحلي","🔵"],
 ["sky blue","أزرق سماوي","🩵"],
-["baby blue","أزرق فاتح","🩵"],
-["royal blue","أزرق ملكي","🔵"],
 ["dark blue","أزرق داكن","🔵"],
 ["light blue","أزرق فاتح","🔵"],
 ["dark green","أخضر داكن","🟢"],
 ["light green","أخضر فاتح","🟢"],
-["lime","ليموني","🟢"],
-["mint","نعناعي","🌿"],
 ["olive","زيتي","🫒"],
 ["khaki","كاكي","🟫"],
-["maroon","خمري","🔴"],
 ["burgundy","عنابي","🔴"],
 ["coral","مرجاني","🪸"],
 ["peach","خوخي","🍑"],
 ["lavender","لافندر","💜"],
-["violet","بنفسجي فاتح","🟣"],
-["magenta","أرجواني","🩷"],
-["cyan","سماوي","🔵"],
-["cream","كريمي","🤍"],
-["ivory","عاجي","🤍"],
-["rose","وردي غامق","🌹"]
+["cream","كريمي","🤍"]
 ],
 
 "🍎 Fruits":[
@@ -2040,13 +3058,11 @@ const vocabulary={
 ["banana","موز","🍌"],
 ["orange","برتقال","🍊"],
 ["lemon","ليمون","🍋"],
-["lime","ليمون أخضر","🍋"],
 ["grape","عنب","🍇"],
 ["strawberry","فراولة","🍓"],
 ["watermelon","بطيخ","🍉"],
 ["melon","شمام","🍈"],
 ["peach","خوخ","🍑"],
-["nectarine","نكتارين","🍑"],
 ["pear","إجاص","🍐"],
 ["pineapple","أناناس","🍍"],
 ["mango","مانجو","🥭"],
@@ -2054,19 +3070,13 @@ const vocabulary={
 ["cherry","كرز","🍒"],
 ["blueberry","توت أزرق","🫐"],
 ["raspberry","توت العليق","🫐"],
-["blackberry","توت أسود","🫐"],
 ["pomegranate","رمان","❤️"],
 ["fig","تين","🟣"],
 ["date","تمر","🌴"],
 ["coconut","جوز الهند","🥥"],
 ["papaya","بابايا","🍊"],
-["guava","جوافة","🍈"],
 ["apricot","مشمش","🍑"],
 ["plum","برقوق","🟣"],
-["grapefruit","جريب فروت","🍊"],
-["passion fruit","فاكهة العاطفة","🟣"],
-["dragon fruit","فاكهة التنين","🐉"],
-["persimmon","كاكي","🟠"],
 ["avocado","أفوكادو","🥑"]
 ],
 
@@ -2095,9 +3105,6 @@ const vocabulary={
 ["turnip","لفت","🫜"],
 ["pumpkin","يقطين","🎃"],
 ["sweet potato","بطاطا حلوة","🍠"],
-["artichoke","خرشوف","🌿"],
-["asparagus","هليون","🌿"],
-["radish","فجل","🫜"],
 ["ginger","زنجبيل","🫚"],
 ["leek","كراث","🌿"],
 ["okra","بامية","🌿"]
@@ -2125,9 +3132,6 @@ const vocabulary={
 ["olive oil","زيت الزيتون","🫒"],
 ["salt","ملح","🧂"],
 ["sugar","سكر","🍬"],
-["pepper","فلفل","🌶️"],
-["spicy","حار","🌶️"],
-["mint","نعناع","🌿"],
 ["tea","شاي","🍵"],
 ["coffee","قهوة","☕"],
 ["water","ماء","💧"],
@@ -2136,8 +3140,6 @@ const vocabulary={
 ["jam","مربى","🍓"],
 ["flour","دقيق","🌾"],
 ["sauce","صلصة","🥫"],
-["ketchup","كاتشب","🍅"],
-["mayonnaise","مايونيز","🥫"],
 ["breakfast","فطور","🍳"],
 ["lunch","غداء","🍽️"],
 ["dinner","عشاء","🍽️"],
@@ -2190,7 +3192,7 @@ const vocabulary={
 ["drawer","درج خزانة","🗄️"]
 ],
 
-"✈️ Travel & Airport":[
+"✈️ Travel":[
 ["airport","المطار","✈️"],
 ["passport","جواز السفر","🛂"],
 ["visa","تأشيرة","📄"],
@@ -2199,7 +3201,7 @@ const vocabulary={
 ["flight","رحلة جوية","✈️"],
 ["airplane","طائرة","✈️"],
 ["pilot","طيار","👨‍✈️"],
-["flight attendant","مضيفة / مضيف","👩‍✈️"],
+["flight attendant","مضيف/مضيفة","👩‍✈️"],
 ["airport security","أمن المطار","🛂"],
 ["passport control","مراقبة الجوازات","🛂"],
 ["customs","الجمارك","🛃"],
@@ -2213,14 +3215,9 @@ const vocabulary={
 ["luggage","الأمتعة","🧳"],
 ["suitcase","حقيبة سفر","🧳"],
 ["backpack","حقيبة ظهر","🎒"],
-["carry-on","حقيبة يد","👜"],
-["baggage claim","استلام الأمتعة","🧳"],
-["security check","التفتيش الأمني","🔍"],
 ["hotel","فندق","🏨"],
 ["reservation","حجز","📅"],
 ["reception","الاستقبال","🛎️"],
-["room","غرفة","🛏️"],
-["key card","بطاقة الغرفة","💳"],
 ["taxi","سيارة أجرة","🚕"],
 ["bus","حافلة","🚌"],
 ["train","قطار","🚆"],
@@ -2237,10 +3234,6 @@ const vocabulary={
 ["bill","الفاتورة","🧾"],
 ["cash","نقد","💵"],
 ["card","بطاقة","💳"],
-["dollar","دولار","💵"],
-["American English","الإنجليزية الأمريكية","🇺🇸"],
-["where is...?","أين يوجد...؟","❓"],
-["How much?","كم السعر؟","💰"],
 ["help","مساعدة","🆘"]
 ],
 
@@ -2256,10 +3249,8 @@ const vocabulary={
 ["tired","متعب","😴"],
 ["sleepy","نعسان","🥱"],
 ["scared","خائف","😨"],
-["afraid","خائف","😨"],
 ["worried","قلق","😟"],
 ["surprised","متفاجئ","😲"],
-["shocked","مصدوم","😱"],
 ["confused","مرتبك","😵"],
 ["bored","يشعر بالملل","🥱"],
 ["lonely","وحيد","🥺"],
@@ -2267,36 +3258,26 @@ const vocabulary={
 ["shy","خجول","😊"],
 ["embarrassed","محرج","😳"],
 ["jealous","غيور","💚"],
-["in love","واقع في الحب","❤️"],
-["loving","محب","❤️"],
-["kind","لطيف","💜"],
-["cruel","قاسٍ","😈"],
 ["hopeful","متفائل","🌷"],
-["hopeless","فاقد الأمل","😔"],
 ["grateful","ممتن","🙏"],
-["thankful","شاكر","🙏"],
 ["comfortable","مرتاح","😌"],
 ["uncomfortable","غير مرتاح","😣"],
 ["confident","واثق","💪"],
-["insecure","غير واثق","🥺"],
-["strong","قوي","💪"],
-["weak","ضعيف","🫶"],
 ["curious","فضولي","🔎"],
 ["interested","مهتم","👀"],
 ["disappointed","خائب الأمل","😞"],
 ["satisfied","راضٍ","😊"]
 ],
 
-"🌦️ Seasons & Weather":[
+"🌦️ Weather":[
 ["spring","الربيع","🌸"],
 ["summer","الصيف","☀️"],
 ["autumn","الخريف","🍂"],
-["fall","الخريف","🍁"],
 ["winter","الشتاء","❄️"],
 ["hot","حار","🔥"],
 ["cold","بارد","🥶"],
 ["warm","دافئ","🌤️"],
-["cool","منعش / بارد قليلاً","🍃"],
+["cool","بارد قليلاً","🍃"],
 ["sunny","مشمس","☀️"],
 ["rainy","ممطر","🌧️"],
 ["cloudy","غائم","☁️"],
@@ -2317,120 +3298,216 @@ const vocabulary={
 ["sun","شمس","☀️"],
 ["moon","قمر","🌙"],
 ["sky","سماء","🌌"]
+],
+
+"🎓 University":[
+["university","جامعة","🎓"],
+["student","طالب","🧑‍🎓"],
+["teacher","أستاذ","👩‍🏫"],
+["class","قسم","🏫"],
+["course","مادة","📚"],
+["lesson","درس","📖"],
+["exam","امتحان","📝"],
+["homework","واجب","✏️"],
+["library","مكتبة","📚"],
+["book","كتاب","📕"],
+["notebook","دفتر","📓"],
+["pen","قلم","🖊️"],
+["question","سؤال","❓"],
+["answer","إجابة","✅"],
+["subject","مادة دراسية","📚"],
+["grade","نقطة / علامة","💯"],
+["schedule","جدول","📅"],
+["semester","فصل دراسي","🗓️"],
+["degree","شهادة","🎓"],
+["classmate","زميل الدراسة","👥"]
+],
+
+"💼 Work":[
+["office","مكتب","🏢"],
+["manager","مدير","👔"],
+["employee","موظف","🧑‍💼"],
+["customer","زبون","🧑"],
+["meeting","اجتماع","🤝"],
+["email","بريد إلكتروني","📧"],
+["computer","حاسوب","💻"],
+["phone","هاتف","📱"],
+["document","وثيقة","📄"],
+["file","ملف","📁"],
+["printer","طابعة","🖨️"],
+["company","شركة","🏢"],
+["salary","راتب","💵"],
+["contract","عقد","📄"],
+["job","عمل","💼"],
+["career","مسار مهني","📈"],
+["interview","مقابلة","🗣️"],
+["experience","خبرة","⭐"],
+["skill","مهارة","🧠"],
+["schedule","جدول","📅"]
 ]
 
 };
 
+function renderVocabularyCategories(){
 
-/* =====================================================
-   VOCABULARY RENDER
-===================================================== */
+const box=document.getElementById("vocabCategories");
 
-function renderVocabulary(filter=""){
+box.className="vocab-category-grid";
 
-const container=
-document.getElementById("vocabContent");
+box.innerHTML="";
 
-container.innerHTML="";
+Object.entries(vocabulary).forEach(([category,items])=>{
 
-Object.entries(vocabulary)
-.forEach(([category,items])=>{
+const div=document.createElement("div");
 
-const filtered=items.filter(item=>
+div.className="vocab-category";
 
-item[0]
-.toLowerCase()
-.includes(filter.toLowerCase())
+const icon=category.split(" ")[0];
 
-||
+const title=category.substring(icon.length).trim();
 
-item[1].includes(filter)
+div.innerHTML=`
+<div class="vocab-category-icon">${icon}</div>
+<div class="vocab-category-title">${escapeHTML(title)}</div>
+<div class="vocab-category-count">${items.length} words</div>
+`;
 
-);
+div.onclick=()=>openVocabCategory(category);
 
-if(!filtered.length)return;
+box.appendChild(div);
 
-const title=document.createElement("h3");
+});
 
-title.className="category-title";
+}
 
-title.textContent=category;
+function openVocabCategory(category){
 
-container.appendChild(title);
+const wordsBox=document.getElementById("vocabWords");
 
-const grid=document.createElement("div");
+document.getElementById("vocabCategories")
+.classList.add("hidden");
 
-grid.className="vocab-grid";
+wordsBox.classList.remove("hidden");
 
-filtered.forEach(item=>{
+wordsBox.innerHTML=`
 
-const word=item[0];
+<button class="back" onclick="closeVocabCategory()">
+← Vocabulary Worlds
+</button>
 
-const arabic=item[1];
+<h3 class="category-title">${escapeHTML(category)}</h3>
 
-const emoji=item[2];
+<div class="vocab-grid" id="selectedVocabGrid"></div>
+`;
+
+const grid=document.getElementById("selectedVocabGrid");
+
+vocabulary[category].forEach(item=>{
 
 const card=document.createElement("div");
 
 card.className="vocab-item";
 
 card.innerHTML=`
-
-<div class="vocab-picture">
-${emoji}
-</div>
-
-<div class="vocab-word">
-${escapeHTML(word)}
-</div>
-
-<div class="vocab-ar">
-${escapeHTML(arabic)}
-</div>
-
-<button class="mic">
-🔊
-</button>
-
+<div class="vocab-picture">${item[2]}</div>
+<div class="vocab-word">${escapeHTML(item[0])}</div>
+<div class="vocab-ar">${escapeHTML(item[1])}</div>
+<button class="mic">🔊</button>
 `;
 
-card.querySelector(".mic")
-.addEventListener("click",function(){
+card.querySelector(".mic").onclick=()=>{
 
-speakWord(word);
+speak(item[0],.8);
 
-});
+if(!card.dataset.learned){
+
+card.dataset.learned="true";
+
+state.progress.vocabulary=
+Math.min(
+100,
+state.progress.vocabulary+1
+);
+
+addXP(1);
+}
+
+};
 
 grid.appendChild(card);
 
 });
 
-container.appendChild(grid);
-
-});
-
 }
 
+function closeVocabCategory(){
 
-function speakWord(word){
+document.getElementById("vocabWords")
+.classList.add("hidden");
 
-speak(word,0.8);
-
-addXP(1);
+document.getElementById("vocabCategories")
+.classList.remove("hidden");
 
 }
-
 
 function searchVocabulary(){
 
 const value=
-document.getElementById("vocabSearch").value;
+document.getElementById("vocabSearch").value
+.toLowerCase()
+.trim();
 
-renderVocabulary(value);
+if(!value){
 
+renderVocabularyCategories();
+
+return;
 }
 
-renderVocabulary();
+const wordsBox=document.getElementById("vocabWords");
+
+document.getElementById("vocabCategories")
+.classList.add("hidden");
+
+wordsBox.classList.remove("hidden");
+
+wordsBox.innerHTML=`
+<button class="back" onclick="closeVocabCategory()">
+← Vocabulary Worlds
+</button>
+<div class="vocab-grid" id="searchGrid"></div>
+`;
+
+const grid=document.getElementById("searchGrid");
+
+Object.values(vocabulary)
+.flat()
+.filter(x=>
+x[0].toLowerCase().includes(value)||
+x[1].includes(value)
+)
+.forEach(item=>{
+
+const card=document.createElement("div");
+
+card.className="vocab-item";
+
+card.innerHTML=`
+<div class="vocab-picture">${item[2]}</div>
+<div class="vocab-word">${escapeHTML(item[0])}</div>
+<div class="vocab-ar">${escapeHTML(item[1])}</div>
+<button class="mic">🔊</button>
+`;
+
+card.querySelector(".mic").onclick=()=>{
+speak(item[0],.8);
+};
+
+grid.appendChild(card);
+
+});
+
+}
 
 
 /* =====================================================
@@ -2438,13 +3515,12 @@ renderVocabulary();
 ===================================================== */
 
 const connectors=[
-
 ["With","مع","My brother is with my father.","أخي مع أبي."],
 ["In","في","I am in Morocco.","أنا في المغرب."],
 ["On","على / في","The book is on the table.","الكتاب على الطاولة."],
 ["At","في / عند","I am at the airport.","أنا في المطار."],
 ["From","من","I am from Morocco.","أنا من المغرب."],
-["To","إلى","I am going to America.","أنا ذاهبة إلى أمريكا."],
+["To","إلى","I am going to university.","أنا ذاهبة إلى الجامعة."],
 ["For","من أجل / لـ","This gift is for you.","هذه الهدية لك."],
 ["About","عن","We are talking about travel.","نحن نتحدث عن السفر."],
 ["Before","قبل","I eat breakfast before university.","آكل الفطور قبل الجامعة."],
@@ -2458,7 +3534,6 @@ const connectors=[
 ["When","عندما","I smile when I am happy.","أبتسم عندما أكون سعيدة."],
 ["While","بينما","I listen while I work.","أستمع بينما أعمل."],
 ["Although","رغم أن","Although I am tired, I study.","رغم أنني متعبة، أدرس."],
-["Before","قبل أن","Call me before you leave.","اتصل بي قبل أن تغادر."],
 ["Until","حتى","I will wait until you arrive.","سأنتظر حتى تصل."],
 ["Also","أيضًا","I also speak French.","أتحدث الفرنسية أيضًا."],
 ["Too","أيضًا","I love traveling too.","أنا أيضًا أحب السفر."],
@@ -2468,14 +3543,13 @@ const connectors=[
 ["Finally","أخيرًا","Finally, I finished my work.","أخيرًا أنهيت عملي."],
 ["For example","على سبيل المثال","I love fruit, for example, apples.","أحب الفواكه، مثلًا التفاح."],
 ["Instead","بدلًا من ذلك","I will walk instead.","سأمشي بدلًا من ذلك."],
-["Without","بدون","I cannot live without water.","لا أستطيع العيش بدون ماء."]
+["Without","بدون","I cannot live without water.","لا أستطيع العيش بدون ماء."],
+["During","خلال","I study during the evening.","أدرس خلال المساء."]
 ];
-
 
 function renderConnectors(){
 
-const box=
-document.getElementById("connectorContent");
+const box=document.getElementById("connectorContent");
 
 box.innerHTML="";
 
@@ -2486,35 +3560,16 @@ const div=document.createElement("div");
 div.className="connector";
 
 div.innerHTML=`
-
-<div class="connector-word">
-${escapeHTML(x[0])}
-</div>
-
-<div class="connector-ar">
-${escapeHTML(x[1])}
-</div>
-
-<div class="connector-example">
-${escapeHTML(x[2])}
-</div>
-
-<div class="connector-ar">
-${escapeHTML(x[3])}
-</div>
-
-<button class="secondary">
-🔊 Hear sentence
-</button>
-
+<div class="connector-word">${escapeHTML(x[0])}</div>
+<div class="connector-ar">${escapeHTML(x[1])}</div>
+<div class="connector-example">${escapeHTML(x[2])}</div>
+<div class="connector-ar">${escapeHTML(x[3])}</div>
+<button class="secondary">🔊 Hear sentence</button>
 `;
 
-div.querySelector("button")
-.addEventListener("click",function(){
-
+div.querySelector("button").onclick=()=>{
 speak(x[2]);
-
-});
+};
 
 box.appendChild(div);
 
@@ -2522,264 +3577,664 @@ box.appendChild(div);
 
 }
 
-renderConnectors();
+
+/* =====================================================
+   GRAMMAR TABLES
+===================================================== */
+
+const grammarVerbs=[
+{
+base:"work",
+ar:"يعمل",
+past:"worked"
+},
+{
+base:"study",
+ar:"يدرس",
+past:"studied"
+},
+{
+base:"watch",
+ar:"يشاهد",
+past:"watched"
+},
+{
+base:"play",
+ar:"يلعب",
+past:"played"
+},
+{
+base:"go",
+ar:"يذهب",
+past:"went"
+},
+{
+base:"eat",
+ar:"يأكل",
+past:"ate"
+},
+{
+base:"drink",
+ar:"يشرب",
+past:"drank"
+},
+{
+base:"write",
+ar:"يكتب",
+past:"wrote"
+},
+{
+base:"read",
+ar:"يقرأ",
+past:"read"
+},
+{
+base:"take",
+ar:"يأخذ",
+past:"took"
+},
+{
+base:"make",
+ar:"يصنع",
+past:"made"
+},
+{
+base:"see",
+ar:"يرى",
+past:"saw"
+}
+];
+
+function renderVerbTables(){
+
+const box=document.getElementById("verbTables");
+
+box.innerHTML="";
+
+grammarVerbs.forEach(v=>{
+
+const table=document.createElement("table");
+
+table.className="tense-table";
+
+table.innerHTML=`
+
+<tr>
+<th colspan="6">
+${escapeHTML(v.base)} — ${escapeHTML(v.ar)}
+</th>
+</tr>
+
+<tr>
+<th>Subject</th>
+<th>Present</th>
+<th>Future</th>
+<th>Past</th>
+<th>Negative</th>
+<th>Question</th>
+</tr>
+`;
+
+const subjects=[
+"I",
+"You",
+"He",
+"She",
+"It",
+"We",
+"They"
+];
+
+subjects.forEach(s=>{
+
+let present;
+
+if(s==="He"||s==="She"||s==="It"){
+present=conjugatePresent(s,v.base);
+}else{
+present=v.base;
+}
+
+let past=v.past;
+
+if(v.base==="read"){
+past="read";
+}
+
+const negative=
+s==="He"||s==="She"||s==="It"
+?"does not "+v.base
+:"do not "+v.base;
+
+const question=
+s==="He"||s==="She"||s==="It"
+?"Does "+s.toLowerCase()+" "+v.base+"?"
+:"Do "+s.toLowerCase()+" "+v.base+"?";
+
+table.innerHTML+=`
+
+<tr>
+<td>${s}</td>
+<td>${present}</td>
+<td>${s} will ${v.base}</td>
+<td>${past}</td>
+<td>${s} ${negative}</td>
+<td>${question}</td>
+</tr>
+`;
+
+});
+
+box.appendChild(table);
+
+});
+
+}
 
 
 /* =====================================================
-   GRAMMAR PRACTICE
+   GRAMMAR PRACTICE — 1000
 ===================================================== */
 
-const grammarQuestions=[
+function makeGrammarData(){
 
-{
-q:"She ___ English every day.",
-a:["study","studies","studied"],
-correct:1
-},
+const arr=[];
 
-{
-q:"I ___ to America tomorrow.",
-a:["will travel","traveled","travelled yesterday"],
-correct:0
-},
+for(let i=0;i<1000;i++){
 
-{
-q:"Yesterday, I ___ very tired.",
-a:["am","will be","was"],
-correct:2
-},
+const v=grammarVerbs[i%grammarVerbs.length];
 
-{
-q:"He ___ coffee every morning.",
-a:["drink","drinks","drank"],
-correct:1
-},
+let q;
+let options;
+let correct;
 
-{
-q:"They ___ to the hotel yesterday.",
-a:["went","go","will go"],
-correct:0
-},
+const type=i%6;
 
-{
-q:"We ___ visit Morocco next summer.",
-a:["visited","will","visiting"],
-correct:1
-}
+if(type===0){
 
+q="She ___ English every day.";
+
+options=[
+v.base,
+conjugatePresent("She",v.base),
+v.past
 ];
 
+correct=1;
 
-let currentGrammar=0;
+}else if(type===1){
 
+q="They ___ "+v.base+" yesterday.";
+
+options=[
+v.base,
+"will "+v.base,
+v.past
+];
+
+correct=2;
+
+}else if(type===2){
+
+q="I ___ "+v.base+" tomorrow.";
+
+options=[
+"will "+v.base,
+v.past,
+conjugatePresent("I",v.base)
+];
+
+correct=0;
+
+}else if(type===3){
+
+q="He ___ "+v.base+" every morning.";
+
+options=[
+v.past,
+conjugatePresent("He",v.base),
+"will "+v.base
+];
+
+correct=1;
+
+}else if(type===4){
+
+q="Yesterday, we ___ "+v.base+".";
+
+options=[
+v.past,
+v.base,
+"will "+v.base
+];
+
+correct=0;
+
+}else{
+
+q="Will you ___ "+v.base+" tomorrow?";
+
+options=[
+v.past,
+v.base,
+conjugatePresent("He",v.base)
+];
+
+correct=1;
+
+}
+
+arr.push({
+q,
+options,
+correct
+});
+
+}
+
+return arr;
+}
+
+const grammarData=makeGrammarData();
+
+let grammarIndex=state.progress.grammar;
 
 function renderGrammarQuestion(){
 
-const q=
-grammarQuestions[currentGrammar];
+const q=grammarData[grammarIndex];
+
+document.getElementById("grammarNumber").textContent=
+grammarIndex+1;
+
+let html=`
+<h3 style="margin-bottom:15px">
+${escapeHTML(q.q)}
+</h3>
+`;
+
+q.options.forEach((x,i)=>{
+
+html+=`
+<button class="quiz-option"
+onclick="answerGrammar(${i})">
+${escapeHTML(x)}
+</button>
+`;
+
+});
+
+document.getElementById("grammarExercise").innerHTML=html;
+
+renderGrammarHistory();
+}
+
+function answerGrammar(index){
+
+const q=grammarData[grammarIndex];
+
+if(index===q.correct){
+
+document.getElementById("grammarExercise").innerHTML=`
+
+<div class="result success">
+
+🎉 Correct!
+
+<br><br>
+
+${escapeHTML(
+q.q.replace("___",q.options[q.correct])
+)}
+
+<br><br>
+
+<button class="primary" onclick="nextGrammar()">
+Next →
+</button>
+
+</div>`;
+
+}else{
+
+document.getElementById("grammarExercise").innerHTML=`
+
+<div class="result error">
+
+❌ Not correct.
+
+<br>
+
+The SAME question will stay until you choose the right form.
+
+<br><br>
+
+<button class="secondary" onclick="renderGrammarQuestion()">
+Try again
+</button>
+
+</div>`;
+
+}
+
+}
+
+function nextGrammar(){
+
+state.progress.grammar=Math.max(
+state.progress.grammar,
+grammarIndex+1
+);
+
+state.history.grammar.push(
+grammarData[grammarIndex]
+);
+
+grammarIndex++;
+
+addXP(15);
+
+renderGrammarQuestion();
+}
+
+function renderGrammarHistory(){
+
+const box=document.getElementById("grammarHistory");
+
+box.innerHTML="";
+
+state.history.grammar
+.slice(-12)
+.forEach(x=>{
+
+box.innerHTML+=`
+<div class="result success" style="margin-top:8px">
+✓ ${escapeHTML(
+x.q.replace("___",x.options[x.correct])
+)}
+</div>
+`;
+
+});
+
+}
+
+
+/* =====================================================
+   CONVERSATION STORIES — 1000
+===================================================== */
+
+const conversationScenarios=[
+{
+alex:"Hey! How are you today?",
+answers:[
+"I’m doing well, thank you.",
+"I went to the airport yesterday.",
+"I don't like English."
+]
+},
+{
+alex:"What are you doing this weekend?",
+answers:[
+"I’m going to visit my friend.",
+"I was tired yesterday.",
+"English is difficult."
+]
+},
+{
+alex:"Do you study English every day?",
+answers:[
+"Yes, I try to practice every day.",
+"I went there last year.",
+"I am from Morocco."
+]
+},
+{
+alex:"Why are you learning English?",
+answers:[
+"Because I want to communicate more confidently.",
+"I bought a new bag.",
+"Yesterday was Monday."
+]
+},
+{
+alex:"Where would you like to travel?",
+answers:[
+"I would like to visit the United States.",
+"I am studying grammar.",
+"I ate breakfast."
+]
+},
+{
+alex:"What did you do yesterday?",
+answers:[
+"I studied and worked.",
+"I will travel tomorrow.",
+"I am happy today."
+]
+},
+{
+alex:"What will you do tomorrow?",
+answers:[
+"I will go to university.",
+"I went to university yesterday.",
+"I am from Morocco."
+]
+},
+{
+alex:"What do you usually do in the evening?",
+answers:[
+"I usually study and relax.",
+"I traveled last year.",
+"I will buy a ticket."
+]
+},
+{
+alex:"Have you ever visited another country?",
+answers:[
+"Yes, I have visited another country.",
+"I am studying now.",
+"I will cook dinner."
+]
+},
+{
+alex:"What is one goal you have this year?",
+answers:[
+"I want to improve my English.",
+"I bought coffee yesterday.",
+"I am sitting here."
+]
+}
+];
+
+function makeStories(){
+
+const arr=[];
+
+for(let i=0;i<1000;i++){
+
+const s=conversationScenarios[i%conversationScenarios.length];
+
+arr.push({
+alex:s.alex,
+answers:s.answers,
+correct:0
+});
+
+}
+
+return arr;
+}
+
+const storyData=makeStories();
+
+let storyIndex=state.progress.stories;
+
+function renderStory(){
+
+const s=storyData[storyIndex];
+
+document.getElementById("storyNumber").textContent=
+storyIndex+1;
 
 let html=`
 
-<h3>${escapeHTML(q.q)}</h3>
+<div class="result">
 
+👨 <b>Alex:</b><br>
+${escapeHTML(s.alex)}
+
+</div>
+
+<p style="margin:18px 0;font-weight:800">
+What would you say?
+</p>
 `;
 
-q.a.forEach((answer,index)=>{
+s.answers.forEach((answer,i)=>{
 
 html+=`
 
-<button
-class="quiz-option"
-onclick="answerGrammar(${index})">
+<button class="quiz-option"
+onclick="storyAnswer(${i})">
 
 ${escapeHTML(answer)}
 
 </button>
+`;
+
+});
+
+document.getElementById("storyDialogue").innerHTML=html;
+
+renderStoryHistory();
+}
+
+function storyAnswer(index){
+
+const s=storyData[storyIndex];
+
+if(index===s.correct){
+
+document.getElementById("storyDialogue").innerHTML=`
+
+<div class="result success">
+
+🎉 Excellent response!
+
+<br><br>
+
+👨 Alex:
+${escapeHTML(s.alex)}
+
+<br><br>
+
+🗣️ You:
+${escapeHTML(s.answers[index])}
+
+<br><br>
+
+<button class="primary" onclick="nextStory()">
+Continue conversation →
+</button>
+
+</div>`;
+
+}else{
+
+document.getElementById("storyDialogue").innerHTML=`
+
+<div class="result error">
+
+❌ That answer does not fit the conversation naturally.
+
+<br><br>
+
+Read Alex's sentence again and choose the appropriate response.
+
+<br><br>
+
+<button class="secondary" onclick="renderStory()">
+Try again
+</button>
+
+</div>`;
+
+}
+
+}
+
+function nextStory(){
+
+state.progress.stories=Math.max(
+state.progress.stories,
+storyIndex+1
+);
+
+state.history.stories.push(
+storyData[storyIndex]
+);
+
+storyIndex++;
+
+addXP(25);
+
+renderStory();
+}
+
+function renderStoryHistory(){
+
+const box=document.getElementById("storyHistory");
+
+box.innerHTML="";
+
+state.history.stories
+.slice(-10)
+.forEach(x=>{
+
+box.innerHTML+=`
+
+<div class="result success" style="margin-top:8px">
+
+👨 ${escapeHTML(x.alex)}
+
+<br><br>
+
+🗣️ ${escapeHTML(x.answers[0])}
+
+</div>
 
 `;
 
 });
 
-document.getElementById("grammarExercise")
-.innerHTML=html;
-
 }
 
 
-function answerGrammar(index){
+/* =====================================================
+   INITIALIZE
+===================================================== */
 
-const q=
-grammarQuestions[currentGrammar];
+renderThink();
 
-if(index===q.correct){
+renderSpeak();
 
-document.getElementById("grammarExercise")
-.innerHTML=
+renderListening();
 
-`<div class="result">
+renderReading();
 
-🎉 <b>Correct!</b>
+renderWriting();
 
-<br><br>
+renderBuilder();
 
-${escapeHTML(q.q.replace(
-"___",
-q.a[q.correct]
-))}
+renderVocabularyCategories();
 
-<br><br>
+renderConnectors();
 
-<button class="primary"
-onclick="nextGrammar()">
-
-Next →
-
-</button>
-
-</div>`;
-
-addXP(15);
-
-}else{
-
-document.getElementById("grammarExercise")
-.innerHTML=
-
-`<div class="result">
-
-❌ Not quite.
-
-<br>
-
-Try again and look at the tense.
-
-<br><br>
-
-<button class="secondary"
-onclick="renderGrammarQuestion()">
-
-Try again
-
-</button>
-
-</div>`;
-
-}
-
-}
-
-
-function nextGrammar(){
-
-currentGrammar++;
-
-if(currentGrammar>=grammarQuestions.length){
-
-currentGrammar=0;
-
-document.getElementById("grammarExercise")
-.innerHTML=
-
-`<div class="result">
-
-🏆 Amazing! You finished the grammar practice.
-
-<br><br>
-
-You earned XP and practiced:
-
-<br>
-
-Present
-
-<br>
-
-Past
-
-<br>
-
-Future
-
-<br><br>
-
-<button class="primary"
-onclick="renderGrammarQuestion()">
-
-Practice again
-
-</button>
-
-</div>`;
-
-}else{
+renderVerbTables();
 
 renderGrammarQuestion();
 
-}
-
-}
-
-renderGrammarQuestion();
-
-
-/* =====================================================
-   STORIES
-===================================================== */
-
-function storyAnswer(n){
-
-document.getElementById("storyResult")
-.innerHTML=
-
-n===1
-
-?
-
-'<div class="result">💜 Great! That is a natural answer. +25 XP</div>'
-
-:
-
-'<div class="result">Try an answer that matches the question about this weekend.</div>';
-
-if(n===1){
-
-addXP(25);
-
-}
-
-}
-
-
-/* =====================================================
-   SECURITY / HTML HELPERS
-===================================================== */
-
-function escapeHTML(value){
-
-return String(value)
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
-
-}
-
-
-function escapeJS(value){
-
-return String(value)
-.replace(/\\/g,"\\\\")
-.replace(/'/g,"\\'")
-.replace(/\n/g,"\\n")
-.replace(/\r/g,"\\r");
-
-}
-
-
-/* =====================================================
-   START
-===================================================== */
+renderStory();
 
 updateStats();
 
